@@ -1,0 +1,134 @@
+{
+  "question": "O que os clientes relatam sobre atrasos na entrega?",
+  "filters": {
+    "score_max": 2
+  },
+  "status": "answered",
+  "claims": [
+    {
+      "text": "estou preocupado, pois até agora não recebi o produto, e nem fui comunicado o porque está atrasado.",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "text": "Dessa vez a culpa foi dos correios, ele se atrasaram deve ser a tal greve deles.",
+      "evidence_ids": [
+        "E2"
+      ]
+    },
+    {
+      "text": "Os tampos da mesa estavam danificados e aparentemente tentaram pintar com qualquer tinta antes de enviar o que só piorou tudo, acabamento péssimo, lateral do tampo descascando e soltando pedacinho :(()",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "text": "Produto recebido antes do prazo estabelecido e de acordo com o que foi solicitado.",
+      "evidence_ids": [
+        "E4"
+      ]
+    }
+  ],
+  "answer": "estou preocupado, pois até agora não recebi o produto, e nem fui comunicado o porque está atrasado. [E1]\n\nDessa vez a culpa foi dos correios, ele se atrasaram deve ser a tal greve deles. [E2]\n\nOs tampos da mesa estavam danificados e aparentemente tentaram pintar com qualquer tinta antes de enviar o que só piorou tudo, acabamento péssimo, lateral do tampo descascando e soltando pedacinho :(() [E3]\n\nProduto recebido antes do prazo estabelecido e de acordo com o que foi solicitado. [E4]",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": null,
+      "doc_id": "bc466687f268c0415312c27f95378954aace7b1f0b5a1c93b5b59549c9810ddb",
+      "message": "Estou preocupado, pois até agora não recebi o produto, e nem fui comunicado o porque está atrasado.",
+      "order_id": "162b2345ef3cc0551c0a32058840a2ec",
+      "purchase_date": "2018-07-21",
+      "review_date": "2018-08-08",
+      "review_id": "0159077dd9d4cb22186f4a0c65ac61da",
+      "score": 1,
+      "text": "ruim\nEstou preocupado, pois até agora não recebi o produto, e nem fui comunicado o porque está atrasado.",
+      "title": "ruim",
+      "citation_id": "E1",
+      "context_text": "ruim\nEstou preocupado, pois até agora não recebi o produto, e nem fui comunicado o porque está atrasado.",
+      "similarity": 0.85789
+    },
+    {
+      "categories": [
+        "relogios_presentes"
+      ],
+      "delivered_late": true,
+      "doc_id": "77b1c291c9476c6e1db0bfe13042fa0cf61cff1fc0d0ce132916ced35be1c46c",
+      "message": "Dessa vez a culpa foi dos correios,ele se atrasaram deve ser a tal greve deles",
+      "order_id": "e86c9bfc5e5cce878c7d0c2419927cd7",
+      "purchase_date": "2018-03-13",
+      "review_date": "2018-04-15",
+      "review_id": "00b4ff93b872060dc0915bbaac9466e7",
+      "score": 1,
+      "text": "Dessa vez a culpa foi dos correios,ele se atrasaram deve ser a tal greve deles",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Dessa vez a culpa foi dos correios,ele se atrasaram deve ser a tal greve deles",
+      "similarity": 0.854912
+    },
+    {
+      "categories": [
+        "moveis_escritorio"
+      ],
+      "delivered_late": false,
+      "doc_id": "c1f28da302eea6d15d46b86815927755825512a364845034f24d275f942cd82e",
+      "message": "Os tampos da mesa estavam danificados e aparentemente tentaram pintar com qualquer tinta antes de enviar o que só piorou tudo, acabamento péssimo, lateral do tampo descascando e soltando pedacinho :(",
+      "order_id": "ff73e2e57b5c7d3a1aa7c3ccaacafaa6",
+      "purchase_date": "2017-06-19",
+      "review_date": "2017-06-30",
+      "review_id": "005ee02b2a92d329cd650b1bba202b26",
+      "score": 2,
+      "text": "Os tampos da mesa estavam danificados e aparentemente tentaram pintar com qualquer tinta antes de enviar o que só piorou tudo, acabamento péssimo, lateral do tampo descascando e soltando pedacinho :(",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "Os tampos da mesa estavam danificados e aparentemente tentaram pintar com qualquer tinta antes de enviar o que só piorou tudo, acabamento péssimo, lateral do tampo descascando e soltando pedacinho :(",
+      "similarity": 0.83954
+    },
+    {
+      "categories": [
+        "ferramentas_jardim"
+      ],
+      "delivered_late": false,
+      "doc_id": "51c18cd3cef0f9608d37d2f3b04a23489f43576809e9ed389fbc447c2be578ee",
+      "message": "Produto recebido antes do prazo estabelecido e de acordo com o que foi solicitado.",
+      "order_id": "7e844a0812d948cb6f3a7ffa97bde8dd",
+      "purchase_date": "2017-11-12",
+      "review_date": "2017-11-22",
+      "review_id": "00355aabc83e148cd43833a1c0f6f3fe",
+      "score": 1,
+      "text": "Produto recebido antes do prazo estabelecido e de acordo com o que foi solicitado.",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": "Produto recebido antes do prazo estabelecido e de acordo com o que foi solicitado.",
+      "similarity": 0.82641
+    }
+  ],
+  "notice": "As conclusões descrevem os comentários recuperados. A busca seleciona uma amostra por relevância; ela não mede a frequência dos problemas em toda a base. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-15T21:36:33.748381+00:00",
+  "configuration": {
+    "provider": "transformers",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 4,
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        17,
+        384
+      ],
+      "document_count": 17,
+      "dimensions": 384,
+      "source_sha256": "ece91d636bed6741202a7b95352500d9bbd58fd7ed48a02ca4ab4daac9a1725f",
+      "docs_sha256": "e51d2379eea2917c85e991eed7a02c9f9d6b9415411b24d885ff106d0da533a4",
+      "vectors_sha256": "5021c4c9ebe425217c97da915f774b670f338828584f1c8dc4aef7bbbcb40afc"
+    }
+  },
+  "elapsed_seconds": 172.833
+}

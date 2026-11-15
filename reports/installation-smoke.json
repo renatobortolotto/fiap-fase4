@@ -1,0 +1,119 @@
+{
+  "question": "O que os clientes elogiam nas entregas antes do prazo?",
+  "filters": {
+    "score_min": 4
+  },
+  "status": "answered",
+  "claims": [
+    {
+      "text": "entregue muito antes do prazo!",
+      "evidence_ids": [
+        "E4"
+      ],
+      "kind": "quotation",
+      "quote_verified": true
+    }
+  ],
+  "answer": "Nos comentários recuperados, os clientes relatam:\n\n> entregue muito antes do prazo! [E4]",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "cama_mesa_banho"
+      ],
+      "delivered_late": false,
+      "doc_id": "7013daf2251cf1e5c5f786f1a7c5b32d3d2069631c409f7e94acd981b7eb4db4",
+      "message": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "order_id": "a1226839947001dfb15c46e812c68325",
+      "purchase_date": "2017-03-04",
+      "review_date": "2017-03-10",
+      "review_id": "0ec638d4fa47f321fd70dd6dd6e7c568",
+      "score": 4,
+      "text": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "title": "",
+      "citation_id": "E1",
+      "context_text": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "similarity": 0.898897
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "a93c37dfe9915231a5dccf45614af54fe705df6bd4828ff3e172b2c87d080087",
+      "message": "Parabéns a entrega foi antes do prazo",
+      "order_id": "2d33e2f321b7f676de5d3ab87c08d1ab",
+      "purchase_date": "2017-08-06",
+      "review_date": "2017-08-16",
+      "review_id": "cdf1925c268b7902beb421680b225d26",
+      "score": 5,
+      "text": "Parabéns a entrega foi antes do prazo",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Parabéns a entrega foi antes do prazo",
+      "similarity": 0.90054
+    },
+    {
+      "categories": [
+        "automotivo"
+      ],
+      "delivered_late": false,
+      "doc_id": "54734fe6debfcd95a2b23ba0c487832e9af11290aad54bb86da539ea978dbc05",
+      "message": "entrega antes do prazo",
+      "order_id": "7157fd8b253bcba337ae46c9f0e10476",
+      "purchase_date": "2017-08-06",
+      "review_date": "2017-08-15",
+      "review_id": "89574fd5da8cdf29650416f3c937cd3b",
+      "score": 5,
+      "text": "entrega antes do prazo",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "entrega antes do prazo",
+      "similarity": 0.895932
+    },
+    {
+      "categories": [
+        "pcs"
+      ],
+      "delivered_late": false,
+      "doc_id": "da2e2c47f0cb0692da9f50e721bbd210ff648f6fae0f074859b5dfabf6007af5",
+      "message": "Entregue muito antes do prazo! Excelente! Loja muito atenciosa com o cliente. Recomendo!",
+      "order_id": "8185ba302492c86291d7b1912c94ded3",
+      "purchase_date": "2018-04-18",
+      "review_date": "2018-04-25",
+      "review_id": "d5a86b5d21dd6daf089000d89c1df630",
+      "score": 5,
+      "text": "Entregue muito antes do prazo! Excelente! Loja muito atenciosa com o cliente. Recomendo!",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": "Entregue muito antes do prazo! Excelente! Loja muito atenciosa com o cliente. Recomendo!",
+      "similarity": 0.895435
+    }
+  ],
+  "notice": "As conclusões descrevem os comentários recuperados. A busca seleciona uma amostra por relevância; ela não mede a frequência dos problemas em toda a base. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-15T21:56:14.158746+00:00",
+  "configuration": {
+    "provider": "transformers",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 4,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "elapsed_seconds": 23.89
+}

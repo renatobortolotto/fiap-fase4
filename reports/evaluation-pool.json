@@ -1,0 +1,196 @@
+{
+  "n_queries": 5,
+  "n_relevance_queries": 4,
+  "recall_at_k": 0.675,
+  "mrr_at_k": 1.0,
+  "n_abstention_queries": 5,
+  "n_abstention_correct": 5,
+  "retrieval_gate_abstention_accuracy": 1.0,
+  "results": [
+    {
+      "query_id": "atraso",
+      "question": "Quais relatos mencionam explicitamente atraso ou prazo de entrega nao cumprido?",
+      "relevant_ids": [
+        "5822998bd781ecac23e05b5bc4048c91db4e2320268dd5d038be76f0abc6bd4c",
+        "c47398ed61ccdbdd48c4cd158abba4aaa38c06c5be7ba43ea2be43ed8bdf0acb",
+        "77b1c291c9476c6e1db0bfe13042fa0cf61cff1fc0d0ce132916ced35be1c46c",
+        "bc466687f268c0415312c27f95378954aace7b1f0b5a1c93b5b59549c9810ddb"
+      ],
+      "expect_abstain": false,
+      "filters": {},
+      "hits": [
+        {
+          "id": "c47398ed61ccdbdd48c4cd158abba4aaa38c06c5be7ba43ea2be43ed8bdf0acb",
+          "similarity": 0.8903955817222595
+        },
+        {
+          "id": "d93499d1bde2f894978217bc37e0212aeaebe894d7fdf60d5fdd2637737cb6da",
+          "similarity": 0.8625974059104919
+        },
+        {
+          "id": "51c18cd3cef0f9608d37d2f3b04a23489f43576809e9ed389fbc447c2be578ee",
+          "similarity": 0.874539852142334
+        },
+        {
+          "id": "bc466687f268c0415312c27f95378954aace7b1f0b5a1c93b5b59549c9810ddb",
+          "similarity": 0.8900442123413086
+        }
+      ],
+      "n_relevant": 4,
+      "n_retrieved_relevant": 2,
+      "recall_at_k": 0.5,
+      "reciprocal_rank_at_k": 1.0,
+      "retrieval_gate_abstained": false,
+      "retrieval_gate_abstention_correct": true
+    },
+    {
+      "query_id": "avaria",
+      "question": "Quais comentarios relatam produto danificado, quebrado ou que nao funciona?",
+      "relevant_ids": [
+        "c1f28da302eea6d15d46b86815927755825512a364845034f24d275f942cd82e",
+        "9fcf32daef16f5b12e64eab77e3fd672c575fc3380408d3914b984fb8e8d9571",
+        "d9c7ad41563d125265c9bef4ee0fc12072c659c57d7eb490d1f7824b45d6d18c",
+        "d93499d1bde2f894978217bc37e0212aeaebe894d7fdf60d5fdd2637737cb6da",
+        "5822998bd781ecac23e05b5bc4048c91db4e2320268dd5d038be76f0abc6bd4c"
+      ],
+      "expect_abstain": false,
+      "filters": {},
+      "hits": [
+        {
+          "id": "9fcf32daef16f5b12e64eab77e3fd672c575fc3380408d3914b984fb8e8d9571",
+          "similarity": 0.8793037533760071
+        },
+        {
+          "id": "bc466687f268c0415312c27f95378954aace7b1f0b5a1c93b5b59549c9810ddb",
+          "similarity": 0.8780203461647034
+        },
+        {
+          "id": "d93499d1bde2f894978217bc37e0212aeaebe894d7fdf60d5fdd2637737cb6da",
+          "similarity": 0.8652418851852417
+        },
+        {
+          "id": "c1f28da302eea6d15d46b86815927755825512a364845034f24d275f942cd82e",
+          "similarity": 0.868405282497406
+        }
+      ],
+      "n_relevant": 5,
+      "n_retrieved_relevant": 3,
+      "recall_at_k": 0.6,
+      "reciprocal_rank_at_k": 1.0,
+      "retrieval_gate_abstained": false,
+      "retrieval_gate_abstention_correct": true
+    },
+    {
+      "query_id": "elogio",
+      "question": "Quais clientes elogiam receber o produto antes do prazo?",
+      "relevant_ids": [
+        "fb49c742582912923f203f2149ed03fa5ab09bcd51f5db70bd7b3a7262d23b4e",
+        "53b7f2027f8de6f0bdc2b491c279d8a34787400acce4443556804751698b2a74",
+        "51c18cd3cef0f9608d37d2f3b04a23489f43576809e9ed389fbc447c2be578ee",
+        "82923135c6d0c49d22176f1b2a6365f0ed158fdf112ddd5db9b1a6d1d549bcb8"
+      ],
+      "expect_abstain": false,
+      "filters": {},
+      "hits": [
+        {
+          "id": "51c18cd3cef0f9608d37d2f3b04a23489f43576809e9ed389fbc447c2be578ee",
+          "similarity": 0.8673128485679626
+        },
+        {
+          "id": "82923135c6d0c49d22176f1b2a6365f0ed158fdf112ddd5db9b1a6d1d549bcb8",
+          "similarity": 0.8488099575042725
+        },
+        {
+          "id": "53b7f2027f8de6f0bdc2b491c279d8a34787400acce4443556804751698b2a74",
+          "similarity": 0.8658902645111084
+        },
+        {
+          "id": "fb49c742582912923f203f2149ed03fa5ab09bcd51f5db70bd7b3a7262d23b4e",
+          "similarity": 0.8293485045433044
+        }
+      ],
+      "n_relevant": 4,
+      "n_retrieved_relevant": 4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "retrieval_gate_abstained": false,
+      "retrieval_gate_abstention_correct": true
+    },
+    {
+      "query_id": "faltante",
+      "question": "Quais comentarios relatam que faltou parte do pedido ou algum componente?",
+      "relevant_ids": [
+        "b95da87a5b1d87e6fba357a2be89eb072654c7504fd38af99cb43a98558baa2a",
+        "925cb90d8fdbdd70fd034c548ce11189dff22e0eb09070c14d4c71901f890702",
+        "6faffed092fd1a342c5266b34578d28f2cd58491b7d2315d14c8833dcd079fe3",
+        "493560e03dd9f436c4b86d7bf95cbd256b51ddbbd5d642447dfc70788bf3f0de",
+        "274ff66a3f74937c91601d7d745d9ce194339b831c5feab8999bf9693a90c828"
+      ],
+      "expect_abstain": false,
+      "filters": {},
+      "hits": [
+        {
+          "id": "b95da87a5b1d87e6fba357a2be89eb072654c7504fd38af99cb43a98558baa2a",
+          "similarity": 0.8611081838607788
+        },
+        {
+          "id": "bc466687f268c0415312c27f95378954aace7b1f0b5a1c93b5b59549c9810ddb",
+          "similarity": 0.8635938167572021
+        },
+        {
+          "id": "925cb90d8fdbdd70fd034c548ce11189dff22e0eb09070c14d4c71901f890702",
+          "similarity": 0.8631619215011597
+        },
+        {
+          "id": "6faffed092fd1a342c5266b34578d28f2cd58491b7d2315d14c8833dcd079fe3",
+          "similarity": 0.8576566576957703
+        }
+      ],
+      "n_relevant": 5,
+      "n_retrieved_relevant": 3,
+      "recall_at_k": 0.6,
+      "reciprocal_rank_at_k": 1.0,
+      "retrieval_gate_abstained": false,
+      "retrieval_gate_abstention_correct": true
+    },
+    {
+      "query_id": "periodo-sem-dados",
+      "question": "O que relatam sobre entrega em 2040?",
+      "relevant_ids": [],
+      "expect_abstain": true,
+      "filters": {
+        "date_from": "2040-01-01"
+      },
+      "hits": [],
+      "n_relevant": 0,
+      "n_retrieved_relevant": 0,
+      "recall_at_k": null,
+      "reciprocal_rank_at_k": null,
+      "retrieval_gate_abstained": true,
+      "retrieval_gate_abstention_correct": true
+    }
+  ],
+  "top_k": 4,
+  "min_similarity": 0.75,
+  "limitations": [
+    "Recall@k e MRR@k usam somente perguntas com relevant_ids não vazios; IDs relevantes omitidos não são inferidos automaticamente.",
+    "Os rótulos podem cobrir apenas um pool de documentos: as métricas não comprovam recall global do corpus nem prevalência de temas.",
+    "A acurácia de abstenção mede somente o gate de recuperação com menos de duas evidências; não executa nem avalia o LLM ou as regras de escopo.",
+    "Esta avaliação não mede sustentação semântica das afirmações, que exige revisão das respostas e de suas fontes."
+  ],
+  "retrieval_mode": "hybrid",
+  "index_manifest": {
+    "schema_version": 1,
+    "model_name": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "shape": [
+      17,
+      384
+    ],
+    "document_count": 17,
+    "dimensions": 384,
+    "source_sha256": "ece91d636bed6741202a7b95352500d9bbd58fd7ed48a02ca4ab4daac9a1725f",
+    "docs_sha256": "e51d2379eea2917c85e991eed7a02c9f9d6b9415411b24d885ff106d0da533a4",
+    "vectors_sha256": "5021c4c9ebe425217c97da915f774b670f338828584f1c8dc4aef7bbbcb40afc"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "recorded_at_utc": "2026-11-15T21:55:03.048689+00:00",
+  "project_path": ".",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "logical_cpus": 6,
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "transformers": "5.23.0",
+    "sentence-transformers": "6.3.0",
+    "numpy": "2.5.4",
+    "streamlit": "1.67.0",
+    "pytest": "9.2.0"
+  },
+  "dataset": {
+    "input_reviews": 99224,
+    "text_documents": 42687,
+    "excluded_no_text": 56537,
+    "title_only_documents": 1737
+  },
+  "index": {
+    "schema_version": 1,
+    "model_name": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "shape": [
+      42687,
+      384
+    ],
+    "document_count": 42687,
+    "dimensions": 384,
+    "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+    "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+    "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+  },
+  "index_build_seconds": 757.59,
+  "tests": {
+    "passed": 107,
+    "failed": 0,
+    "seconds": 1.61,
+    "command": ".venv\\Scripts\\python.exe -m pytest -q --basetemp artifacts\\pytest-final-02",
+    "location": "."
+  },
+  "ui_real_corpus": {
+    "exceptions": 0,
+    "text_reviews": 42687,
+    "score_1_or_2": 10994,
+    "categories": 73
+  },
+  "http_check": {
+    "/": 200,
+    "/_stcore/health": 200
+  },
+  "examples": {
+    "01-atrasos": {
+      "status": "answered",
+      "seconds": 29.697,
+      "n_sources": 4,
+      "n_claims": 3,
+      "quote_verified_claims": 3
+    },
+    "02-elogios": {
+      "status": "answered",
+      "seconds": 5.559,
+      "n_sources": 4,
+      "n_claims": 1,
+      "quote_verified_claims": 1
+    },
+    "03-fora-do-escopo": {
+      "status": "abstained",
+      "seconds": 0.0,
+      "n_sources": 0,
+      "n_claims": 0,
+      "quote_verified_claims": 0
+    },
+    "04-sem-evidencias": {
+      "status": "abstained",
+      "seconds": 0.016,
+      "n_sources": 0,
+      "n_claims": 0,
+      "quote_verified_claims": 0
+    }
+  },
+  "development_pool": {
+    "documents": 17,
+    "queries": 5,
+    "relevance_queries": 4,
+    "labels": "AI-proposed, pending human review",
+    "dense_recall_at_4": 0.5625,
+    "dense_mrr_at_4": 0.875,
+    "hybrid_recall_at_4": 0.675,
+    "hybrid_mrr_at_4": 1.0,
+    "retrieval_gate_correct": 5,
+    "retrieval_gate_total": 5
+  },
+  "not_executed": [
+    "Ollama real server/model (adapter covered by mocked tests)",
+    "Independent human relevance and claim-support assessment",
+    "Public GitHub publishing",
+    "Video recording and academic submission"
+  ],
+  "snapshot_scope": "Local validation before repository publication; see docs/entrega.md for delivery links.",
+  "repository_url": "https://github.com/renatobortolotto/fiap-fase4"
+}

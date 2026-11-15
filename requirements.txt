@@ -1,0 +1,3 @@
+# Instala a aplicação a partir do pyproject.toml.
+# Para reproduzir versões verificadas, prefira uv sync --locked --extra dev.
+-e .

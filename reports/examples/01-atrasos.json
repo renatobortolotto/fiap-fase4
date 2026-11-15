@@ -1,0 +1,142 @@
+{
+  "question": "O que os clientes relatam sobre atrasos na entrega?",
+  "filters": {
+    "score_max": 2
+  },
+  "status": "answered",
+  "claims": [
+    {
+      "text": "Atraso na entrega sem dar satisfação ao cliente, que com certeza escolheu o produto com cuidado e com as melhores expectativas.",
+      "evidence_ids": [
+        "E1"
+      ],
+      "kind": "quotation",
+      "quote_verified": true
+    },
+    {
+      "text": "Gostaria de esclarecimentos acerca da entrega que está em atraso.",
+      "evidence_ids": [
+        "E2"
+      ],
+      "kind": "quotation",
+      "quote_verified": true,
+      "original_evidence_ids": [
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "text": "Atrasos acontecem nenhuma empresa está livre de passar por algum problema de logística. Mas o fato de não comunicarem seu cliente final é vergonhoso. Até o Mercado Livre tem controle sobre atrasos!",
+      "evidence_ids": [
+        "E3"
+      ],
+      "kind": "quotation",
+      "quote_verified": true,
+      "original_evidence_ids": [
+        "E4"
+      ]
+    }
+  ],
+  "answer": "Nos comentários recuperados, os clientes relatam:\n\n> Atraso na entrega sem dar satisfação ao cliente, que com certeza escolheu o produto com cuidado e com as melhores expectativas. [E1]\n\n> Gostaria de esclarecimentos acerca da entrega que está em atraso. [E2]\n\n> Atrasos acontecem nenhuma empresa está livre de passar por algum problema de logística. Mas o fato de não comunicarem seu cliente final é vergonhoso. Até o Mercado Livre tem controle sobre atrasos! [E3]",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "moveis_decoracao"
+      ],
+      "delivered_late": true,
+      "doc_id": "a9d9db43448e6d529f3c9a10fb0fadfdf31a84a57a763fd2519c24e3ea51ddea",
+      "message": "Atraso na entrega sem dar satisfação ao cliente, que com certeza escolheu o produto com cuidado e com as melhores expectativas. Falta de consideração.",
+      "order_id": "0f29bafaaa77f4548165215b66bd97e4",
+      "purchase_date": "2017-11-14",
+      "review_date": "2017-12-17",
+      "review_id": "2d0a07007cc84621a2bc694505be4036",
+      "score": 1,
+      "text": "Atraso na entrega sem dar satisfação ao cliente, que com certeza escolheu o produto com cuidado e com as melhores expectativas. Falta de consideração.",
+      "title": "",
+      "citation_id": "E1",
+      "context_text": "Atraso na entrega sem dar satisfação ao cliente, que com certeza escolheu o produto com cuidado e com as melhores expectativas. Falta de consideração.",
+      "similarity": 0.881202
+    },
+    {
+      "categories": [
+        "relogios_presentes"
+      ],
+      "delivered_late": true,
+      "doc_id": "b4a86c11f4f462e340e0b5d69b111288119bfbe52e0cf99bc5db9d8b81f636ed",
+      "message": "Gostaria de esclarecimentos acerca da entrega que está em atraso",
+      "order_id": "e269b2472c0546324acf4d09dd7acfab",
+      "purchase_date": "2017-11-24",
+      "review_date": "2017-12-20",
+      "review_id": "7c4c2d10a57d4aab58a570a5a8ac9f2c",
+      "score": 1,
+      "text": "Gostaria de esclarecimentos acerca da entrega que está em atraso",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Gostaria de esclarecimentos acerca da entrega que está em atraso",
+      "similarity": 0.875575
+    },
+    {
+      "categories": [
+        "climatizacao"
+      ],
+      "delivered_late": null,
+      "doc_id": "ed2968c9134756d3bc37db01f1619a5c9b05f2da678bfef6abc9fc85fe7c1b06",
+      "message": "Atrasos acontecem nenhuma empresa está livre de passar por algum problema de logística. Mas o fato de não comunicarem seu cliente final é vergonhoso. Até o Mercado Livre tem controle sobre atrasos!",
+      "order_id": "45973912e490866800c0aea8f63099c8",
+      "purchase_date": "2016-10-07",
+      "review_date": "2016-12-03",
+      "review_id": "d7486b4da781b9d7dc5484ce65868081",
+      "score": 1,
+      "text": "Atrasos acontecem nenhuma empresa está livre de passar por algum problema de logística. Mas o fato de não comunicarem seu cliente final é vergonhoso. Até o Mercado Livre tem controle sobre atrasos!",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "Atrasos acontecem nenhuma empresa está livre de passar por algum problema de logística. Mas o fato de não comunicarem seu cliente final é vergonhoso. Até o Mercado Livre tem controle sobre atrasos!",
+      "similarity": 0.877447
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": true,
+      "doc_id": "990584e08e94822b4159f4428987f57fa657e6115b46de1a880207643734b808",
+      "message": "Falta de atenção e respeito com cliente",
+      "order_id": "3b1b1d0a19960310b9e033909f63f662",
+      "purchase_date": "2018-06-11",
+      "review_date": "2018-06-23",
+      "review_id": "9b1e2c9d0d236f106bed5169a8cde33f",
+      "score": 1,
+      "text": "Entrega do produto\nFalta de atenção e respeito com cliente",
+      "title": "Entrega do produto",
+      "citation_id": "E4",
+      "context_text": "Entrega do produto\nFalta de atenção e respeito com cliente",
+      "similarity": 0.87543
+    }
+  ],
+  "notice": "As conclusões descrevem os comentários recuperados. A busca seleciona uma amostra por relevância; ela não mede a frequência dos problemas em toda a base. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-15T21:49:33.083791+00:00",
+  "configuration": {
+    "provider": "transformers",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 4,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "elapsed_seconds": 29.697
+}
