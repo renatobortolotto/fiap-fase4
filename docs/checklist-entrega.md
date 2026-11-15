@@ -42,7 +42,7 @@ Os itens marcados foram verificados na implementação local; os demais dependem
 - [x] Arquivos temporários, caches e pesos de modelos fora do versionamento.
 - [x] Segredos e credenciais fora do versionamento.
 - [x] Condições de uso e atribuição do dataset verificadas na fonte.
-- [ ] Link público abre para um visitante sem acesso à conta da equipe.
+- [x] Link público abre para um visitante sem acesso à conta da equipe.
 
 ## Vídeo
 

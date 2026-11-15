@@ -264,10 +264,11 @@ e [checklist de entrega](docs/checklist-entrega.md).
 
 ## Entrega acadêmica
 
-Este diretório contém a implementação local. Para concluir a entrega da disciplina,
-é necessário disponibilizar o repositório público e gravar/publicar o vídeo de até
-7 minutos com demonstração real. O roteiro está preparado; a gravação não é gerada
-pela aplicação. A trilha Databricks mencionada no enunciado é opcional.
+O código está publicado no [repositório público da entrega](https://github.com/renatobortolotto/fiap-fase4).
+Para concluir a entrega da disciplina, a equipe deve revisar o material e gravar/publicar
+o vídeo de até 7 minutos com demonstração real. O roteiro está preparado; a gravação
+não é gerada pela aplicação. Consulte os [links e o estado da entrega](docs/entrega.md).
+A trilha Databricks mencionada no enunciado é opcional.
 
 ## Referências técnicas
 

@@ -12,3 +12,5 @@ O vídeo de apresentação ainda precisa ser gravado e disponibilizado. Há um
 Antes da submissão acadêmica, a equipe deve revisar as respostas e os rótulos de
 desenvolvimento, conferir os links e preencher as informações de integrantes exigidas
 pela disciplina. Consulte o [checklist](checklist-entrega.md).
+
+Publicação e acesso público conferidos em 15/11/2026. A implementação inicial está no [commit f47fb51](https://github.com/renatobortolotto/fiap-fase4/commit/f47fb519b6ce6b9b5a2c2c28dbc559d6804d5d69).
