@@ -172,3 +172,11 @@ def test_retry_does_not_feed_rejected_numeric_hallucination_back_to_model():
     retry = s.generator.calls[1]
     assert "99 meses" not in json.dumps(retry)
     assert not any(message["role"] == "assistant" for message in retry)
+
+
+def test_unmeasured_prevalence_wording_is_rejected_instead_of_qualified_as_global_evidence():
+    sources = [{"citation_id": "E1", "context_text": "Não obtive retorno da loja."}]
+    payload = {"findings": ["Muitos clientes não receberam resposta."], "examples": [
+        {"evidence_id": "E1", "quote": "Não obtive retorno da loja."}]}
+    with pytest.raises(GenerationError, match="generalização"):
+        validate_response(payload, sources)
