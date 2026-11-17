@@ -5,7 +5,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from voc_olist.config import Settings
+from voc_olist.config import Settings, generation_defaults
 from voc_olist.cli import make_embedder, make_search_index
 from voc_olist.llm import make_generator
 from voc_olist.rag import RagService
@@ -15,28 +15,35 @@ st.set_page_config(page_title="Escuta | Voz do Cliente", page_icon="◉", layout
 
 
 @st.cache_resource
-def load_index(path, fingerprint):
-    return VectorIndex.load(Path(path))
+def load_index(path, fingerprint, retrieval_mode):
+    settings = Settings.from_env()
+    return make_search_index(VectorIndex.load(Path(path)), replace(settings, retrieval_mode=retrieval_mode))
 
 
 @st.cache_resource
-def resources(settings):
-    return make_embedder(settings), make_generator(settings)
+def resources(settings, fingerprint):
+    index = load_index(str(settings.index_dir), fingerprint, settings.retrieval_mode)
+    return RagService(index, make_embedder(settings), make_generator(settings), settings)
 
 
 def render_result(result):
     if result["status"] == "answered":
         st.markdown("Nos comentários recuperados, os clientes relatam:")
-        for claim in result["claims"]:
-            st.markdown(("> " if claim.get("kind") == "quotation" else "") + claim["text"])
-            if claim.get("kind") == "quotation":
-                st.caption("Trecho literal de uma avaliação; opiniões são atribuídas ao cliente.")
-            st.caption("Fontes: " + ", ".join(claim["evidence_ids"]))
+        for finding in result["findings"]:
+            st.markdown(finding["text"])
+        st.caption("Contexto consultado: " + ", ".join(result["context_evidence_ids"]))
+        with st.expander("Trechos ilustrativos", expanded=True):
+            for quote in result["illustrative_quotes"]:
+                st.caption(quote["evidence_id"])
+                st.text(quote["quote"])
+            st.caption("Exemplos do contexto; não são uma prova individual de cada frase da síntese.")
     elif result["status"] == "evidence_only":
         st.info(result["reason"])
     else:
         st.warning(result["reason"])
     st.caption(result["notice"])
+    if result.get("inferred_period"):
+        st.caption("Período identificado na pergunta; filtros efetivos: " + json.dumps(result["filters"], ensure_ascii=False))
     with st.expander(f"Avaliações recuperadas · {len(result['sources'])}", expanded=True):
         for source in result["sources"]:
             st.markdown(f"**{source['citation_id']} · nota {source.get('score', '?')}/5**")
@@ -53,7 +60,7 @@ def render_result(result):
 
 st.caption("TECH CHALLENGE · FASE 4")
 st.title("Escuta — Voz do Cliente")
-st.write("Explore o que os clientes relatam sobre suas compras. Cada conclusão aponta as avaliações usadas como fonte.")
+st.write("Explore o que os clientes relatam sobre suas compras, com sínteses, contexto consultado e trechos rastreáveis.")
 
 settings = Settings.from_env()
 manifest_path = settings.index_dir / "manifest.json"
@@ -63,22 +70,24 @@ if not manifest_path.exists():
     st.stop()
 
 try:
-    index = load_index(str(settings.index_dir), manifest_path.stat().st_mtime_ns)
+    index = load_index(str(settings.index_dir), manifest_path.stat().st_mtime_ns, settings.retrieval_mode)
 except (ValueError, OSError) as exc:
     st.error(str(exc))
     st.stop()
 
 with st.sidebar:
     st.header("Exploração")
-    label = st.selectbox("Modo de resposta", ["RAG com Ollama", "RAG com modelo pequeno local", "Somente evidências"],
-                         index={"ollama": 0, "transformers": 1, "evidence": 2}.get(settings.provider, 0))
-    provider = {"RAG com Ollama": "ollama", "RAG com modelo pequeno local": "transformers", "Somente evidências": "evidence"}[label]
+    modes = {"RAG local · Qwen 7B": "native", "RAG com Ollama": "ollama",
+             "RAG com Transformers": "transformers", "Somente evidências": "evidence"}
+    label = st.selectbox("Modo de resposta", list(modes), index=list(modes.values()).index(settings.provider))
+    provider = modes[label]
     if provider != settings.provider:
-        settings = replace(settings, provider=provider,
-                           llm_model="Qwen/Qwen2.5-0.5B-Instruct" if provider == "transformers" else "qwen2.5:3b",
-                           llm_revision="7ae557604adf67be50417f59c2c2f167def9a775" if provider == "transformers" else None)
-    if provider == "transformers":
-        st.caption("Modelo pequeno: primeira execução baixa cerca de 1 GB; a qualidade é limitada. A geração em CPU pode demorar.")
+        model, revision = generation_defaults(provider)
+        settings = replace(settings, provider=provider, llm_model=model, llm_revision=revision)
+    if provider == "native":
+        st.caption("Qwen 7B quantizado, executado neste computador. O primeiro uso baixa cerca de 4,7 GB e pode demorar; o runtime local inicia automaticamente.")
+    elif provider == "transformers":
+        st.caption(f"Modelo: {settings.llm_model}. O padrão baixa cerca de 3 GB no primeiro uso; a geração em CPU pode demorar.")
     elif provider == "ollama":
         st.caption(f"Modelo: {settings.llm_model}. O Ollama precisa estar em execução.")
     else:
@@ -133,8 +142,8 @@ if question:
     with st.chat_message("assistant"):
         try:
             with st.spinner("Buscando avaliações e preparando a resposta…"):
-                embedder, generator = resources(settings)
-                result = RagService(make_search_index(index, settings), embedder, generator, settings).answer(question, filters)
+                service = resources(settings, manifest_path.stat().st_mtime_ns)
+                result = service.answer(question, filters)
             render_result(result)
             st.session_state.setdefault("history", []).append(result)
         except (ValueError, RuntimeError, OSError) as exc:

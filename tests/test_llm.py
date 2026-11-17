@@ -7,15 +7,20 @@ import pytest
 import voc_olist.llm as llm
 
 
+def test_constrained_decoding_integration_imports_with_locked_transformers():
+    from lmformatenforcer.integrations.transformers import build_transformers_prefix_allowed_tokens_fn
+    assert callable(build_transformers_prefix_allowed_tokens_fn)
+
+
 def test_ollama_contract_nonstreaming_and_json_schema(monkeypatch):
     captured = {}
     def request(req, timeout):
         captured.update(url=req.full_url, payload=json.loads(req.data), timeout=timeout)
-        return io.BytesIO(json.dumps({"message": {"content": '{"abstain":true,"reason":"sem suporte","claims":[]}'}}).encode())
+        return io.BytesIO(json.dumps({"message": {"content": '{"findings":[],"reason":"sem suporte","examples":[]}'}}).encode())
     monkeypatch.setattr(llm, "urlopen", request)
     result = llm.OllamaGenerator("fixture-model", "http://localhost:11434/", 9).generate([
         {"role": "user", "content": "Pergunta"}])
-    assert result["abstain"] is True
+    assert result["findings"] == []
     assert captured["url"] == "http://localhost:11434/api/chat"
     assert captured["payload"]["stream"] is False
     assert captured["payload"]["format"]["type"] == "object"

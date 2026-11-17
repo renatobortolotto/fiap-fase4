@@ -159,3 +159,104 @@ def test_e5_prefixes_and_lazy_loading_without_model_download():
     assert vectors.dtype == np.float32
     assert query.shape == (2,)
     assert np.linalg.norm(query) == pytest.approx(1.0)
+
+
+class RecordingEmbedder:
+    model_name = "deterministic-batching-fixture"
+    revision = "fixture-revision"
+
+    def __init__(self, mapping):
+        self.mapping = mapping
+        self.batches = []
+
+    def encode_documents(self, texts):
+        self.batches.append(list(texts))
+        return np.asarray([self.mapping[text] for text in texts], dtype=np.float64)
+
+
+def test_unique_length_sorted_batches_restore_every_original_document_row(tmp_path):
+    documents = [
+        {"doc_id": "review-long-first", "text": "texto maior", "score": 1},
+        {"doc_id": "review-z", "text": "z", "score": 5},
+        {"doc_id": "review-long-again", "text": "texto maior", "score": 2},
+        {"doc_id": "review-a", "text": "a", "score": 4},
+        {"doc_id": "review-medium", "text": "médio", "score": 3},
+    ]
+    source = tmp_path / "source.jsonl"
+    source.write_text("\n".join(json.dumps(doc, ensure_ascii=False) for doc in documents), encoding="utf-8")
+    original_bytes = source.read_bytes()
+    embedder = RecordingEmbedder({"texto maior": [1, 1], "z": [1, 0], "a": [3, 4], "médio": [0, 2]})
+    index_dir = tmp_path / "index"
+    manifest = VectorIndex.build(source, index_dir, embedder, batch_size=2)
+    index = VectorIndex.load(index_dir)
+
+    assert embedder.batches == [["a", "z"], ["médio", "texto maior"]]
+    assert sum(map(len, embedder.batches)) == 4
+    assert manifest["n_unique_texts"] == 4 and manifest["document_count"] == 5
+    assert manifest["shape"] == [5, 2]
+    assert index.documents == documents
+    assert source.read_bytes() == original_bytes
+    assert manifest["source_sha256"] == hashlib.sha256(original_bytes).hexdigest()
+    expected = np.asarray([[2**-.5, 2**-.5], [1, 0], [2**-.5, 2**-.5], [.6, .8], [0, 1]], dtype=np.float32)
+    np.testing.assert_allclose(index.vectors, expected, atol=1e-6)
+    np.testing.assert_array_equal(index.vectors[0], index.vectors[2])
+    np.testing.assert_allclose(np.linalg.norm(index.vectors, axis=1), 1.0, atol=1e-6)
+    assert index.vectors.dtype == np.float32
+
+
+def test_encoding_deduplication_uses_exact_text_without_merging_reviews(tmp_path):
+    documents = [{"doc_id": str(i), "text": text} for i, text in enumerate(["Entrega", "entrega", "Entrega ", "Entrega"])]
+    source = tmp_path / "source.jsonl"
+    source.write_text("\n".join(json.dumps(doc) for doc in documents), encoding="utf-8")
+    embedder = RecordingEmbedder({"Entrega": [1, 0], "entrega": [0, 1], "Entrega ": [1, 1]})
+    index_dir = tmp_path / "index"
+    manifest = VectorIndex.build(source, index_dir, embedder, batch_size=1)
+    index = VectorIndex.load(index_dir)
+
+    assert embedder.batches == [["Entrega"], ["entrega"], ["Entrega "]]
+    assert manifest["n_unique_texts"] == 3 and len(index.documents) == 4
+    assert index.documents == documents
+    np.testing.assert_array_equal(index.vectors[0], index.vectors[3])
+    assert not np.array_equal(index.vectors[0], index.vectors[1])
+
+
+def test_manifest_without_optional_batching_metadata_remains_loadable(built):
+    _, index_dir, _, _ = built
+    manifest_path = index_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest.pop("n_unique_texts")
+    manifest.pop("batching_strategy")
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    index = VectorIndex.load(index_dir)
+    assert index.vectors.shape == (5, 3)
+    assert len(index.documents) == 5
+
+
+def test_unique_batch_row_count_mismatch_is_rejected(tmp_path):
+    source = tmp_path / "source.jsonl"
+    source.write_text('{"text":"a"}\n{"text":"b"}\n{"text":"a"}\n', encoding="utf-8")
+
+    class MissingRowEmbedder:
+        model_name = "invalid-row-count-fixture"
+        revision = None
+        def encode_documents(self, texts):
+            return np.ones((len(texts) - 1, 2), dtype=np.float32)
+
+    with pytest.raises(ValueError, match="Quantidade de embeddings"):
+        VectorIndex.build(source, tmp_path / "index", MissingRowEmbedder(), batch_size=2)
+
+
+def test_unique_batch_dimension_change_is_rejected(tmp_path):
+    source = tmp_path / "source.jsonl"
+    source.write_text('{"text":"a"}\n{"text":"bb"}\n', encoding="utf-8")
+
+    class ChangedDimensionEmbedder:
+        model_name = "invalid-dimension-fixture"
+        revision = None
+        calls = 0
+        def encode_documents(self, texts):
+            self.calls += 1
+            return np.ones((len(texts), self.calls + 1), dtype=np.float32)
+
+    with pytest.raises(ValueError, match="dimensão dos embeddings mudou"):
+        VectorIndex.build(source, tmp_path / "index", ChangedDimensionEmbedder(), batch_size=1)

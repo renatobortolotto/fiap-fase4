@@ -8,7 +8,7 @@ import logging
 from pathlib import Path
 import sys
 
-from .config import Settings
+from .config import Settings, generation_defaults
 from .download import download_dataset
 from .llm import make_generator
 from .prepare import prepare_dataset
@@ -26,7 +26,7 @@ def emit(data, output=None):
 
 
 def make_embedder(settings):
-    return SentenceEmbedder(settings.embedding_model, settings.embedding_revision, settings.cache_dir)
+    return SentenceEmbedder(settings.embedding_model, settings.embedding_revision, settings.cache_dir, settings.embedding_threads)
 
 
 def make_search_index(index, settings):
@@ -61,7 +61,7 @@ def main(argv=None):
     ask = sub.add_parser("ask", help="Responder uma pergunta com fontes identificáveis")
     ask.add_argument("question")
     add_search_options(ask)
-    ask.add_argument("--provider", choices=["ollama", "transformers", "evidence"])
+    ask.add_argument("--provider", choices=["native", "ollama", "transformers", "evidence"])
     ask.add_argument("--model", help="Modelo gerador, conforme provedor selecionado")
     ask.add_argument("--llm-revision", help="Commit do modelo gerador no Hugging Face")
     ask.add_argument("--output", type=Path, help="Salvar a consulta e as fontes em JSON")
@@ -73,6 +73,7 @@ def main(argv=None):
     evaluate.add_argument("--index-dir", type=Path, help="Índice alternativo do pool de avaliação")
     evaluate.add_argument("--retrieval-mode", choices=["dense", "hybrid"], help="Comparar busca densa ou reranking híbrido")
     sub.add_parser("status", help="Conferir disponibilidade dos dados e índice sem carregar modelos")
+    sub.add_parser("models", help="Obter os modelos locais e o runtime portátil, sem criar índice")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(message)s")
     try:
@@ -86,8 +87,7 @@ def main(argv=None):
         if getattr(args, "provider", None):
             overrides["provider"] = args.provider
             if args.provider != settings.provider and not args.model:
-                overrides["llm_model"] = "Qwen/Qwen2.5-0.5B-Instruct" if args.provider == "transformers" else "qwen2.5:3b"
-                overrides["llm_revision"] = "7ae557604adf67be50417f59c2c2f167def9a775" if args.provider == "transformers" else None
+                overrides["llm_model"], overrides["llm_revision"] = generation_defaults(args.provider)
         if getattr(args, "model", None):
             overrides["llm_model"], overrides["llm_revision"] = args.model, None
         if getattr(args, "llm_revision", None):
@@ -99,6 +99,16 @@ def main(argv=None):
             emit(download_dataset(settings.raw_dir, args.archive))
         elif args.command == "prepare":
             emit(prepare_dataset(settings.raw_dir, settings.processed_dir))
+        elif args.command == "models":
+            from .model_store import local_model_path
+            local_model_path(settings.embedding_model, settings.embedding_revision, settings.cache_dir)
+            if settings.provider == "native":
+                from .native_runtime import ensure_native_runtime
+                ensure_native_runtime(settings.root / ".cache")
+            elif settings.provider == "transformers":
+                local_model_path(settings.llm_model, settings.llm_revision, settings.cache_dir)
+            emit({"provider": settings.provider, "embedding_model": settings.embedding_model,
+                  "llm_model": settings.llm_model, "note": "Arquivos preparados; o modelo é carregado na primeira consulta. Ollama requer servidor próprio."})
         elif args.command == "index":
             emit(VectorIndex.build(args.documents or settings.processed_dir / "documents.jsonl", args.index_dir or settings.index_dir,
                                    make_embedder(settings), args.batch_size))

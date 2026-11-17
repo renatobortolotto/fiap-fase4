@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from .model_store import local_model_path
 
 logger = logging.getLogger(__name__)
 
@@ -75,10 +76,12 @@ class SentenceEmbedder:
         model_name: str = "intfloat/multilingual-e5-small",
         revision: str | None = None,
         cache_dir: str | Path | None = None,
+        threads: int = 4,
     ) -> None:
         self.model_name = model_name
         self.revision = revision
         self.cache_dir = cache_dir
+        self.threads = threads
         self._model = None
 
     def _carregar(self):
@@ -90,13 +93,9 @@ class SentenceEmbedder:
                 raise ValueError("Instale sentence-transformers para criar ou consultar embeddings.") from exc
             # Em máquinas com muitos núcleos, os pequenos lotes de avaliações
             # podem ficar mais lentos pelo excesso de threads concorrentes.
-            torch.set_num_threads(min(8, os.cpu_count() or 1))
-            kwargs: dict[str, Any] = {"device": "cpu", "trust_remote_code": False}
-            if self.revision is not None:
-                kwargs["revision"] = self.revision
-            if self.cache_dir is not None:
-                kwargs["cache_folder"] = str(self.cache_dir)
-            self._model = SentenceTransformer(self.model_name, **kwargs)
+            torch.set_num_threads(min(self.threads, os.cpu_count() or 1))
+            path = local_model_path(self.model_name, self.revision, Path(self.cache_dir or ".cache/huggingface"))
+            self._model = SentenceTransformer(str(path), device="cpu", trust_remote_code=False, local_files_only=True)
         return self._model
 
     def _encode(self, texts: list[str], prefix: str) -> np.ndarray:
@@ -195,21 +194,29 @@ class VectorIndex:
         documents_path, index_dir = Path(documents_path), Path(index_dir)
         source_sha256 = _sha256(documents_path)
         documents = _ler_documentos(documents_path)
+        # Repeated wording remains a distinct review in the corpus. Only the
+        # expensive encoding is shared for exactly identical strings. Length
+        # sorting reduces padding within CPU batches; the mapping below restores
+        # one vector per document in its original, traceable source order.
+        unique_texts = sorted({document["text"] for document in documents}, key=lambda text: (len(text), text))
+        text_rows = {text: row for row, text in enumerate(unique_texts)}
         batches = []
         dimension = None
         next_progress = 1024
-        for start in range(0, len(documents), batch_size):
-            texts = [document["text"] for document in documents[start:start + batch_size]]
+        for start in range(0, len(unique_texts), batch_size):
+            texts = unique_texts[start:start + batch_size]
             batch = _normalizar(embedder.encode_documents(texts), expected_rows=len(texts))
             if dimension is not None and batch.shape[1] != dimension:
                 raise ValueError("A dimensão dos embeddings mudou entre os lotes.")
             dimension = batch.shape[1]
             batches.append(batch)
             completed = start + len(texts)
-            if completed >= next_progress or completed == len(documents):
-                logger.info("Embeddings: %s/%s documentos indexados", completed, len(documents))
+            if completed >= next_progress or completed == len(unique_texts):
+                logger.info("Embeddings: %s/%s textos únicos (%s documentos)", completed, len(unique_texts), len(documents))
                 next_progress = (completed // 1024 + 1) * 1024
-        vectors = np.concatenate(batches, axis=0)
+        unique_vectors = np.concatenate(batches, axis=0)
+        document_rows = np.fromiter((text_rows[document["text"]] for document in documents), dtype=np.intp, count=len(documents))
+        vectors = np.ascontiguousarray(unique_vectors[document_rows], dtype=np.float32)
         index_dir.mkdir(parents=True, exist_ok=True)
         # O manifesto é substituído por último: cargas concorrentes ou uma escrita
         # interrompida não poderão aceitar silenciosamente arquivos incompatíveis.
@@ -226,6 +233,8 @@ class VectorIndex:
                 "revision": getattr(embedder, "revision", None),
                 "shape": list(vectors.shape),
                 "document_count": len(documents),
+                "n_unique_texts": len(unique_texts),
+                "batching_strategy": "exact_unique_texts_sorted_by_length_then_text",
                 "dimensions": int(vectors.shape[1]),
                 "source_sha256": source_sha256,
                 "docs_sha256": _sha256(docs_path),

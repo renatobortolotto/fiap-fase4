@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from voc_olist.cli import make_embedder, make_search_index
-from voc_olist.config import Settings
+from voc_olist.config import Settings, generation_defaults
 from voc_olist.llm import make_generator
 from voc_olist.rag import RagService
 from voc_olist.retrieval import VectorIndex
@@ -13,13 +13,11 @@ from voc_olist.retrieval import VectorIndex
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--provider", choices=["transformers", "ollama"], default="transformers")
+    parser.add_argument("--provider", choices=["native", "transformers", "ollama"], default="native")
     args = parser.parse_args()
     settings = Settings.from_env()
-    settings = replace(settings, provider=args.provider,
-                       llm_model="Qwen/Qwen2.5-0.5B-Instruct" if args.provider == "transformers" else "qwen2.5:3b",
-                       llm_revision="7ae557604adf67be50417f59c2c2f167def9a775" if args.provider == "transformers" else None,
-                       top_k=4)
+    model, revision = generation_defaults(args.provider)
+    settings = replace(settings, provider=args.provider, llm_model=model, llm_revision=revision, top_k=4)
     service = RagService(make_search_index(VectorIndex.load(settings.index_dir), settings), make_embedder(settings), make_generator(settings), settings)
     examples = [
         ("01-atrasos", "O que os clientes relatam sobre atrasos na entrega?", {"score_max": 2}),
