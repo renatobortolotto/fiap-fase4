@@ -19,6 +19,7 @@ Write one or two concise findings in Brazilian Portuguese. If at least one revie
 paraphrase what it says in third person, identifying it as a customer's report. Do not copy a review into findings
 or speak as if you were the customer. A partial answer is welcome when clearly qualified. Do not refuse merely because reviews
 are short or the sample is not representative. If NONE answers the requested topic, return empty arrays.
+Prefer a single finding when sufficient. A second finding must add distinct information, without repeating the first.
 Select up to two exact illustrative quotations from the reviews. 'nota' is the customer's 1-to-5 star rating.
 Do not put E1/E2 labels in findings; the application separately displays the full consulted context.
 Do not invent causes, completed resolutions, statistics, corporate policies or external facts.
