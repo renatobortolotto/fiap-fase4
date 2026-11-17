@@ -1,0 +1,3 @@
+# Keep byte-for-byte evidence hashes stable across Windows and other checkouts.
+reports/** -text whitespace=cr-at-eol
+evaluation/*.jsonl -text whitespace=cr-at-eol

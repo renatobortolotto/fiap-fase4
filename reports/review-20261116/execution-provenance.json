@@ -70,5 +70,6 @@
       "reports/demo-context-v2-final"
     ]
   },
-  "source_hash_normalization": "CRLF normalized to LF; SHA-256 of source bytes, independent of Git checkout line endings."
+  "source_hash_normalization": "CRLF normalized to LF; SHA-256 of source bytes, independent of Git checkout line endings.",
+  "artifact_storage": ".gitattributes preserves reports/** and evaluation/*.jsonl byte-for-byte, including original line endings, so stored evidence hashes remain valid after checkout or download."
 }
