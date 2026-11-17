@@ -164,6 +164,19 @@ def _requests_author_identity(question: str) -> bool:
     return bool(direct_request and author_relation)
 
 
+def _requests_proven_cause(question: str) -> bool:
+    """Comentários permitem relatar hipóteses, não comprovar causas operacionais."""
+    text = _fold(_QUOTED.sub(" ", question))
+    reported = re.search(r"\b(?:hipoteses?|suspeitas?|opinioes?|alegacoes?)\b|"
+                         r"\b(?:clientes|consumidores|compradores)\s+(?:dizem|relatam|alegam|suspeitam|atribuem)\b|"
+                         r"\b(?:avaliacoes|comentarios|relatos)\s+(?:mencionam|citam|descrevem)\b", text)
+    if reported:
+        return False
+    causal = re.search(r"\b(?:causa|causas|falha|falhas|motivo|motivos|culpa|responsavel)\b", text)
+    proof = re.search(r"\b(?:comprov\w*|provad\w*|prove|prova|certeza|exatamente|definitiv\w*)\b", text)
+    return bool(causal and proof or re.search(r"\bcausa(?:s)?\s+raiz\b", text))
+
+
 def _explicit_years(question: str) -> list[int]:
     """Reconhece contexto temporal; não interpreta todo código de 4 dígitos como ano.
 
@@ -332,6 +345,9 @@ class ScopeGuard:
         if _requests_author_identity(question):
             return self._result(False, "unsupported_metadata",
                 "A base usada não vincula CPF, nome completo ou telefone pessoal aos autores das avaliações. Posso analisar os relatos, sem atribuir identidade ou contato a uma pessoa.", details)
+        if _requests_proven_cause(question):
+            return self._result(False, "unsupported_causal_proof",
+                "As avaliações registram percepções dos compradores e não comprovam uma causa operacional interna. Posso investigar as hipóteses e experiências que os clientes relatam.", details)
         temporal = _temporal_capability(question)
         if temporal["terms"]:
             details["temporal_capability"] = temporal

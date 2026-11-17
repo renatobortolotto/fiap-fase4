@@ -156,3 +156,19 @@ def test_one_validation_retry_is_bounded_and_recorded():
     r = s.answer("Há atraso?")
     assert r["status"] == "answered" and r["generation_attempts"] == 2
     assert len(r["validation_errors"]) == 1
+
+
+def test_retry_does_not_feed_rejected_numeric_hallucination_back_to_model():
+    class CorrectingGenerator(FakeGenerator):
+        def generate(self, messages):
+            self.calls.append(messages)
+            if len(self.calls) == 1:
+                return {**self.payload, "findings": ["O atraso foi de 99 meses."]}
+            return self.payload
+    s = service(generator=CorrectingGenerator())
+    r = s.answer("O que os clientes relatam sobre a espera?")
+    assert r["status"] == "answered" and r["generation_attempts"] == 2
+    assert "números ausentes" in r["validation_errors"][0]
+    retry = s.generator.calls[1]
+    assert "99 meses" not in json.dumps(retry)
+    assert not any(message["role"] == "assistant" for message in retry)

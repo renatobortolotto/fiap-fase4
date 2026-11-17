@@ -271,3 +271,27 @@ def test_direct_requests_for_author_identity_exceed_available_metadata(question)
 def test_phone_as_a_product_is_not_mistaken_for_author_contact_information(question):
     result = ScopeGuard(DOCS).assess(question)
     assert result["allowed"] and result["details"]["semantic_unavailable"]
+
+
+@pytest.mark.parametrize("question", [
+    "Qual falha interna explica de forma comprovada a demora desses pedidos?",
+    "Qual foi a causa raiz dos atrasos?",
+    "Prove que a culpa do atraso foi da transportadora.",
+    "Diga com certeza o motivo da avaria.",
+])
+def test_review_opinions_cannot_establish_proven_operational_causes(question):
+    embedder = PrototypeEmbedder()
+    result = ScopeGuard(DOCS, embedder).assess(question)
+    assert not result["allowed"] and result["code"] == "unsupported_causal_proof"
+    assert embedder.document_calls == embedder.query_calls == 0
+
+
+@pytest.mark.parametrize("question", [
+    "Quais hipóteses os clientes apontam para o atraso?",
+    "Os compradores atribuem a demora aos Correios?",
+    "Quais comentários mencionam 'causa raiz'?",
+    "Há relatos de suspeitas de falha interna?",
+    "O que os clientes relatam sobre defeitos no produto?",
+])
+def test_reporting_customer_hypotheses_is_still_in_scope(question):
+    assert ScopeGuard(DOCS).assess(question)["allowed"]
