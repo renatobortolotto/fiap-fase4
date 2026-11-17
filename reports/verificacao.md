@@ -80,4 +80,4 @@ O top-k não permite frequência, porcentagens ou rankings populacionais de tema
 
 ## Publicação e entrega
 
-Endereço de entrega: [GitHub main](https://github.com/renatobortolotto/fiap-fase4/tree/main). O estado da sincronização/publicação é registrado no campo `publication` de [verificacao.json](verificacao.json), após ser observado; a validação técnica não pressupõe esse passo. Vídeo de até sete minutos e submissão acadêmica ainda cabem à equipe. Consulte [entrega](../docs/entrega.md), [roteiro](../docs/roteiro-video.md) e [checklist](../docs/checklist-entrega.md).
+Endereço de entrega: [GitHub main](https://github.com/renatobortolotto/fiap-fase4/tree/main). A revisão foi publicada na `main`, com visibilidade pública conferida e referência remota observada no commit `b735c92`. O campo `publication` de [verificacao.json](verificacao.json) registra essa confirmação; commits posteriores podem apenas atualizar o relato. Vídeo de até sete minutos e submissão acadêmica ainda cabem à equipe. Consulte [entrega](../docs/entrega.md), [roteiro](../docs/roteiro-video.md) e [checklist](../docs/checklist-entrega.md).

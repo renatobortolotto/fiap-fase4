@@ -423,8 +423,13 @@
   ],
   "publication": {
     "target_branch": "main",
-    "final_revision_published": false,
-    "status": "Final main synchronization and push are coordinated after this technical report; update only after observing publication."
+    "final_revision_published": true,
+    "observed_published_payload_commit": "b735c922f4780910a91801b13795a9d84cb8b29c",
+    "confirmed_at_utc": "2026-11-17T02:47:17.193566+00:00",
+    "repository_visibility": "public",
+    "default_branch": "main",
+    "verification": "git ls-remote origin and GitHub repository metadata",
+    "status": "Technical payload publication observed. This reporting-only commit records that observation."
   },
   "evidence_artifacts": [
     {

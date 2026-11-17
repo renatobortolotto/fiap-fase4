@@ -23,3 +23,5 @@ calibração independente e benchmark cego são melhorias futuras de avaliação
 sem serem requisitos extras do enunciado. Consulte o [checklist](checklist-entrega.md).
 
 A implementação inicial de 15/11/2026 permanece no [commit f47fb51](https://github.com/renatobortolotto/fiap-fase4/commit/f47fb519b6ce6b9b5a2c2c28dbc559d6804d5d69). O registro daquela versão foi preservado em [verificacao-20261115.md](../reports/verificacao-20261115.md) e no JSON correspondente. Ele não substitui as evidências da revisão atual.
+
+A revisão técnica foi publicada na `main` em 16/11/2026, com visibilidade pública conferida. A pasta local `fase4` recebeu o código, as dependências e o índice verificados. A confirmação da referência remota está no campo `publication` de [verificacao.json](../reports/verificacao.json).
