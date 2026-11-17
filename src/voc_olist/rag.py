@@ -78,7 +78,7 @@ def validate_response(payload: dict, sources: list[dict]) -> tuple[list[dict], l
         if re.search(r"\bE\d+\b", text):
             raise GenerationError("A síntese não deve inventar atribuição individual de fontes.")
         if _aggregation_request(text) or re.search(
-            r"\b(?:maioria dos clientes|todos os clientes|comuns?|recorrentes?|frequentes?|predominantes?|geralmente|frequentemente|normalmente|(?:muitos|diversos|inúmeros|vários)\s+(?:clientes|compradores|consumidores|pedidos|relatos|avaliações))\b", text, re.I):
+            r"\b(?:maioria dos clientes|todos os clientes|comu(?:m|ns)|recorrentes?|frequentes?|predominantes?|geralmente|frequentemente|normalmente|(?:muitos|diversos|inúmeros|vários)\s+(?:clientes|compradores|consumidores|pedidos|relatos|avaliações))\b", text, re.I):
             raise GenerationError("A resposta tentou apresentar agregação ou generalização sem método validado.")
         if not set(re.findall(r"\b\d+\b", text)) <= available_numbers:
             raise GenerationError("A síntese acrescentou números ausentes do contexto.")
