@@ -1,0 +1,233 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "O que os clientes relatam sobre problemas relacionados à entrega?",
+  "filters": {
+    "score_max": 2
+  },
+  "status": "answered",
+  "findings": [
+    {
+      "text": "Os clientes relatam problemas com atrasos e falta de comunicação sobre as entregas."
+    },
+    {
+      "text": "Os clientes também mencionam não conseguirem entrar em contato com a empresa para resolver os problemas de entrega."
+    }
+  ],
+  "illustrative_quotes": [
+    {
+      "evidence_id": "E6",
+      "quote": "Me informaram que ocorreu um problema na entrega, e até agora não entraram em contato comigo para esclarecer o que houve. Até agora não recebi o produto.",
+      "literal_verified": true
+    },
+    {
+      "evidence_id": "E7",
+      "quote": "Estou muito chateada por não ter recebido meu produto. Recebi um e mail dizendo que houve um problema na entrega mas ninguem me responde qual foi o problema e se o produto ainda vai chegar.",
+      "literal_verified": true
+    }
+  ],
+  "context_evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+  ],
+  "literal_quotes_verified": true,
+  "summary_entailment_verified": false,
+  "answer": "Nos comentários recuperados:\n\nOs clientes relatam problemas com atrasos e falta de comunicação sobre as entregas.\n\nOs clientes também mencionam não conseguirem entrar em contato com a empresa para resolver os problemas de entrega.",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": true,
+      "doc_id": "990584e08e94822b4159f4428987f57fa657e6115b46de1a880207643734b808",
+      "message": "Falta de atenção e respeito com cliente",
+      "order_id": "3b1b1d0a19960310b9e033909f63f662",
+      "purchase_date": "2018-06-11",
+      "review_date": "2018-06-23",
+      "review_id": "9b1e2c9d0d236f106bed5169a8cde33f",
+      "score": 1,
+      "text": "Entrega do produto\nFalta de atenção e respeito com cliente",
+      "title": "Entrega do produto",
+      "citation_id": "E1",
+      "context_text": "Entrega do produto\nFalta de atenção e respeito com cliente",
+      "similarity": 0.863711
+    },
+    {
+      "categories": [
+        "papelaria"
+      ],
+      "delivered_late": true,
+      "doc_id": "c2f27a3ad04adc8a4c39d1ce6d70b0dc76a45f1f48139927dfbb100882ccaeeb",
+      "message": "Falta de consideração com o cliente, pois ocorreu problema na entrega é em momento nenhum o problema foi tratado.duas compras, uma com prazo de entrega 15 e 21/02, as 2 atrasou, liguei dia 23 reclaman",
+      "order_id": "9e659002324793f036fbe26aa8b5d049",
+      "purchase_date": "2018-01-29",
+      "review_date": "2018-02-23",
+      "review_id": "4baf65ba0f4dc753e9cf3d8863433da0",
+      "score": 2,
+      "text": "Falta de consideração com o cliente, pois ocorreu problema na entrega é em momento nenhum o problema foi tratado.duas compras, uma com prazo de entrega 15 e 21/02, as 2 atrasou, liguei dia 23 reclaman",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Falta de consideração com o cliente, pois ocorreu problema na entrega é em momento nenhum o problema foi tratado.duas compras, uma com prazo de entrega 15 e 21/02, as 2 atrasou, liguei dia 23 reclaman",
+      "similarity": 0.862216
+    },
+    {
+      "categories": [
+        "cool_stuff",
+        "moveis_decoracao"
+      ],
+      "delivered_late": false,
+      "doc_id": "9c46ac95abe6efc12e66a78a2259f0d7789cb7f020bc6c50931be8f6fee14c9a",
+      "message": "Sou cliente há anos, porém sempre há divergências e problemas na entrega, consta como produto entregue, porém foi entregue apenas 1 produto, aguardo solução!",
+      "order_id": "62b22cf8987a8a48d638c4bcaf7024ce",
+      "purchase_date": "2018-06-28",
+      "review_date": "2018-07-05",
+      "review_id": "42a3a3e2b79465364e24f6f4c642bc23",
+      "score": 1,
+      "text": "Em partes\nSou cliente há anos, porém sempre há divergências e problemas na entrega, consta como produto entregue, porém foi entregue apenas 1 produto, aguardo solução!",
+      "title": "Em partes",
+      "citation_id": "E3",
+      "context_text": "Em partes\nSou cliente há anos, porém sempre há divergências e problemas na entrega, consta como produto entregue, porém foi entregue apenas 1 produto, aguardo solução!",
+      "similarity": 0.864271
+    },
+    {
+      "categories": [
+        "moveis_quarto"
+      ],
+      "delivered_late": null,
+      "doc_id": "ba0658fe88551593198653b50d6b692498fb330ad13f7c77d56625d95af24c2c",
+      "message": "Ja é as egunda vez que tenho problemas com entregas",
+      "order_id": "b47f53f735ee76b0f07d10b4525d564e",
+      "purchase_date": "2018-02-13",
+      "review_date": "2018-03-09",
+      "review_id": "eef257db1ec8d36de355d272048eb3e7",
+      "score": 1,
+      "text": "Ja é as egunda vez que tenho problemas com entregas",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": "Ja é as egunda vez que tenho problemas com entregas",
+      "similarity": 0.858391
+    },
+    {
+      "categories": [],
+      "delivered_late": null,
+      "doc_id": "bec1ef734253f980da139dbfe540390f6897e516998db7f85d3cae28d0a1388b",
+      "message": "Não chegou ainda estou na esperando ainda",
+      "order_id": "896fbd78a9ef3839b34b893f48f6bc67",
+      "purchase_date": "2018-05-12",
+      "review_date": "2018-06-03",
+      "review_id": "20787e5ce2d5175a20135e52e3a701e8",
+      "score": 2,
+      "text": "Problemas com entrega\nNão chegou ainda estou na esperando ainda",
+      "title": "Problemas com entrega",
+      "citation_id": "E5",
+      "context_text": "Problemas com entrega\nNão chegou ainda estou na esperando ainda",
+      "similarity": 0.859475
+    },
+    {
+      "categories": [
+        "cool_stuff"
+      ],
+      "delivered_late": true,
+      "doc_id": "e8f69fc35ec9cb9e618fd1e7bbc4ef35d26587fde961cb2d2010869545399d26",
+      "message": "Me informaram que ocorreu um problema na entrega, e até agora não entraram em contato comigo para esclarecer o que houve. Até agora não recebi o produto.",
+      "order_id": "fa086b521df2d133df67f2883eadad21",
+      "purchase_date": "2017-05-03",
+      "review_date": "2017-05-26",
+      "review_id": "2bf5cb7bc41acf9177350b5eb46a563b",
+      "score": 1,
+      "text": "Me informaram que ocorreu um problema na entrega, e até agora não entraram em contato comigo para esclarecer o que houve. Até agora não recebi o produto.",
+      "title": "",
+      "citation_id": "E6",
+      "context_text": "Me informaram que ocorreu um problema na entrega, e até agora não entraram em contato comigo para esclarecer o que houve. Até agora não recebi o produto.",
+      "similarity": 0.864998
+    },
+    {
+      "categories": [
+        "cama_mesa_banho"
+      ],
+      "delivered_late": true,
+      "doc_id": "cba4862934001c1226f24002427df840fee228bc0efcc990fe6078145f6a48de",
+      "message": "Estou muito chateada por não ter recebido meu produto. Recebi um e mail dizendo que houve um problema na entrega mas ninguem me responde qual foi o problema e se o produto ainda vai chegar.",
+      "order_id": "8ffdb23dc30d4050e387117034445f98",
+      "purchase_date": "2017-05-02",
+      "review_date": "2017-06-01",
+      "review_id": "e3bcf6fcda1b6e45d4a17e553bebe21f",
+      "score": 1,
+      "text": "Estou muito chateada por não ter recebido meu produto. Recebi um e mail dizendo que houve um problema na entrega mas ninguem me responde qual foi o problema e se o produto ainda vai chegar.",
+      "title": "",
+      "citation_id": "E7",
+      "context_text": "Estou muito chateada por não ter recebido meu produto. Recebi um e mail dizendo que houve um problema na entrega mas ninguem me responde qual foi o problema e se o produto ainda vai chegar.",
+      "similarity": 0.858229
+    },
+    {
+      "categories": [
+        "moveis_escritorio"
+      ],
+      "delivered_late": false,
+      "doc_id": "3ca1f03a7f76ffe38e470e4aedbb01f5664ee62ae7ab9f394fcab253646f91e9",
+      "message": "Fiz duas compras uma chegou e a outra estou com problema na entrega, não consigo contato por e-mail ou por telefone para reclamar.",
+      "order_id": "01ba82170ebb683c73793bb809bbf1b9",
+      "purchase_date": "2018-02-06",
+      "review_date": "2018-02-24",
+      "review_id": "4488aeefe49359f73c6b65bb6c831bff",
+      "score": 2,
+      "text": "Fiz duas compras uma chegou e a outra estou com problema na entrega, não consigo contato por e-mail ou por telefone para reclamar.",
+      "title": "",
+      "citation_id": "E8",
+      "context_text": "Fiz duas compras uma chegou e a outra estou com problema na entrega, não consigo contato por e-mail ou por telefone para reclamar.",
+      "similarity": 0.858652
+    }
+  ],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:17:30.129154+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "scope": {
+    "allowed": true,
+    "code": "in_scope",
+    "reason": "",
+    "details": {
+      "semantic_unavailable": false,
+      "semantic": {
+        "method": "e5_task_prototypes",
+        "positive_score": 0.8598124980926514,
+        "negative_score": 0.8112852573394775,
+        "negative_minus_positive": -0.04852724075317383,
+        "rejection_margin": 0.015,
+        "positive_prototype": "Analisar relatos de clientes sobre entrega dos pedidos, demora, prazo e recebimento antecipado.",
+        "negative_prototype": "Receber recomendação médica, indicação de medicamento, diagnóstico ou tratamento de sintomas e doenças.",
+        "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+      }
+    }
+  },
+  "generation_attempts": 1,
+  "validation_errors": [],
+  "elapsed_seconds": 56.245
+}

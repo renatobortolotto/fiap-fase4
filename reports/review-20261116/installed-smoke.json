@@ -1,0 +1,226 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "Há relatos de cartão cobrado duas vezes na mesma compra?",
+  "filters": {},
+  "status": "answered",
+  "findings": [
+    {
+      "text": "Há relatos de cartão cobrado duas vezes na mesma compra."
+    }
+  ],
+  "illustrative_quotes": [
+    {
+      "evidence_id": "E6",
+      "quote": "A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+      "literal_verified": true
+    }
+  ],
+  "context_evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+  ],
+  "literal_quotes_verified": true,
+  "summary_entailment_verified": false,
+  "answer": "Nos comentários recuperados:\n\nHá relatos de cartão cobrado duas vezes na mesma compra.",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "cool_stuff"
+      ],
+      "delivered_late": false,
+      "doc_id": "766439af77fc58eda18720fe0bade99385c09972c3aa13ce3a3e5e4d461e9f64",
+      "message": "O produto foi comprado em 6x no cartão e foi cobrado em apenas uma vez.",
+      "order_id": "d2816e182d8750e410a4288b16a9ecd6",
+      "purchase_date": "2018-05-04",
+      "review_date": "2018-05-18",
+      "review_id": "6eb6e9daacece449b0286c05215ee809",
+      "score": 3,
+      "text": "Cobrança Errada\nO produto foi comprado em 6x no cartão e foi cobrado em apenas uma vez.",
+      "title": "Cobrança Errada",
+      "citation_id": "E1",
+      "context_text": "Cobrança Errada\nO produto foi comprado em 6x no cartão e foi cobrado em apenas uma vez.",
+      "similarity": 0.874479
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "e7bf8f80b1087a4eb78374e44258802d2844a9b917c363be9b11394519451cee",
+      "message": "Comprei 2 itens da mesma loja, recebi apenas 1 e foi cobrado 2 fretes",
+      "order_id": "b28d5be82c0088c66d57a28686db4e39",
+      "purchase_date": "2018-01-31",
+      "review_date": "2018-02-06",
+      "review_id": "668f6174de19065eff87c66b58c5f213",
+      "score": 4,
+      "text": "Comprei 2 itens da mesma loja, recebi apenas 1 e foi cobrado 2 fretes",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Comprei 2 itens da mesma loja, recebi apenas 1 e foi cobrado 2 fretes",
+      "similarity": 0.87068
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "e345ba7838c21bd4b9d2ed43c3934f5d1282e7f9dd0d91600df239c0b7072d13",
+      "message": "Por duas vezes adquiri produtos com vocês,sendo cobrada taxa de entrega contudo das duas vezes realizadas nao foi entregue conforme acordado bem como não houve a restituição dos valores",
+      "order_id": "1047b7ef8d56907e4256da73c4734bc3",
+      "purchase_date": "2017-12-12",
+      "review_date": "2017-12-30",
+      "review_id": "aadfba5b8c31ae3abb43601aa7fdd1db",
+      "score": 1,
+      "text": "Por duas vezes adquiri produtos com vocês,sendo cobrada taxa de entrega contudo das duas vezes realizadas nao foi entregue conforme acordado bem como não houve a restituição dos valores",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "Por duas vezes adquiri produtos com vocês,sendo cobrada taxa de entrega contudo das duas vezes realizadas nao foi entregue conforme acordado bem como não houve a restituição dos valores",
+      "similarity": 0.871718
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "4bf700eeecce926af9406c7737ddd2042ac5af4fac53424b2a3cc6079cb2254d",
+      "message": "O produto não foi entregue totalmente, Cobraram 4 embalagens e só entregaram duas. Valor cobrado no cartão 4x61,13",
+      "order_id": "2caf51ea139cc9003d6dee63bfea1106",
+      "purchase_date": "2018-03-14",
+      "review_date": "2018-03-24",
+      "review_id": "2ca520d417c2a0ae2fe872b76aa2fafd",
+      "score": 2,
+      "text": "O produto não foi entregue totalmente, Cobraram 4 embalagens e só entregaram duas. Valor cobrado no cartão 4x61,13",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": "O produto não foi entregue totalmente, Cobraram 4 embalagens e só entregaram duas. Valor cobrado no cartão 4x61,13",
+      "similarity": 0.86366
+    },
+    {
+      "categories": [
+        "moveis_decoracao"
+      ],
+      "delivered_late": false,
+      "doc_id": "734f19fdcfa190afc6ce9679d6b294c0c7dff28d3472b69012c2c2037bfec845",
+      "message": "Eu realizei a compra de 4 unidades e só chegaram 2 unidades na minha residência, porém, no meu cartão foi cobrado o valor referente as 4 unidades, ninguém resolve o problema. NÃO RECOMENDO!",
+      "order_id": "e9555dc20eba7e4e62210df1f438ea00",
+      "purchase_date": "2016-10-08",
+      "review_date": "2016-10-27",
+      "review_id": "91f30fe56a84d369d913e7bf6d1d85a5",
+      "score": 1,
+      "text": "Eu realizei a compra de 4 unidades e só chegaram 2 unidades na minha residência, porém, no meu cartão foi cobrado o valor referente as 4 unidades, ninguém resolve o problema. NÃO RECOMENDO!",
+      "title": "",
+      "citation_id": "E5",
+      "context_text": "Eu realizei a compra de 4 unidades e só chegaram 2 unidades na minha residência, porém, no meu cartão foi cobrado o valor referente as 4 unidades, ninguém resolve o problema. NÃO RECOMENDO!",
+      "similarity": 0.866559
+    },
+    {
+      "categories": [
+        "ferramentas_jardim"
+      ],
+      "delivered_late": false,
+      "doc_id": "2a901cd3fbbc0a6054dd67ae38e9736aa7a6cb6422512ee297e2eadec2c7e748",
+      "message": "A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+      "order_id": "9c047f1058da1c399c10a1526f528855",
+      "purchase_date": "2018-07-07",
+      "review_date": "2018-07-14",
+      "review_id": "056b3ad0eea6283fb5d5671ef40d2a0d",
+      "score": 5,
+      "text": "Reclamcao\nA entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+      "title": "Reclamcao",
+      "citation_id": "E6",
+      "context_text": "Reclamcao\nA entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+      "similarity": 0.864228
+    },
+    {
+      "categories": [
+        "relogios_presentes"
+      ],
+      "delivered_late": false,
+      "doc_id": "4b831b5008d0b6bd9c8cdd3949427880a17aab223eb799cc88cf7242aa981f4e",
+      "message": "FIZ A COMPRA DE DOIS PRODUTO E SÓ RECEBI UM PRODUTO E FORAM COBRADOS DOIS PRODUTOS.",
+      "order_id": "a5477627582780f6c347026e9c8ae0eb",
+      "purchase_date": "2018-08-10",
+      "review_date": "2018-08-18",
+      "review_id": "4aa626e0bb885f7c6f0b591897f31a40",
+      "score": 2,
+      "text": "RECEBI SOMENTE UM PRODUTO\nFIZ A COMPRA DE DOIS PRODUTO E SÓ RECEBI UM PRODUTO E FORAM COBRADOS DOIS PRODUTOS.",
+      "title": "RECEBI SOMENTE UM PRODUTO",
+      "citation_id": "E7",
+      "context_text": "RECEBI SOMENTE UM PRODUTO\nFIZ A COMPRA DE DOIS PRODUTO E SÓ RECEBI UM PRODUTO E FORAM COBRADOS DOIS PRODUTOS.",
+      "similarity": 0.865751
+    },
+    {
+      "categories": [
+        "beleza_saude"
+      ],
+      "delivered_late": false,
+      "doc_id": "547a86f1be822ba62241cadbb22e0fbf50719ccc8042dce48ff99c22cd21fe9f",
+      "message": "Um pedido com duas unidades mas duas entregas com uma unidade cada uma e pagamento de duas taxas. O produto ficou caro.",
+      "order_id": "87993df58718ae05426e9b6fb1d838ab",
+      "purchase_date": "2017-12-03",
+      "review_date": "2017-12-19",
+      "review_id": "22d478af7ad6c0fe370f5a1393dc007c",
+      "score": 3,
+      "text": "Um pedido com duas unidades mas duas entregas com uma unidade cada uma e pagamento de duas taxas. O produto ficou caro.",
+      "title": "",
+      "citation_id": "E8",
+      "context_text": "Um pedido com duas unidades mas duas entregas com uma unidade cada uma e pagamento de duas taxas. O produto ficou caro.",
+      "similarity": 0.865941
+    }
+  ],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:39:56.801525+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "n_unique_texts": 37111,
+      "batching_strategy": "exact_unique_texts_sorted_by_length_then_text",
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "d78e18f3ba874450bc73b51186c4cf43e19524054b65fbd458f937b518e67810"
+    }
+  },
+  "scope": {
+    "allowed": true,
+    "code": "in_scope",
+    "reason": "",
+    "details": {
+      "semantic_unavailable": false,
+      "semantic": {
+        "method": "e5_task_prototypes",
+        "positive_score": 0.8513184785842896,
+        "negative_score": 0.8105327486991882,
+        "negative_minus_positive": -0.04078572988510132,
+        "rejection_margin": 0.015,
+        "positive_prototype": "Analisar avaliações que descrevem pagamento da compra, frete, parcelamento e problemas na cobrança do cartão.",
+        "negative_prototype": "Descobrir informações de geografia, história, capitais de países e fatos de conhecimento geral.",
+        "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+      }
+    }
+  },
+  "generation_attempts": 1,
+  "validation_errors": [],
+  "elapsed_seconds": 29.867
+}

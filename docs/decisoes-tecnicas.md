@@ -28,11 +28,11 @@ Reciprocal Rank Fusion soma `1 / (60 + rank)` para os ranks denso e lexical com 
 
 O modo padrão é `RETRIEVAL_MODE=hybrid`; `RETRIEVAL_MODE=dense` mantém a linha de base disponível. A implementação usa a biblioteca padrão e o índice NumPy existente. Seu limite é explícito: a reordenação não recupera documentos ausentes do pool denso e não garante melhor resultado em todas as perguntas.
 
-Nos relatórios históricos do pool de 17 documentos, Recall@4 passou de 0,5625 na linha de base para 0,675 no modo híbrido; MRR@4 passou de 0,875 para 1,0. O ajuste foi motivado e avaliado no mesmo material de desenvolvimento, com rótulos propostos por IA. Esses números não são evidência independente de generalização, não validam a geração do LLM e não substituem uma execução final da revisão atual. O protocolo em `avaliacao.md` mantém a revisão humana e o teste separado como trabalhos pendentes.
+Nos relatórios históricos do pool de 17 documentos, Recall@4 passou de 0,5625 na linha de base para 0,675 no modo híbrido; MRR@4 passou de 0,875 para 1,0. O ajuste foi motivado e avaliado no mesmo material de desenvolvimento, com rótulos propostos por IA. Esses números não são evidência independente de generalização e não validam a geração do LLM. A revisão atual tem seu próprio lote de aceitação assistida; revisão humana e teste separado permanecem extensões futuras opcionais.
 
 ## Filtros explícitos
 
-Nota, período, categoria e atraso são seleções visíveis, aplicadas aos candidatos antes do ranking por similaridade. Anos explicitamente temporais na pergunta também geram recorte anual: “entregas em 2017” restringe `purchase_date` a 2017. O sistema intersecta esse recorte com o período manual e mostra/exporta os filtros efetivos. A interpretação procura distinguir datas de códigos de produto ou pedido. Nota, categoria e atraso não são inferidos silenciosamente do texto.
+Nota, período, categoria e atraso são seleções visíveis, aplicadas aos candidatos antes do ranking por similaridade. Anos explicitamente temporais na pergunta também geram recorte anual: “entregas em 2017” restringe `purchase_date` a 2017. O sistema intersecta esse recorte com o período manual e mostra/exporta os filtros efetivos. A interpretação cobre anos; meses e dias usam filtros manuais. Ela procura distinguir datas de códigos de produto ou pedido. Nota, categoria e atraso não são inferidos silenciosamente do texto.
 
 Uma pergunta sobre “clientes insatisfeitos” pode ser demonstrada com notas 1 e 2, explicando que essa é a definição operacional escolhida. O sistema não deve afirmar que todas as pessoas com essas notas têm o mesmo motivo de insatisfação.
 
@@ -46,9 +46,9 @@ As estatísticas do índice híbrido e os protótipos do guard permanecem em cac
 
 ## LLM e saída estruturada
 
-O padrão é [`Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M`](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF), revisão `bb5d59e06d9551d752d08b292a50eb208b07ab1f`, com runtime portátil [llama.cpp b12359](https://github.com/ggml-org/llama.cpp/releases/tag/b12359) em CPU e quatro threads. A quantização permite usar o modelo em formato GGUF local; os dois segmentos somam cerca de 4,68 GB. O runtime oficial tem aproximadamente 25 MB. Recomendam-se 16 GB de RAM e cerca de 10 GB livres em disco para a configuração padrão, com espaço adicional para outros caches.
+O padrão é [`Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M`](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF), revisão `bb5d59e06d9551d752d08b292a50eb208b07ab1f`, com runtime portátil [llama.cpp b12359](https://github.com/ggml-org/llama.cpp/releases/tag/b12359) em CPU e quatro threads. A quantização permite usar o modelo em formato GGUF local; os dois segmentos somam cerca de 4,68 GB. O runtime oficial tem aproximadamente 25 MB. Recomendam-se 16 GB de RAM e 20 GB livres em disco para a configuração padrão, com espaço adicional para outros caches.
 
-O aplicativo obtém os arquivos e gerencia o próprio servidor llama.cpp oculto, restrito a `127.0.0.1` em porta temporária, encerrando seu processo ao sair do Python. A opção evita uma instalação global ou um servidor que o usuário precise iniciar manualmente. A API recebe o schema de resposta. Tamanho de modelo, quantização e formato válido não demonstram melhor sustentação: os pilotos e métricas finais dessa configuração ainda precisam de execução e inspeção.
+O aplicativo obtém os arquivos e gerencia o próprio servidor llama.cpp oculto, restrito a `127.0.0.1` em porta temporária, encerrando seu processo ao sair do Python. A opção evita uma instalação global ou um servidor que o usuário precise iniciar manualmente. A API recebe o schema de resposta. Tamanho de modelo, quantização e formato válido não demonstram melhor sustentação. O lote nativo v4 foi executado e inspecionado contra as fontes; a conclusão é delimitada aos casos de desenvolvimento observados, com suas ressalvas.
 
 O fallback opcional `Qwen/Qwen2.5-1.5B-Instruct`, revisão `989aa7980e4cf806f80c7fef2b1adb7bc71aa306`, usa Transformers e acrescenta cerca de 3,1 GB de download. Transformers 4.57.6 e Sentence Transformers 5.7.0 são as versões do lock compatível com LM Format Enforcer 0.11.3. Nesse caminho, o [decoder restrito](https://github.com/noamgat/lm-format-enforcer) controla o schema e alternativas de exemplos. Ollama com `qwen2.5:3b` continua outra alternativa. Cada provedor deve ser avaliado separadamente. Restringir formato resolve uma classe de erro estrutural, não a verdade da resposta.
 
@@ -58,13 +58,26 @@ A auditoria do caso QA01 motivou essa separação: a síntese encontrava suporte
 
 `literal_quotes_verified=true` confirma a origem textual dos exemplos por comparação normalizada; `summary_entailment_verified=false` declara que o sistema não certifica sustentação semântica da síntese. O revisor precisa ler todas as fontes relevantes do contexto, não só os exemplos ilustrativos.
 
+## Erros observados e correções
+
+Os lotes nativos e seus pareceres são preservados em `reports/review-20261116/`, sem aprovação retroativa:
+
+- v1: QA09 inventou uma duração, bloqueada na validação, e ficou sem resposta; QA17 inferiu uma causa operacional não comprovada.
+- v2: esses casos foram corrigidos, mas QA10 interpretou a ausência de desfecho registrado como falta de atendimento.
+- v3: QA10 deixou de inferir o desfecho, mas QA01 usou “comuns”, acrescentando frequência não medida.
+- v4: os acréscimos não se repetiram nos 24 casos. Os nove positivos responderam e treze recusas obrigatórias e dois condicionais se abstiveram. A leitura assistida das fontes encontrou suporte nos dez findings, com ressalvas de cobertura e pertinência.
+
+As mudanças reforçaram instruções e controles de capacidade, quantificadores e frequência. A tentativa de correção recebe a instrução de rever as fontes originais, sem reapresentar a saída rejeitada como fala do assistente, evitando reforçar o detalhe inventado. Isso não garante impedir todas as inferências indevidas em consultas novas.
+
 ## Instalação reproduzível no Windows
 
 Os arquivos nativos ficam em `.cache/native`, com download retomável e conferência dos tamanhos e SHA-256 esperados. O runtime é portátil, sem instalação global ou privilégios de administrador. `python -m voc_olist models` antecipa a obtenção dos modelos e runtime sem preparar o corpus. O primeiro uso também pode obter os arquivos faltantes.
 
 Para E5 e fallback Transformers, `model_store.py` usa download para `local_dir`, com arquivos normais, sem exigir symlinks. Caches legados completos são reutilizados e preservados. A revisão fixa modelos por commit, runtime por release e dependências no lock; instalação pip sem lock continua sendo uma alternativa com menor reprodutibilidade.
 
-`Setup.ps1 -ArchivePath "C:\Dados Olist\archive.zip"` importa um ZIP local e implica preparação e indexação. O script cria as pastas de execução e preserva um `.env` existente. `.python-version` declara Python 3.12 e a pasta `artifacts` é mantida no Git com `.gitkeep`. Problemas iniciais de clone sem essa pasta e de texto acentuado no PowerShell motivaram ajustes; eles não equivalem a uma instalação fria completa já validada. O teste final de instalação desta revisão permanece pendente de registro.
+`Setup.ps1 -ArchivePath "C:\Dados Olist\archive.zip"` importa um ZIP local e implica preparação, indexação e obtenção dos modelos. O script cria as pastas de execução e preserva um `.env` existente. `.python-version` declara Python 3.12 e a pasta `artifacts` é mantida no Git com `.gitkeep`. Problemas iniciais de clone sem essa pasta e texto acentuado no PowerShell motivaram ajustes.
+
+Depois dos ajustes, a instalação em clone Windows novo terminou com sucesso: novo Python 3.12.13, venv e cache de modelos, sem copiar pesos ou índice de outra instalação. O cache de wheels do uv foi reutilizado. O clone foi atualizado ao código `1bcc442` antes dos 288 testes e da conversa real via Streamlit AppTest, offline e com duas threads. O botão de exportação e o payload foram conferidos; não houve clique de download em navegador nem inspeção visual por screenshot. A execução e as limitações estão em `reports/review-20261116/clean-install.json`.
 
 ## Limite de inferência de negócio
 

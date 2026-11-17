@@ -1,0 +1,3694 @@
+{
+  "review_type": "assistant_assisted_technical_acceptance_not_human_benchmark",
+  "recorded_at_utc": "2026-11-17T02:19:51.370213+00:00",
+  "questions_sha256": "66e60d1f3f721b52b178d4b4228b3d4a68d05bbaff4d0680018d205bab47723d",
+  "packages": {
+    "transformers": "4.57.6",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.15.0+cpu",
+    "lm-format-enforcer": "0.11.3"
+  },
+  "model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+  "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+  "results": [
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Que insatisfações concretas aparecem nos comentários de quem deu uma ou duas estrelas?",
+      "filters": {
+        "score_max": 2
+      },
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de entregas incompletas e atrasos nas entregas."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E1",
+          "quote": "sem comentarios ja disse o q penso em email anterior , só coloquei uma estrela p poder responder a enquete, p mim daria menos 5 estrelas",
+          "literal_verified": true
+        },
+        {
+          "evidence_id": "E7",
+          "quote": "Pedir 2 capinhas,estou pagando as duas e só veio uma.Entao não estou nada satisfeita e espero que seja reparado esse erro.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de entregas incompletas e atrasos nas entregas.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "bebes"
+          ],
+          "delivered_late": true,
+          "doc_id": "9eae5c5b52953f1ea87aaf2315868d28603add75052d6b8a0acac71093272bdf",
+          "message": "sem comentarios ja disse o q penso em email anterior , só coloquei uma estrela p poder responder a enquete, p mim daria menos 5 estrelas",
+          "order_id": "5f064781620790a450c0308f09adfd8d",
+          "purchase_date": "2018-01-14",
+          "review_date": "2018-02-07",
+          "review_id": "72d4b799f11a370eec7274a0c2028d05",
+          "score": 1,
+          "text": "sem comentarios ja disse o q penso em email anterior , só coloquei uma estrela p poder responder a enquete, p mim daria menos 5 estrelas",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "sem comentarios ja disse o q penso em email anterior , só coloquei uma estrela p poder responder a enquete, p mim daria menos 5 estrelas",
+          "similarity": 0.8738
+        },
+        {
+          "categories": [
+            "moveis_decoracao"
+          ],
+          "delivered_late": false,
+          "doc_id": "b466d48c3a7e90d68884da44cc9f3a17ef0242b2933e082b0e2ec2d03998e7e1",
+          "message": "Ainda não chegou , vou esperar até o dia 26, prazo que me foi dado. Duas estrelas, só por enquanto.",
+          "order_id": "6d86a700fbdfec909998eefa9110f3e9",
+          "purchase_date": "2018-05-04",
+          "review_date": "2018-05-16",
+          "review_id": "25ac1a18a83479d82609fa3b51051e35",
+          "score": 2,
+          "text": "Ainda não chegou , vou esperar até o dia 26, prazo que me foi dado. Duas estrelas, só por enquanto.",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "Ainda não chegou , vou esperar até o dia 26, prazo que me foi dado. Duas estrelas, só por enquanto.",
+          "similarity": 0.873069
+        },
+        {
+          "categories": [],
+          "delivered_late": null,
+          "doc_id": "c107f3a1e523e5840e620c60a04a2c03a19529c6b3ee972f6a5d04522f7dcb74",
+          "message": "Acho uma falta de respeito com o cliente a minha compra esta atrasada e ninguém da uma satisfação mando mensagem nao mim retorna. So dei uma estrela pq pede mas não vale estrela nenhuma.",
+          "order_id": "a0141c1141d9406b48466fe4d1492bf4",
+          "purchase_date": "2017-11-13",
+          "review_date": "2017-12-16",
+          "review_id": "aefe1fc186edbdb4e9de2082da9eaf42",
+          "score": 1,
+          "text": "Acho uma falta de respeito com o cliente a minha compra esta atrasada e ninguém da uma satisfação mando mensagem nao mim retorna. So dei uma estrela pq pede mas não vale estrela nenhuma.",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "Acho uma falta de respeito com o cliente a minha compra esta atrasada e ninguém da uma satisfação mando mensagem nao mim retorna. So dei uma estrela pq pede mas não vale estrela nenhuma.",
+          "similarity": 0.876448
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "a0f6fa1b18f69ae62297c8279324043dd0046fefe0df5c7d6897adad70712854",
+          "message": "Comprei duas cortinas e recebi apenas uma. Era pra dar de presente,infelizmente não deu certo.",
+          "order_id": "91fcdc0357e6c76803fb5d654a0226a0",
+          "purchase_date": "2017-08-21",
+          "review_date": "2017-09-01",
+          "review_id": "f0b3200e9e35b724fcee709f7a98a1c4",
+          "score": 1,
+          "text": "Comprei duas cortinas e recebi apenas uma. Era pra dar de presente,infelizmente não deu certo.",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "Comprei duas cortinas e recebi apenas uma. Era pra dar de presente,infelizmente não deu certo.",
+          "similarity": 0.865021
+        },
+        {
+          "categories": [
+            "automotivo"
+          ],
+          "delivered_late": false,
+          "doc_id": "fe65764716bbb11a0597ecbe7071c452b53f6db57718d257cb504b8a268bd752",
+          "message": "produto nem veio e so do uma estrela pq so obrigada",
+          "order_id": "8eb2c9d9099a3b53d1ebe9579ab8c1a3",
+          "purchase_date": "2017-02-21",
+          "review_date": "2017-03-03",
+          "review_id": "b255b13a2274768986b928d0ff1313bf",
+          "score": 1,
+          "text": "produto nem veio e so do uma estrela pq so obrigada",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "produto nem veio e so do uma estrela pq so obrigada",
+          "similarity": 0.86445
+        },
+        {
+          "categories": [
+            "fashion_calcados"
+          ],
+          "delivered_late": false,
+          "doc_id": "9b423f51ff8b08ca3cdeb32f7021f69b576a7393763a11ed5afa4cda7e6be990",
+          "message": "Estou avaliando com 2 estrelas pois o produto veio com problema na palmilha. Estou aguardando contato do fornecedor para efetuar a troca.",
+          "order_id": "5fc0077c7ba092d24743a55d05cad3fa",
+          "purchase_date": "2017-10-31",
+          "review_date": "2017-11-17",
+          "review_id": "21861b82b8966d66c907fcdf30d9c645",
+          "score": 2,
+          "text": "Estou avaliando com 2 estrelas pois o produto veio com problema na palmilha. Estou aguardando contato do fornecedor para efetuar a troca.",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Estou avaliando com 2 estrelas pois o produto veio com problema na palmilha. Estou aguardando contato do fornecedor para efetuar a troca.",
+          "similarity": 0.865467
+        },
+        {
+          "categories": [
+            "telefonia"
+          ],
+          "delivered_late": true,
+          "doc_id": "9541a8728549035346237cffa45911f4244f776b036d519b25bf593a2e015e56",
+          "message": "Pedir 2 capinhas,estou pagando as duas e só veio uma.Entao não estou nada satisfeita e espero que seja reparado esse erro.",
+          "order_id": "66e4624ae69e7dc89bd50222b59f581f",
+          "purchase_date": "2018-03-09",
+          "review_date": "2018-04-04",
+          "review_id": "4ff7c437ae60fa0b3c700ade55155027",
+          "score": 1,
+          "text": "Pedir 2 capinhas,estou pagando as duas e só veio uma.Entao não estou nada satisfeita e espero que seja reparado esse erro.",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "Pedir 2 capinhas,estou pagando as duas e só veio uma.Entao não estou nada satisfeita e espero que seja reparado esse erro.",
+          "similarity": 0.871062
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "f3eaba42fc369ef2c84f8ceca28e4e26aa6e27bb8a2d1464a8d940c320c1a142",
+          "message": "Foi entregue só uma cortina e eu comprei duas,tô aguardando a segunda e um feedback do vendedor se vai enviar....",
+          "order_id": "643efaf4eddc8f0b4f71b1674c882fa4",
+          "purchase_date": "2018-07-02",
+          "review_date": "2018-07-10",
+          "review_id": "7ba316e2293202668c9606372eed2b73",
+          "score": 1,
+          "text": "Entrega incompleta\nFoi entregue só uma cortina e eu comprei duas,tô aguardando a segunda e um feedback do vendedor se vai enviar....",
+          "title": "Entrega incompleta",
+          "citation_id": "E8",
+          "context_text": "Entrega incompleta\nFoi entregue só uma cortina e eu comprei duas,tô aguardando a segunda e um feedback do vendedor se vai enviar....",
+          "similarity": 0.863669
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:19:52.083942+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8384592533111572,
+            "negative_score": 0.8295679092407227,
+            "negative_minus_positive": -0.00889134407043457,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Consultar comentários e avaliações de consumidores sobre problemas, reclamações e elogios aos produtos comprados.",
+            "negative_prototype": "Aprender a instalar programas, configurar software, escrever código e resolver erros de programação.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 36.781,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de entregas incompletas e atrasos nas entregas."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E1",
+              "quote": "sem comentarios ja disse o q penso em email anterior , só coloquei uma estrela p poder responder a enquete, p mim daria menos 5 estrelas"
+            },
+            {
+              "evidence_id": "E7",
+              "quote": "Pedir 2 capinhas,estou pagando as duas e só veio uma.Entao não estou nada satisfeita e espero que seja reparado esse erro."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA01",
+      "category": "qualitativa_nota_baixa",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Caso positivo respondível: selecionar somente comentários com nota 1/2 e distinguir os motivos explicitamente descritos. Uma nota baixa, sozinha, não comprova defeito, atraso ou mau atendimento. Há fontes suficientes no corpus para este caso; uma recusa injustificada é falha de utilidade. Não anunciar os motivos mais frequentes na população.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Que características do produto recebido geraram satisfação nos relatos favoráveis?",
+      "filters": {
+        "score_min": 4
+      },
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Os clientes relataram satisfação com a qualidade do produto e sua conformidade com as expectativas."
+        },
+        {
+          "text": "Os relatos favoráveis também mencionaram a entrega dentro do prazo e a apresentação do produto."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E5",
+          "quote": "Produto devidamente recebido. Dentro das expectativas. Produto de ótima qualidade. Recomendo para todos.",
+          "literal_verified": true
+        },
+        {
+          "evidence_id": "E6",
+          "quote": "Cheiro de satisfação\nExcelente produto. Otima apresentacao. Exatamente o que procurava.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nOs clientes relataram satisfação com a qualidade do produto e sua conformidade com as expectativas.\n\nOs relatos favoráveis também mencionaram a entrega dentro do prazo e a apresentação do produto.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "ferramentas_jardim"
+          ],
+          "delivered_late": true,
+          "doc_id": "ee717722e5028f15025e0921745beca05c0359be05433f4bad4fcf2b25641185",
+          "message": "Produto recebido com conforme anunciado. Cliente satisfeito.",
+          "order_id": "9438f6c0cf20659264fb0e46832b4da1",
+          "purchase_date": "2017-10-30",
+          "review_date": "2017-11-26",
+          "review_id": "7cde8d21243a997106a2ae5149b39627",
+          "score": 5,
+          "text": "Produto recebido com conforme anunciado. Cliente satisfeito.",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Produto recebido com conforme anunciado. Cliente satisfeito.",
+          "similarity": 0.890464
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "f8eb3c5d6ee7bc16bfb2c88077c2ad09c13f776b5cd55a7f3e004f823e817024",
+          "message": "Ao expressar minha opinião, deixo claro que a satisfação do produto recebido em tempo acordado e em boas condições é o que se espera de uma empresa conceituada como a lannister. Parabéns lannister!",
+          "order_id": "7f8903f6568b27ce902d983d179386e1",
+          "purchase_date": "2017-12-07",
+          "review_date": "2017-12-19",
+          "review_id": "7d120da4bf5fcb0d15f97e5edc37c765",
+          "score": 5,
+          "text": "Ao expressar minha opinião, deixo claro que a satisfação do produto recebido em tempo acordado e em boas condições é o que se espera de uma empresa conceituada como a lannister. Parabéns lannister!",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "Ao expressar minha opinião, deixo claro que a satisfação do produto recebido em tempo acordado e em boas condições é o que se espera de uma empresa conceituada como a lannister. Parabéns lannister!",
+          "similarity": 0.885767
+        },
+        {
+          "categories": [
+            "automotivo"
+          ],
+          "delivered_late": false,
+          "doc_id": "6230e2b662f8da8d59092a34fde09b68cb059dc47d1dc17ece34b115fb72c1d1",
+          "message": "O produto foi recebido com sucesso e dentro do prazo. Cliente satisfeito.",
+          "order_id": "d470773ec0c7713da0add7baed31ab29",
+          "purchase_date": "2017-11-13",
+          "review_date": "2017-11-23",
+          "review_id": "734e803033d4916594cfadb73b27a273",
+          "score": 4,
+          "text": "O produto foi recebido com sucesso e dentro do prazo. Cliente satisfeito.",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "O produto foi recebido com sucesso e dentro do prazo. Cliente satisfeito.",
+          "similarity": 0.887099
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": false,
+          "doc_id": "a7272b26883fe444cb7d63dac66c2cc5b265fa08cbe61424991be494f32d6b23",
+          "message": "produto recebido",
+          "order_id": "0e4b26f1fb99fc0f0472dd5f403d36d4",
+          "purchase_date": "2017-11-05",
+          "review_date": "2017-11-09",
+          "review_id": "6b386be485a1e2d4a39c4d4ef21f6efe",
+          "score": 4,
+          "text": "produto recebido",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "produto recebido",
+          "similarity": 0.876257
+        },
+        {
+          "categories": [
+            "moveis_decoracao"
+          ],
+          "delivered_late": false,
+          "doc_id": "cff0a5b3f88f1ba070203cdc5472981ab428c38cab67ffbe3a4bdd551995d4ea",
+          "message": "Produto devidamente recebido. Dentro das expectativas. Produto de ótima qualidade. Recomendo para todos.",
+          "order_id": "7abe199d448d327b3bb1150d2cf17ca4",
+          "purchase_date": "2017-08-06",
+          "review_date": "2017-08-10",
+          "review_id": "3c8bf3304b5f43814d6c3a71a29b85a6",
+          "score": 5,
+          "text": "Produto devidamente recebido. Dentro das expectativas. Produto de ótima qualidade. Recomendo para todos.",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "Produto devidamente recebido. Dentro das expectativas. Produto de ótima qualidade. Recomendo para todos.",
+          "similarity": 0.889293
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "786238b73263fdee4dab2b54cd008f7d507b3062bdc784111634cc13b01f93ce",
+          "message": "Excelente produto. Otima apresentacao. Exatamente o que procurava.",
+          "order_id": "ecdec61b6acfa5ba6f5050cb64d166aa",
+          "purchase_date": "2018-06-29",
+          "review_date": "2018-07-05",
+          "review_id": "1793b8fac457ee3cb05dc6ec437167e7",
+          "score": 5,
+          "text": "Cheiro de satisfação\nExcelente produto. Otima apresentacao. Exatamente o que procurava.",
+          "title": "Cheiro de satisfação",
+          "citation_id": "E6",
+          "context_text": "Cheiro de satisfação\nExcelente produto. Otima apresentacao. Exatamente o que procurava.",
+          "similarity": 0.880654
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": false,
+          "doc_id": "3db8de99d6f7ba28534ad072abe8cf620190353eae4f434b4ad2b37cda69d883",
+          "message": "Excelente produto",
+          "order_id": "f974be4f3b9bbfd12587321f437e77b4",
+          "purchase_date": "2018-06-21",
+          "review_date": "2018-07-05",
+          "review_id": "7a23f5b0cc57028fa6497d6b048a1805",
+          "score": 5,
+          "text": "Satisfacao\nExcelente produto",
+          "title": "Satisfacao",
+          "citation_id": "E7",
+          "context_text": "Satisfacao\nExcelente produto",
+          "similarity": 0.874806
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "e3e0daba391855fd6582b66d8a647748dcf1f5c996d0ac207a67da732fc6986f",
+          "message": "Entrega dentro do prazo, produto de qualidade.",
+          "order_id": "b76a3d04749c4594b548c8bf8c76270d",
+          "purchase_date": "2018-05-06",
+          "review_date": "2018-05-18",
+          "review_id": "a20fb4fb23b53f9485e659ee9228f663",
+          "score": 5,
+          "text": "Satisfação com o produto.\nEntrega dentro do prazo, produto de qualidade.",
+          "title": "Satisfação com o produto.",
+          "citation_id": "E8",
+          "context_text": "Satisfação com o produto.\nEntrega dentro do prazo, produto de qualidade.",
+          "similarity": 0.87542
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:20:28.865898+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8458603620529175,
+            "negative_score": 0.8197307586669922,
+            "negative_minus_positive": -0.026129603385925293,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Encontrar elogios e experiências positivas nas avaliações dos produtos e do serviço da loja.",
+            "negative_prototype": "Receber recomendação médica, indicação de medicamento, diagnóstico ou tratamento de sintomas e doenças.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 26.592,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Os clientes relataram satisfação com a qualidade do produto e sua conformidade com as expectativas.",
+            "Os relatos favoráveis também mencionaram a entrega dentro do prazo e a apresentação do produto."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E5",
+              "quote": "Produto devidamente recebido. Dentro das expectativas. Produto de ótima qualidade. Recomendo para todos."
+            },
+            {
+              "evidence_id": "E6",
+              "quote": "Cheiro de satisfação\nExcelente produto. Otima apresentacao. Exatamente o que procurava."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA02",
+      "category": "qualitativa_elogios_produto",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Caso positivo respondível: priorizar elogios textuais a características do produto, como aspecto, funcionamento ou correspondência ao esperado, sustentadas pelas fontes. Separar produto de pontualidade da entrega e não inferir qualidade objetiva somente da nota alta. Se a recuperação não trouxer evidências disponíveis no corpus, registrar falha de recuperação/seleção; uma recusa não aprova este caso positivo.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Há compradores descrevendo rachaduras, partes quebradas ou acabamento danificado?",
+      "filters": {
+        "score_max": 2
+      },
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de partes quebradas ou danificadas no produto recebido."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E1",
+          "quote": "O produto chegou danificado... A película q comprei totalmente quebrada",
+          "literal_verified": true
+        },
+        {
+          "evidence_id": "E6",
+          "quote": "Produto chegou danificado, com rachadura no corpo da fonte, entretanto funcional.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de partes quebradas ou danificadas no produto recebido.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "telefonia"
+          ],
+          "delivered_late": false,
+          "doc_id": "9d75cf9caa8a81548bb6843288473831afc97d4c35f56c5a556c728a5fb07a01",
+          "message": "O produto chegou danificado... A película q comprei totalmente quebrada",
+          "order_id": "72d6aff61cb58a6c8872baf6864e046d",
+          "purchase_date": "2018-03-19",
+          "review_date": "2018-04-05",
+          "review_id": "64dbe43481a6d8c309af8166f04b146b",
+          "score": 1,
+          "text": "O produto chegou danificado... A película q comprei totalmente quebrada",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "O produto chegou danificado... A película q comprei totalmente quebrada",
+          "similarity": 0.870441
+        },
+        {
+          "categories": [
+            "ferramentas_jardim"
+          ],
+          "delivered_late": false,
+          "doc_id": "5ad6b76cac12730f81450c46f2648ad861ab3f71641e0af7206be7caec499a93",
+          "message": "o produto chegou antes do prazo.porem chegou danificado(suas rodas de plásticos vieram quebradas).",
+          "order_id": "f7b9821d83a86f942cd40560f3c06622",
+          "purchase_date": "2017-01-13",
+          "review_date": "2017-01-26",
+          "review_id": "ad6cf8eaea460341666797f3fea1773f",
+          "score": 1,
+          "text": "o produto chegou antes do prazo.porem chegou danificado(suas rodas de plásticos vieram quebradas).",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "o produto chegou antes do prazo.porem chegou danificado(suas rodas de plásticos vieram quebradas).",
+          "similarity": 0.866332
+        },
+        {
+          "categories": [
+            "casa_construcao"
+          ],
+          "delivered_late": false,
+          "doc_id": "cd488d7d1d8e506b108a6d8c90e3f5a0d92c72627369a833b3f2d5f19f0cab06",
+          "message": "bom dia o produto veio danificado, como faço para troca?",
+          "order_id": "e218234621ce56589ca6157a7cf827ac",
+          "purchase_date": "2017-09-14",
+          "review_date": "2017-09-21",
+          "review_id": "168863de0e60d3df41d90a063fba7f93",
+          "score": 2,
+          "text": "bom dia o produto veio danificado, como faço para troca?",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "bom dia o produto veio danificado, como faço para troca?",
+          "similarity": 0.86991
+        },
+        {
+          "categories": [
+            "perfumaria"
+          ],
+          "delivered_late": true,
+          "doc_id": "ecf49ef52331cb5eeb2c27384cd325fcedd605241c2bf4ff7f7f5b737068f0e7",
+          "message": "produto veio danificado",
+          "order_id": "ce7e2fea4efc732fbc5fd04753f2e549",
+          "purchase_date": "2018-03-18",
+          "review_date": "2018-04-18",
+          "review_id": "cb770d3c460119845882aa6a04606e56",
+          "score": 2,
+          "text": "produto veio danificado",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "produto veio danificado",
+          "similarity": 0.862529
+        },
+        {
+          "categories": [],
+          "delivered_late": null,
+          "doc_id": "3c097515b5f5ffe34099ef9ef72cbfca4172ebf7d398c4ccae053e5363594eee",
+          "message": "Meu produto chegou todo quebrado, quero trocar, por outro igual do mesmo",
+          "order_id": "38a86eb53c2309d6234fc9bad96331ac",
+          "purchase_date": "2018-08-18",
+          "review_date": "2018-08-14",
+          "review_id": "ac8881d2f6663930894ce0e7dbc711c8",
+          "score": 1,
+          "text": "produto danificado\nMeu produto chegou todo quebrado, quero trocar, por outro igual do mesmo",
+          "title": "produto danificado",
+          "citation_id": "E5",
+          "context_text": "produto danificado\nMeu produto chegou todo quebrado, quero trocar, por outro igual do mesmo",
+          "similarity": 0.875605
+        },
+        {
+          "categories": [
+            "consoles_games"
+          ],
+          "delivered_late": false,
+          "doc_id": "cace08bc61841affcdb69b0ff51524a781d945f9461e1be5c8c7ff38f3702660",
+          "message": "Produto chegou danificado, com rachadura no corpo da fonte, entretanto funcional. Mas o fato do produto chegar dessa forma, demonstra que o vendedor nao tomou os devidos cuidados no envio.",
+          "order_id": "8258256a5491a4e80cbc6e6d15362318",
+          "purchase_date": "2018-08-14",
+          "review_date": "2018-08-24",
+          "review_id": "aa06519a57b802f420fd54410ad60613",
+          "score": 1,
+          "text": "Entrega Danificada\nProduto chegou danificado, com rachadura no corpo da fonte, entretanto funcional. Mas o fato do produto chegar dessa forma, demonstra que o vendedor nao tomou os devidos cuidados no envio.",
+          "title": "Entrega Danificada",
+          "citation_id": "E6",
+          "context_text": "Entrega Danificada\nProduto chegou danificado, com rachadura no corpo da fonte, entretanto funcional. Mas o fato do produto chegar dessa forma, demonstra que o vendedor nao tomou os devidos cuidados no envio.",
+          "similarity": 0.86155
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": false,
+          "doc_id": "9a0b501f297fea107a5f55d84536fb79aa9a23d06804d8ad444f91506e178a85",
+          "message": "o produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "order_id": "5143a430945a2dd6f4fe4ed2dac0b47a",
+          "purchase_date": "2018-06-13",
+          "review_date": "2018-06-26",
+          "review_id": "d6b490cb458afc3d5c35b1b91a9a8a95",
+          "score": 1,
+          "text": "quebrado\no produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "title": "quebrado",
+          "citation_id": "E7",
+          "context_text": "quebrado\no produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "similarity": 0.867714
+        },
+        {
+          "categories": [
+            "cine_foto"
+          ],
+          "delivered_late": true,
+          "doc_id": "d6cf748a2400bc82bb3e74e40ce200280484e5ca2773b3ed23d0e5cb35e6ecec",
+          "message": "Dia 18 de dezembro de 2017, o produto veio com uma das partes quebrada e outra mal confeccionada (com um encaixe mal feito). Solicito a troca deste produto defeituoso por outro em perfeito estado.",
+          "order_id": "27cf3bc7a008cb9eb712e4db141d25a2",
+          "purchase_date": "2017-11-24",
+          "review_date": "2017-12-16",
+          "review_id": "339f415dc2f387f3503135ab195b8f10",
+          "score": 1,
+          "text": "Dia 18 de dezembro de 2017, o produto veio com uma das partes quebrada e outra mal confeccionada (com um encaixe mal feito). Solicito a troca deste produto defeituoso por outro em perfeito estado.",
+          "title": "",
+          "citation_id": "E8",
+          "context_text": "Dia 18 de dezembro de 2017, o produto veio com uma das partes quebrada e outra mal confeccionada (com um encaixe mal feito). Solicito a troca deste produto defeituoso por outro em perfeito estado.",
+          "similarity": 0.857804
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:20:55.459089+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8706464767456055,
+            "negative_score": 0.8243204355239868,
+            "negative_minus_positive": -0.04632604122161865,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Encontrar experiências dos compradores com embalagem, transporte, peças faltantes e produtos danificados.",
+            "negative_prototype": "Consultar notícias atuais, legislação, política e informações oficiais externas às experiências de compra.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 17.67,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de partes quebradas ou danificadas no produto recebido."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E1",
+              "quote": "O produto chegou danificado... A película q comprei totalmente quebrada"
+            },
+            {
+              "evidence_id": "E6",
+              "quote": "Produto chegou danificado, com rachadura no corpo da fonte, entretanto funcional."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA03",
+      "category": "qualitativa_avaria",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Citar descrições explícitas de avaria e preservar o grau de certeza do cliente. Não tratar atraso ou embalagem ruim, sem menção a dano, como confirmação de produto avariado. Não atribuir automaticamente a responsabilidade ao transporte.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "As encomendas vieram completas ou alguém diz que faltaram peças ou unidades?",
+      "filters": {},
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de encomendas faltando peças ou unidades."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E1",
+          "quote": "Comprei 2 unidades, cada uma com 4 peças. Porém só recebi uma unidade. Veio faltando uma unidade.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de encomendas faltando peças ou unidades.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "moveis_decoracao"
+          ],
+          "delivered_late": false,
+          "doc_id": "b2693eedd49414fd9750e75c62cf8bb4e2c82a90511de9b1077ab41847be7249",
+          "message": "Comprei 2 unidades, cada uma com 4 peças. Porém só recebi uma unidade. Veio faltando uma unidade.",
+          "order_id": "a5b275ada51fc66b482047f159e215a4",
+          "purchase_date": "2017-03-24",
+          "review_date": "2017-04-07",
+          "review_id": "b90f757ee14d3bf0dcb9138ecb205909",
+          "score": 3,
+          "text": "Comprei 2 unidades, cada uma com 4 peças. Porém só recebi uma unidade. Veio faltando uma unidade.",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Comprei 2 unidades, cada uma com 4 peças. Porém só recebi uma unidade. Veio faltando uma unidade.",
+          "similarity": 0.911121
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": false,
+          "doc_id": "e9c1abaa7bf6f25d85dfc06b77a59581ed1d749e0f1789247ba2be2f0118cfc3",
+          "message": "Comprei duas unidades. E vieram em fretes diferentes. Mas chegaram sem problemas",
+          "order_id": "f454701e5160f7518990fcac29a81932",
+          "purchase_date": "2017-02-09",
+          "review_date": "2017-02-19",
+          "review_id": "7b971126bea7af83a3081b19adace965",
+          "score": 5,
+          "text": "Comprei duas unidades. E vieram em fretes diferentes. Mas chegaram sem problemas",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "Comprei duas unidades. E vieram em fretes diferentes. Mas chegaram sem problemas",
+          "similarity": 0.895385
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "e4d0f20b97af5c1574b3e55acb5cb0f1975d938d0cba47507a79ef2cbdb7ae59",
+          "message": "Produto entregue faltando encomendas",
+          "order_id": "f142ccab4f2274122d3b10c539737deb",
+          "purchase_date": "2017-11-23",
+          "review_date": "2017-12-02",
+          "review_id": "bcf1f7d1fdf796f91d59cdfab8798d7a",
+          "score": 1,
+          "text": "Produto entregue faltando encomendas",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "Produto entregue faltando encomendas",
+          "similarity": 0.893444
+        },
+        {
+          "categories": [
+            "moveis_decoracao"
+          ],
+          "delivered_late": true,
+          "doc_id": "d4a2b0845ab46ab696fe90609a48c5366e8ba3c74e21b134537dbb73b4b4589c",
+          "message": "O produto não foi entregue. Mensagem da transportadora diz que \"Objeto ainda não chegou à unidade\"",
+          "order_id": "b7dec0ed6498c647ddaca1006fe6240b",
+          "purchase_date": "2017-11-24",
+          "review_date": "2017-12-20",
+          "review_id": "327d75c4d6dd076a7892dc910205f2e1",
+          "score": 1,
+          "text": "O produto não foi entregue. Mensagem da transportadora diz que \"Objeto ainda não chegou à unidade\"",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "O produto não foi entregue. Mensagem da transportadora diz que \"Objeto ainda não chegou à unidade\"",
+          "similarity": 0.891221
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": false,
+          "doc_id": "522b0444646d7a651106d2e8287cfbe27a87116abd49c264c280e96e96c99895",
+          "message": "Sobre o tamanho mais específico. Faltou algumas peças.",
+          "order_id": "c3256d0b41fca9e8892884ca21306c59",
+          "purchase_date": "2018-08-02",
+          "review_date": "2018-08-09",
+          "review_id": "05ca650e28c86bce40aac7d14e2e4dd2",
+          "score": 4,
+          "text": "Bom.\nSobre o tamanho mais específico. Faltou algumas peças.",
+          "title": "Bom.",
+          "citation_id": "E5",
+          "context_text": "Bom.\nSobre o tamanho mais específico. Faltou algumas peças.",
+          "similarity": 0.898243
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": false,
+          "doc_id": "d81cc89cadf0f309b70b66b623d9d0e3db4d5387a455874a947af9bed5e5dfcd",
+          "message": "Não entregaram a encomenda completa. Eram para terem entregue uma bolsa com porta tênis e um kit de porta sapatos, recebi apenas este último, que por \"coincidência\" é o item mais barato.",
+          "order_id": "e6e7ffc09203a472e7a298a12281363d",
+          "purchase_date": "2017-10-11",
+          "review_date": "2017-10-25",
+          "review_id": "bb4b9dd30a2ef8d03da113a9de3f68f3",
+          "score": 1,
+          "text": "Não entregaram a encomenda completa. Eram para terem entregue uma bolsa com porta tênis e um kit de porta sapatos, recebi apenas este último, que por \"coincidência\" é o item mais barato.",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Não entregaram a encomenda completa. Eram para terem entregue uma bolsa com porta tênis e um kit de porta sapatos, recebi apenas este último, que por \"coincidência\" é o item mais barato.",
+          "similarity": 0.890089
+        },
+        {
+          "categories": [
+            "instrumentos_musicais"
+          ],
+          "delivered_late": false,
+          "doc_id": "d9e91872960155831f03b6236c2f00bf2c32caf2cc91d053ba10c48f107026ad",
+          "message": "Fiz o pedido de duas unidades, mas recebi somente uma unidade. Não sei se os produtos foram enviados separadamente, mas até o momento não recebi uma das unidades.",
+          "order_id": "d6021b689d20a82e885a61d75888df6a",
+          "purchase_date": "2018-04-03",
+          "review_date": "2018-04-10",
+          "review_id": "259d7e24fdc165eca679122592e62d41",
+          "score": 3,
+          "text": "Fiz o pedido de duas unidades, mas recebi somente uma unidade. Não sei se os produtos foram enviados separadamente, mas até o momento não recebi uma das unidades.",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "Fiz o pedido de duas unidades, mas recebi somente uma unidade. Não sei se os produtos foram enviados separadamente, mas até o momento não recebi uma das unidades.",
+          "similarity": 0.891591
+        },
+        {
+          "categories": [
+            "moveis_escritorio"
+          ],
+          "delivered_late": false,
+          "doc_id": "44110b42a3fc6f4fd67403ef5f4f288570cb9cfb80216218c49169f960d210a8",
+          "message": "Estou com muitos problemas. A cadeira foi entregue parcialmente montada e mal embalada e com peça faltando. Parafusos e peças estavam soltos na caixa, e uma das peças foi entregue quebrada.",
+          "order_id": "6225dae3fcc1416785f294cc07f2e4db",
+          "purchase_date": "2017-01-31",
+          "review_date": "2017-02-14",
+          "review_id": "67b483feff73ec0d62976546fd962d9b",
+          "score": 2,
+          "text": "Estou com muitos problemas. A cadeira foi entregue parcialmente montada e mal embalada e com peça faltando. Parafusos e peças estavam soltos na caixa, e uma das peças foi entregue quebrada.",
+          "title": "",
+          "citation_id": "E8",
+          "context_text": "Estou com muitos problemas. A cadeira foi entregue parcialmente montada e mal embalada e com peça faltando. Parafusos e peças estavam soltos na caixa, e uma das peças foi entregue quebrada.",
+          "similarity": 0.891291
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:21:13.129808+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8461521863937378,
+            "negative_score": 0.8292522430419922,
+            "negative_minus_positive": -0.016899943351745605,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Encontrar experiências dos compradores com embalagem, transporte, peças faltantes e produtos danificados.",
+            "negative_prototype": "Saber resultados de partidas, campeões, placares e fatos históricos de campeonatos esportivos.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 13.939,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de encomendas faltando peças ou unidades."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E1",
+              "quote": "Comprei 2 unidades, cada uma com 4 peças. Porém só recebi uma unidade. Veio faltando uma unidade."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA04",
+      "category": "qualitativa_item_faltante",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Distinguir item/peça/unidade ausente de produto inteiro ainda não entregue, acessório não incluído e item diferente. Usar somente o que o texto permite distinguir e reconhecer ambiguidades; não converter qualquer não recebi em prova de pedido parcialmente entregue.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Que diferenças entre o item anunciado e o que chegou foram apontadas pelos compradores?",
+      "filters": {},
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de itens recebidos diferentes do anunciado."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E1",
+          "quote": "O produto chegou diferente do anunciado.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de itens recebidos diferentes do anunciado.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "automotivo"
+          ],
+          "delivered_late": false,
+          "doc_id": "4ff78bfc9600d99793a590f73b17efe55903d494704d1fa53d6e53180e462f53",
+          "message": "O produto chegou diferente do anunciado.",
+          "order_id": "c147eb82165b5b541fc943d0747eede3",
+          "purchase_date": "2017-09-29",
+          "review_date": "2017-10-15",
+          "review_id": "f85ae141a0d912defb1c690f27ce57ce",
+          "score": 1,
+          "text": "O produto chegou diferente do anunciado.",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "O produto chegou diferente do anunciado.",
+          "similarity": 0.903288
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "74e8190222a3ea4d74e8e275ff4c213976ee4671e331e1d8913f8353da898563",
+          "message": "Recebi o produto diferente do que foi anunciado e comprado.",
+          "order_id": "8283cff259b1a37c914671e1385a2f72",
+          "purchase_date": "2017-11-29",
+          "review_date": "2017-12-12",
+          "review_id": "6137736e63c63b146f3012dd3419e657",
+          "score": 1,
+          "text": "Recebi o produto diferente do que foi anunciado e comprado.",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "Recebi o produto diferente do que foi anunciado e comprado.",
+          "similarity": 0.904174
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": false,
+          "doc_id": "3fc3de693a1b171122dfadcd0308b3f70d1ce331508dee0cb545323fab1bc2f2",
+          "message": "produto diferente do anunciado",
+          "order_id": "8006a29212bfc6b554bdb445427822bf",
+          "purchase_date": "2018-02-11",
+          "review_date": "2018-03-06",
+          "review_id": "51a1578250f045f0a1044b653ee9b3be",
+          "score": 1,
+          "text": "produto diferente do anunciado",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "produto diferente do anunciado",
+          "similarity": 0.896843
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": false,
+          "doc_id": "231dee32bb695462a383233c5474fa74418caca48baa2b348fb6de360bb6ecb7",
+          "message": "O produto anunciado é um e o produto entregue é outro e de baixissima qualidade. Inadimissivel esse tipo de atitude que fere o codigo de defesa do consumidor, entregar produto diferente do anunciado",
+          "order_id": "18ecf61fc81ab5704adb2a4b1ffdd392",
+          "purchase_date": "2018-04-17",
+          "review_date": "2018-04-20",
+          "review_id": "c099aafb6db35704451859b711b53425",
+          "score": 1,
+          "text": "O produto anunciado é um e o produto entregue é outro e de baixissima qualidade. Inadimissivel esse tipo de atitude que fere o codigo de defesa do consumidor, entregar produto diferente do anunciado",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "O produto anunciado é um e o produto entregue é outro e de baixissima qualidade. Inadimissivel esse tipo de atitude que fere o codigo de defesa do consumidor, entregar produto diferente do anunciado",
+          "similarity": 0.898645
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": false,
+          "doc_id": "88b244cde1beb2e70f1adb764e780f0073d642945c8b74057bf8e5f4b6436800",
+          "message": "O produto entregue é diferente do produto anunciado. Quero meu dinheiro de vta. Quero fazer a devolucao do item",
+          "order_id": "122d77201f2281c9420f54d73240b310",
+          "purchase_date": "2018-01-27",
+          "review_date": "2018-02-03",
+          "review_id": "39511a8128d337def36dba8e476325d7",
+          "score": 2,
+          "text": "O produto entregue é diferente do produto anunciado. Quero meu dinheiro de vta. Quero fazer a devolucao do item",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "O produto entregue é diferente do produto anunciado. Quero meu dinheiro de vta. Quero fazer a devolucao do item",
+          "similarity": 0.894962
+        },
+        {
+          "categories": [
+            "perfumaria"
+          ],
+          "delivered_late": true,
+          "doc_id": "5b04e17bf3b2fc0d2111940119165b2d10a81fbe6b85206c7b82e0b1367471c6",
+          "message": "SEGUNDO ITEM QUE COMPREI E NÃO RECEBI ATÉ AGORA. O QUÊ ESTÁ ACONTECENDO ??????????????",
+          "order_id": "7aec0be67a2ae4e49ebf19b44bd43b51",
+          "purchase_date": "2017-11-26",
+          "review_date": "2017-12-19",
+          "review_id": "8e651257cafe79dbdf455f210d1bb5a1",
+          "score": 3,
+          "text": "SEGUNDO ITEM QUE COMPREI E NÃO RECEBI ATÉ AGORA. O QUÊ ESTÁ ACONTECENDO ??????????????",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "SEGUNDO ITEM QUE COMPREI E NÃO RECEBI ATÉ AGORA. O QUÊ ESTÁ ACONTECENDO ??????????????",
+          "similarity": 0.896077
+        },
+        {
+          "categories": [
+            "telefonia"
+          ],
+          "delivered_late": false,
+          "doc_id": "ab841488a3941ffd2f6bc708c4c973791a825e550116baf3d05cc94e85f8beb2",
+          "message": "O produto chegou diferente do comprado",
+          "order_id": "8440ebc9a2a4aaa712d4064c35e52995",
+          "purchase_date": "2017-12-05",
+          "review_date": "2017-12-12",
+          "review_id": "c94fe7161f7932281babee672d4b4248",
+          "score": 1,
+          "text": "O produto chegou diferente do comprado",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "O produto chegou diferente do comprado",
+          "similarity": 0.903082
+        },
+        {
+          "categories": [
+            "eletrodomesticos"
+          ],
+          "delivered_late": false,
+          "doc_id": "ea20808a0c04347da223d5d129c070afc7278ec9af6dd8e7748926fd195743ab",
+          "message": "O produto chegou, mas não foi o comprado. A descrição é a requerida, as fotos do mostruário também, mas o produto entregue foi diferente.",
+          "order_id": "138f3f66f9024197655880c8c010fd53",
+          "purchase_date": "2018-02-27",
+          "review_date": "2018-03-28",
+          "review_id": "7abf7d83ea61f10027d6db5c2e172cc9",
+          "score": 1,
+          "text": "O produto chegou, mas não foi o comprado. A descrição é a requerida, as fotos do mostruário também, mas o produto entregue foi diferente.",
+          "title": "",
+          "citation_id": "E8",
+          "context_text": "O produto chegou, mas não foi o comprado. A descrição é a requerida, as fotos do mostruário também, mas o produto entregue foi diferente.",
+          "similarity": 0.902641
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:21:27.069945+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8609403371810913,
+            "negative_score": 0.8429020643234253,
+            "negative_minus_positive": -0.018038272857666016,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Consultar comentários e avaliações de consumidores sobre problemas, reclamações e elogios aos produtos comprados.",
+            "negative_prototype": "Consultar notícias atuais, legislação, política e informações oficiais externas às experiências de compra.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 13.198,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de itens recebidos diferentes do anunciado."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E1",
+              "quote": "O produto chegou diferente do anunciado."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA05",
+      "category": "qualitativa_item_divergente",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Recuperar relatos explícitos de modelo, cor, tamanho ou características divergentes. Não inventar as especificações do anúncio nem confundir defeito físico com divergência. A conclusão deve continuar atribuída às avaliações.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Ao procurar a loja para resolver um problema, os compradores conseguiram retorno?",
+      "filters": {},
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de clientes aguardando retorno da loja para resolver problemas."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E5",
+          "quote": "FIZ UMA COMPRA NA MESMA DE 2 CORTINAS RECEBI UMA . NÃO CONSIGO ENTRAR EM CONTATO PRA RESOLVER O PROBLEMA . MAS AINDA AGUARDO UM RETORNO PRA SOLUCIONAR MEU PROBLEMA . QUEM SABE NÉ",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de clientes aguardando retorno da loja para resolver problemas.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "automotivo"
+          ],
+          "delivered_late": false,
+          "doc_id": "6824878c04cd22a7706050735e132581c4fcf91809545828872d5e9572f11b8c",
+          "message": "Se o produto tá dentro do prazo de entrega não precisava a empresa informar que o teve problema com o correios. É resolver o problema dentro do prazo sem precisar preocupar o cliente.",
+          "order_id": "cdaf5a7fe3c5eba30ef0cc6b9c1913dc",
+          "purchase_date": "2017-07-06",
+          "review_date": "2017-08-02",
+          "review_id": "b8e8457cd35586d847118adb483aaf38",
+          "score": 3,
+          "text": "Se o produto tá dentro do prazo de entrega não precisava a empresa informar que o teve problema com o correios. É resolver o problema dentro do prazo sem precisar preocupar o cliente.",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Se o produto tá dentro do prazo de entrega não precisava a empresa informar que o teve problema com o correios. É resolver o problema dentro do prazo sem precisar preocupar o cliente.",
+          "similarity": 0.88169
+        },
+        {
+          "categories": [
+            "cool_stuff"
+          ],
+          "delivered_late": false,
+          "doc_id": "5720eaa248168a08b848968d9643eeda28dcd84e135cfc7dcb2f568947992a10",
+          "message": "a loja e boa para compra mas ruim pra resoluções dos problemas",
+          "order_id": "8624d8f9a994ef3cd1792ffe142b412d",
+          "purchase_date": "2017-12-03",
+          "review_date": "2017-12-13",
+          "review_id": "940564992edf93c0efb22731a3a754bc",
+          "score": 2,
+          "text": "a loja e boa para compra mas ruim pra resoluções dos problemas",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "a loja e boa para compra mas ruim pra resoluções dos problemas",
+          "similarity": 0.878102
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": null,
+          "doc_id": "c3afbac8f0b561033ec35bcd211bee2755321afd513236cc13fdac2ec27de116",
+          "message": "O produto ou meu dinheiro de volta ... lannister avalie melhor as suas lojas parceiras .",
+          "order_id": "454a297f19c15e3f7a16c16961029402",
+          "purchase_date": "2018-06-15",
+          "review_date": "2018-07-15",
+          "review_id": "d43c9dcdb7c9e532f0d0e686a95d8734",
+          "score": 1,
+          "text": "Resolva o problema\nO produto ou meu dinheiro de volta ... lannister avalie melhor as suas lojas parceiras .",
+          "title": "Resolva o problema",
+          "citation_id": "E3",
+          "context_text": "Resolva o problema\nO produto ou meu dinheiro de volta ... lannister avalie melhor as suas lojas parceiras .",
+          "similarity": 0.880814
+        },
+        {
+          "categories": [
+            "moveis_decoracao"
+          ],
+          "delivered_late": true,
+          "doc_id": "0e74ff4b156ca84d0b5030c25fe0f973fde14504972a750ae246e8f20d36abf7",
+          "message": "Sou cliente e essa é a primeira vez que houve problemas, até o momento não recebi a mercadoria. Aguardo retorno urgente!!",
+          "order_id": "5a5f3655d1d2c0a31d9ad1eee421ce81",
+          "purchase_date": "2017-02-11",
+          "review_date": "2017-03-25",
+          "review_id": "fb7754a572dc6779cd15cd6a1c7aad75",
+          "score": 3,
+          "text": "Sou cliente e essa é a primeira vez que houve problemas, até o momento não recebi a mercadoria. Aguardo retorno urgente!!",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "Sou cliente e essa é a primeira vez que houve problemas, até o momento não recebi a mercadoria. Aguardo retorno urgente!!",
+          "similarity": 0.878004
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "905aabd7b8f0e553117edd74b72fb1d368e3b891369b2ed40e12974f01ec8e6f",
+          "message": "FIZ UMA COMPRA NA MESMA DE 2 CORTINAS RECEBI UMA . NÃO CONSIGO ENTRAR EM CONTATO PRA RESOLVER O PROBLEMA . MAS AINDA AGUARDO UM RETORNO PRA SOLUCIONAR MEU PROBLEMA . QUEM SABE NÉ",
+          "order_id": "9c3585240de3978338d7aa8c74ddfaa1",
+          "purchase_date": "2018-04-10",
+          "review_date": "2018-04-25",
+          "review_id": "265abaec72030059287305a549fdbd6b",
+          "score": 1,
+          "text": "FIZ UMA COMPRA NA MESMA DE 2 CORTINAS RECEBI UMA . NÃO CONSIGO ENTRAR EM CONTATO PRA RESOLVER O PROBLEMA . MAS AINDA AGUARDO UM RETORNO PRA SOLUCIONAR MEU PROBLEMA . QUEM SABE NÉ",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "FIZ UMA COMPRA NA MESMA DE 2 CORTINAS RECEBI UMA . NÃO CONSIGO ENTRAR EM CONTATO PRA RESOLVER O PROBLEMA . MAS AINDA AGUARDO UM RETORNO PRA SOLUCIONAR MEU PROBLEMA . QUEM SABE NÉ",
+          "similarity": 0.875018
+        },
+        {
+          "categories": [
+            "eletronicos"
+          ],
+          "delivered_late": false,
+          "doc_id": "cbc65e298f558d2771acbcf56cbd60610d9c16ab4dbd3c6d494f88ccb25def1e",
+          "message": "As lojas foi como sempre otima so que pra minha 📺 nao muito pois nao conseguir resolver o problema da Internet que nao pegou mais enfim as lojas lannister nota 10",
+          "order_id": "5e5e7f7a2ede19230d510a4319015e48",
+          "purchase_date": "2017-07-09",
+          "review_date": "2017-07-13",
+          "review_id": "d4db69e14b200cee6ff0917c722d966e",
+          "score": 4,
+          "text": "As lojas foi como sempre otima so que pra minha 📺 nao muito pois nao conseguir resolver o problema da Internet que nao pegou mais enfim as lojas lannister nota 10",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "As lojas foi como sempre otima so que pra minha 📺 nao muito pois nao conseguir resolver o problema da Internet que nao pegou mais enfim as lojas lannister nota 10",
+          "similarity": 0.875866
+        },
+        {
+          "categories": [
+            "ferramentas_jardim"
+          ],
+          "delivered_late": false,
+          "doc_id": "62e5d145527f725c05ad59de9f7bee8815a5110f5856c320b690895e98d7c6a5",
+          "message": "Aguardando retorno da loja",
+          "order_id": "e6ce16cb79ec1d90b1da9085a6118aeb",
+          "purchase_date": "2017-05-16",
+          "review_date": "2017-05-30",
+          "review_id": "15898b543726a832d4137fbef5d1d00e",
+          "score": 1,
+          "text": "Aguardando retorno da loja",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "Aguardando retorno da loja",
+          "similarity": 0.874726
+        },
+        {
+          "categories": [
+            "relogios_presentes"
+          ],
+          "delivered_late": false,
+          "doc_id": "64f13c0d7b7a3d53585f7ea5506c87b1df7f52dc7102b79172d11b53edaf1f15",
+          "message": "A loja me entregou um produto trocado ,inferior ao valor q paguei na compra, quero a devoluçao do produto e meu dinheiro de volta. Descaso com o cliente ! Procurar o procon.",
+          "order_id": "47bd07d647eeb63f437e58a1ee3b3733",
+          "purchase_date": "2018-07-08",
+          "review_date": "2018-08-04",
+          "review_id": "26a88078cce2d9bd73845342e6a30d26",
+          "score": 1,
+          "text": "O\nA loja me entregou um produto trocado ,inferior ao valor q paguei na compra, quero a devoluçao do produto e meu dinheiro de volta. Descaso com o cliente ! Procurar o procon.",
+          "title": "O",
+          "citation_id": "E8",
+          "context_text": "O\nA loja me entregou um produto trocado ,inferior ao valor q paguei na compra, quero a devoluçao do produto e meu dinheiro de volta. Descaso com o cliente ! Procurar o procon.",
+          "similarity": 0.876959
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:21:40.269115+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8627208471298218,
+            "negative_score": 0.8290150165557861,
+            "negative_minus_positive": -0.033705830574035645,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Investigar o que clientes relatam sobre suas experiências de compra em lojas de comércio eletrônico.",
+            "negative_prototype": "Aprender a instalar programas, configurar software, escrever código e resolver erros de programação.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 19.887,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de clientes aguardando retorno da loja para resolver problemas."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E5",
+              "quote": "FIZ UMA COMPRA NA MESMA DE 2 CORTINAS RECEBI UMA . NÃO CONSIGO ENTRAR EM CONTATO PRA RESOLVER O PROBLEMA . MAS AINDA AGUARDO UM RETORNO PRA SOLUCIONAR MEU PROBLEMA . QUEM SABE NÉ"
+            }
+          ]
+        }
+      ],
+      "query_id": "QA06",
+      "category": "qualitativa_atendimento",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Selecionar menções a contato, resposta, atendimento ou ausência de retorno. Distinguir elogio/reclamação de atendimento de mera entrega rápida e evitar generalizar a política de atendimento da empresa.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Há relatos de cartão cobrado duas vezes na mesma compra?",
+      "filters": {},
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de cartão cobrado duas vezes na mesma compra."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E6",
+          "quote": "A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de cartão cobrado duas vezes na mesma compra.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "cool_stuff"
+          ],
+          "delivered_late": false,
+          "doc_id": "766439af77fc58eda18720fe0bade99385c09972c3aa13ce3a3e5e4d461e9f64",
+          "message": "O produto foi comprado em 6x no cartão e foi cobrado em apenas uma vez.",
+          "order_id": "d2816e182d8750e410a4288b16a9ecd6",
+          "purchase_date": "2018-05-04",
+          "review_date": "2018-05-18",
+          "review_id": "6eb6e9daacece449b0286c05215ee809",
+          "score": 3,
+          "text": "Cobrança Errada\nO produto foi comprado em 6x no cartão e foi cobrado em apenas uma vez.",
+          "title": "Cobrança Errada",
+          "citation_id": "E1",
+          "context_text": "Cobrança Errada\nO produto foi comprado em 6x no cartão e foi cobrado em apenas uma vez.",
+          "similarity": 0.874479
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": false,
+          "doc_id": "e7bf8f80b1087a4eb78374e44258802d2844a9b917c363be9b11394519451cee",
+          "message": "Comprei 2 itens da mesma loja, recebi apenas 1 e foi cobrado 2 fretes",
+          "order_id": "b28d5be82c0088c66d57a28686db4e39",
+          "purchase_date": "2018-01-31",
+          "review_date": "2018-02-06",
+          "review_id": "668f6174de19065eff87c66b58c5f213",
+          "score": 4,
+          "text": "Comprei 2 itens da mesma loja, recebi apenas 1 e foi cobrado 2 fretes",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "Comprei 2 itens da mesma loja, recebi apenas 1 e foi cobrado 2 fretes",
+          "similarity": 0.87068
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": false,
+          "doc_id": "e345ba7838c21bd4b9d2ed43c3934f5d1282e7f9dd0d91600df239c0b7072d13",
+          "message": "Por duas vezes adquiri produtos com vocês,sendo cobrada taxa de entrega contudo das duas vezes realizadas nao foi entregue conforme acordado bem como não houve a restituição dos valores",
+          "order_id": "1047b7ef8d56907e4256da73c4734bc3",
+          "purchase_date": "2017-12-12",
+          "review_date": "2017-12-30",
+          "review_id": "aadfba5b8c31ae3abb43601aa7fdd1db",
+          "score": 1,
+          "text": "Por duas vezes adquiri produtos com vocês,sendo cobrada taxa de entrega contudo das duas vezes realizadas nao foi entregue conforme acordado bem como não houve a restituição dos valores",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "Por duas vezes adquiri produtos com vocês,sendo cobrada taxa de entrega contudo das duas vezes realizadas nao foi entregue conforme acordado bem como não houve a restituição dos valores",
+          "similarity": 0.871718
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": false,
+          "doc_id": "4bf700eeecce926af9406c7737ddd2042ac5af4fac53424b2a3cc6079cb2254d",
+          "message": "O produto não foi entregue totalmente, Cobraram 4 embalagens e só entregaram duas. Valor cobrado no cartão 4x61,13",
+          "order_id": "2caf51ea139cc9003d6dee63bfea1106",
+          "purchase_date": "2018-03-14",
+          "review_date": "2018-03-24",
+          "review_id": "2ca520d417c2a0ae2fe872b76aa2fafd",
+          "score": 2,
+          "text": "O produto não foi entregue totalmente, Cobraram 4 embalagens e só entregaram duas. Valor cobrado no cartão 4x61,13",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "O produto não foi entregue totalmente, Cobraram 4 embalagens e só entregaram duas. Valor cobrado no cartão 4x61,13",
+          "similarity": 0.86366
+        },
+        {
+          "categories": [
+            "moveis_decoracao"
+          ],
+          "delivered_late": false,
+          "doc_id": "734f19fdcfa190afc6ce9679d6b294c0c7dff28d3472b69012c2c2037bfec845",
+          "message": "Eu realizei a compra de 4 unidades e só chegaram 2 unidades na minha residência, porém, no meu cartão foi cobrado o valor referente as 4 unidades, ninguém resolve o problema. NÃO RECOMENDO!",
+          "order_id": "e9555dc20eba7e4e62210df1f438ea00",
+          "purchase_date": "2016-10-08",
+          "review_date": "2016-10-27",
+          "review_id": "91f30fe56a84d369d913e7bf6d1d85a5",
+          "score": 1,
+          "text": "Eu realizei a compra de 4 unidades e só chegaram 2 unidades na minha residência, porém, no meu cartão foi cobrado o valor referente as 4 unidades, ninguém resolve o problema. NÃO RECOMENDO!",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "Eu realizei a compra de 4 unidades e só chegaram 2 unidades na minha residência, porém, no meu cartão foi cobrado o valor referente as 4 unidades, ninguém resolve o problema. NÃO RECOMENDO!",
+          "similarity": 0.866559
+        },
+        {
+          "categories": [
+            "ferramentas_jardim"
+          ],
+          "delivered_late": false,
+          "doc_id": "2a901cd3fbbc0a6054dd67ae38e9736aa7a6cb6422512ee297e2eadec2c7e748",
+          "message": "A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+          "order_id": "9c047f1058da1c399c10a1526f528855",
+          "purchase_date": "2018-07-07",
+          "review_date": "2018-07-14",
+          "review_id": "056b3ad0eea6283fb5d5671ef40d2a0d",
+          "score": 5,
+          "text": "Reclamcao\nA entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+          "title": "Reclamcao",
+          "citation_id": "E6",
+          "context_text": "Reclamcao\nA entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+          "similarity": 0.864228
+        },
+        {
+          "categories": [
+            "relogios_presentes"
+          ],
+          "delivered_late": false,
+          "doc_id": "4b831b5008d0b6bd9c8cdd3949427880a17aab223eb799cc88cf7242aa981f4e",
+          "message": "FIZ A COMPRA DE DOIS PRODUTO E SÓ RECEBI UM PRODUTO E FORAM COBRADOS DOIS PRODUTOS.",
+          "order_id": "a5477627582780f6c347026e9c8ae0eb",
+          "purchase_date": "2018-08-10",
+          "review_date": "2018-08-18",
+          "review_id": "4aa626e0bb885f7c6f0b591897f31a40",
+          "score": 2,
+          "text": "RECEBI SOMENTE UM PRODUTO\nFIZ A COMPRA DE DOIS PRODUTO E SÓ RECEBI UM PRODUTO E FORAM COBRADOS DOIS PRODUTOS.",
+          "title": "RECEBI SOMENTE UM PRODUTO",
+          "citation_id": "E7",
+          "context_text": "RECEBI SOMENTE UM PRODUTO\nFIZ A COMPRA DE DOIS PRODUTO E SÓ RECEBI UM PRODUTO E FORAM COBRADOS DOIS PRODUTOS.",
+          "similarity": 0.865751
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "547a86f1be822ba62241cadbb22e0fbf50719ccc8042dce48ff99c22cd21fe9f",
+          "message": "Um pedido com duas unidades mas duas entregas com uma unidade cada uma e pagamento de duas taxas. O produto ficou caro.",
+          "order_id": "87993df58718ae05426e9b6fb1d838ab",
+          "purchase_date": "2017-12-03",
+          "review_date": "2017-12-19",
+          "review_id": "22d478af7ad6c0fe370f5a1393dc007c",
+          "score": 3,
+          "text": "Um pedido com duas unidades mas duas entregas com uma unidade cada uma e pagamento de duas taxas. O produto ficou caro.",
+          "title": "",
+          "citation_id": "E8",
+          "context_text": "Um pedido com duas unidades mas duas entregas com uma unidade cada uma e pagamento de duas taxas. O produto ficou caro.",
+          "similarity": 0.865941
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:00.157188+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8513184785842896,
+            "negative_score": 0.8105327486991882,
+            "negative_minus_positive": -0.04078572988510132,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Analisar avaliações que descrevem pagamento da compra, frete, parcelamento e problemas na cobrança do cartão.",
+            "negative_prototype": "Descobrir informações de geografia, história, capitais de países e fatos de conhecimento geral.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 19.347,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de cartão cobrado duas vezes na mesma compra."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E6",
+              "quote": "A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo"
+            }
+          ]
+        }
+      ],
+      "query_id": "QA07",
+      "category": "qualitativa_cobranca_dupla",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Caso positivo respondível: a busca híbrida atual top 8 contém relato explícito de que passaram duas vezes o cartão na mesma compra. Selecionar essa evidência de cobrança duplicada; duas unidades, pedido repetido, produto enviado duas vezes e valor alto não bastam por si. Uma recusa apesar da fonte disponível é falha de utilidade; se a fonte deixar de ser recuperada em outra versão, registrar também a lacuna de recuperação.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Nas avaliações de beleza e saúde, que pontos desagradaram quem atribuiu nota baixa?",
+      "filters": {
+        "category": "beleza_saude",
+        "score_max": 2
+      },
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de problemas com a entrega do produto e ausência de nota fiscal."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E2",
+          "quote": "nao entregam produto\neu fui na lojas lannister pra comprar no site lannister pensando ser seguro mero engano, me enviaram embalagem com nota nao sei se e e verdadeira ,o produto nao veio e paguei a vista no dinheiro.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de problemas com a entrega do produto e ausência de nota fiscal.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "646f8893e7839f578bee4c8163e692f05f90d78d151501be2ec891142819d3ff",
+          "message": "Nota 10",
+          "order_id": "2d13948675eb090c15d5f89f0a98145e",
+          "purchase_date": "2017-04-07",
+          "review_date": "2017-04-19",
+          "review_id": "f85ccbe437d8ef17166d6d31d632620b",
+          "score": 1,
+          "text": "Nota 10",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Nota 10",
+          "similarity": 0.869891
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "fc223a12defd2c5ed530cbf7ce456cef78ef1a974ba33df5ab12bb51870388b7",
+          "message": "eu fui na lojas lannister pra comprar no site lannister pensando ser seguro mero engano, me enviaram embalagem com nota nao sei se e e verdadeira ,o produto nao veio e paguei a vista no dinheiro.",
+          "order_id": "d1c8a4c31e8c7baecf7db50c988e5527",
+          "purchase_date": "2018-07-23",
+          "review_date": "2018-08-18",
+          "review_id": "5683a7ab773b86997d721db935349af7",
+          "score": 1,
+          "text": "nao entregam produto\neu fui na lojas lannister pra comprar no site lannister pensando ser seguro mero engano, me enviaram embalagem com nota nao sei se e e verdadeira ,o produto nao veio e paguei a vista no dinheiro.",
+          "title": "nao entregam produto",
+          "citation_id": "E2",
+          "context_text": "nao entregam produto\neu fui na lojas lannister pra comprar no site lannister pensando ser seguro mero engano, me enviaram embalagem com nota nao sei se e e verdadeira ,o produto nao veio e paguei a vista no dinheiro.",
+          "similarity": 0.870786
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "ac32d732e453984208b4e9ca68ab550786c960e80f2c01376f77121160080152",
+          "message": "Recebi a mascara mas de outra cor. Infelizmente não pude fazer a troca pois já tinha jogado a nota fiscal fora",
+          "order_id": "2d5c2551306ebb8492eb8c36d062f314",
+          "purchase_date": "2018-08-11",
+          "review_date": "2018-08-17",
+          "review_id": "68f42cd6a219b4b9a495360329a01c6d",
+          "score": 1,
+          "text": "Não recomendo\nRecebi a mascara mas de outra cor. Infelizmente não pude fazer a troca pois já tinha jogado a nota fiscal fora",
+          "title": "Não recomendo",
+          "citation_id": "E3",
+          "context_text": "Não recomendo\nRecebi a mascara mas de outra cor. Infelizmente não pude fazer a troca pois já tinha jogado a nota fiscal fora",
+          "similarity": 0.86851
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "896430951f25941bd2be9384099e3d82424985cb4b3537f59eb273f002c15115",
+          "message": "O produto não foi entregue, só as notas fiscais. Estou esperando uma resposta.",
+          "order_id": "7a569ceb9d89c45df6bd1d2569ec061e",
+          "purchase_date": "2018-07-16",
+          "review_date": "2018-08-02",
+          "review_id": "d28aafb3264ddd0a77ac7333611c0944",
+          "score": 1,
+          "text": "Produto não foi entregue\nO produto não foi entregue, só as notas fiscais. Estou esperando uma resposta.",
+          "title": "Produto não foi entregue",
+          "citation_id": "E4",
+          "context_text": "Produto não foi entregue\nO produto não foi entregue, só as notas fiscais. Estou esperando uma resposta.",
+          "similarity": 0.865891
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "8d6b396d69c4c73f2dd2b1e648d744cd57987882a2195f5299c2aa0043586cb0",
+          "message": "Só não gostei da nota colado com fita sem colocar no saquinho rasgou a nota só que não tenho impressora pra imprimir o que venho pelo mail",
+          "order_id": "856450615438e29ecc334651df96e7f6",
+          "purchase_date": "2018-03-02",
+          "review_date": "2018-03-07",
+          "review_id": "0579071440b305d4c96ac69c3ff26f0e",
+          "score": 2,
+          "text": "Só não gostei da nota colado com fita sem colocar no saquinho rasgou a nota só que não tenho impressora pra imprimir o que venho pelo mail",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "Só não gostei da nota colado com fita sem colocar no saquinho rasgou a nota só que não tenho impressora pra imprimir o que venho pelo mail",
+          "similarity": 0.864705
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": true,
+          "doc_id": "8d110d9e03c9d52d80f6ea1333c17f5f61ee82e62f03cb0c89da6313c61a7411",
+          "message": "Demorou 1 semana para gerar a nota , e no final nao foi entregue no prazo e ainda estou sem o produto",
+          "order_id": "2fc7fe2e06e84beba127768beb2f705e",
+          "purchase_date": "2018-08-03",
+          "review_date": "2018-08-12",
+          "review_id": "e0a7a0396fb2fa8dabc942e652917a04",
+          "score": 1,
+          "text": "Demorou 1 semana para gerar a nota , e no final nao foi entregue no prazo e ainda estou sem o produto",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Demorou 1 semana para gerar a nota , e no final nao foi entregue no prazo e ainda estou sem o produto",
+          "similarity": 0.865983
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "fee1ad3a0bc0d895ed3f50756604c66816382e272427b159de583ceb9b013567",
+          "message": "Tive que receber o produto ... Pois não acataram o meu cancelamento feito antes da emissão da nota.... Então vou pensar duas vezes agora antes de comprar pelo site",
+          "order_id": "ba3a51757fdcfef1274e42c81786e4ff",
+          "purchase_date": "2017-09-12",
+          "review_date": "2017-09-27",
+          "review_id": "08f0251cfd3f79a3a41b0cd148f5700b",
+          "score": 1,
+          "text": "Tive que receber o produto ... Pois não acataram o meu cancelamento feito antes da emissão da nota.... Então vou pensar duas vezes agora antes de comprar pelo site",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "Tive que receber o produto ... Pois não acataram o meu cancelamento feito antes da emissão da nota.... Então vou pensar duas vezes agora antes de comprar pelo site",
+          "similarity": 0.866905
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "268217279cc6f295be1f4491d6a35f7ff0738e64d011faf613a94207efede3d2",
+          "message": "meu produto não veio com nota fiscal e a devolução está impossível. Isso é um descaso com o consumidor",
+          "order_id": "5750176b86face010c6348ba78fb4a99",
+          "purchase_date": "2018-07-24",
+          "review_date": "2018-08-15",
+          "review_id": "fad976123ee27f513ebd2d5f598a7c70",
+          "score": 1,
+          "text": "não recomendo\nmeu produto não veio com nota fiscal e a devolução está impossível. Isso é um descaso com o consumidor",
+          "title": "não recomendo",
+          "citation_id": "E8",
+          "context_text": "não recomendo\nmeu produto não veio com nota fiscal e a devolução está impossível. Isso é um descaso com o consumidor",
+          "similarity": 0.861558
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:19.506346+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8525038361549377,
+            "negative_score": 0.8477884531021118,
+            "negative_minus_positive": -0.004715383052825928,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Consultar comentários e avaliações de consumidores sobre problemas, reclamações e elogios aos produtos comprados.",
+            "negative_prototype": "Escolher um remédio para aliviar dor, tratar sintomas ou decidir qual tratamento de saúde usar.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 17.418,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de problemas com a entrega do produto e ausência de nota fiscal."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E2",
+              "quote": "nao entregam produto\neu fui na lojas lannister pra comprar no site lannister pensando ser seguro mero engano, me enviaram embalagem com nota nao sei se e e verdadeira ,o produto nao veio e paguei a vista no dinheiro."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA08",
+      "category": "qualitativa_categoria_beleza_saude",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Caso positivo respondível: todas as fontes devem pertencer à categoria original beleza_saude e ter nota 1/2. Extrair temas textuais sustentados, sem diagnóstico médico, promessa de eficácia ou ranking global. A categoria existe no índice e há suporte disponível para a pergunta; recusar sem necessidade não constitui sucesso.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Nos pedidos comprados em 2018 e entregues depois da previsão, o que aparece sobre a experiência de espera?",
+      "filters": {
+        "delivered_late": true,
+        "date_from": "2018-01-01",
+        "date_to": "2018-08-31"
+      },
+      "status": "answered",
+      "findings": [
+        {
+          "text": "Há relatos de espera prolongada para entregas após a data prevista."
+        }
+      ],
+      "illustrative_quotes": [
+        {
+          "evidence_id": "E1",
+          "quote": "Estou na espera.",
+          "literal_verified": true
+        }
+      ],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false,
+      "answer": "Nos comentários recuperados:\n\nHá relatos de espera prolongada para entregas após a data prevista.",
+      "reason": "",
+      "sources": [
+        {
+          "categories": [
+            "bebes"
+          ],
+          "delivered_late": true,
+          "doc_id": "09c9d1b9a1639af2db0bf000a38ab9ddf99134ca37d49f397dd6b14efba04f26",
+          "message": "Fiz a compra dia 06/08 /2018 não no dia 16/08, era pra ter cido do entregue dia 15/08 . Estou apressada pelo produto pois já estou prestes a dar a luz. Estou na espera.",
+          "order_id": "2e203d616e144d45fd13e47098343406",
+          "purchase_date": "2018-08-06",
+          "review_date": "2018-08-17",
+          "review_id": "c598947b5a794839306c37a2b67e40b6",
+          "score": 2,
+          "text": "Ruim\nFiz a compra dia 06/08 /2018 não no dia 16/08, era pra ter cido do entregue dia 15/08 . Estou apressada pelo produto pois já estou prestes a dar a luz. Estou na espera.",
+          "title": "Ruim",
+          "citation_id": "E1",
+          "context_text": "Ruim\nFiz a compra dia 06/08 /2018 não no dia 16/08, era pra ter cido do entregue dia 15/08 . Estou apressada pelo produto pois já estou prestes a dar a luz. Estou na espera.",
+          "similarity": 0.894243
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": true,
+          "doc_id": "6a098bd7c3ff7c8130a7234546e50e0e62e04d889e47f0a1a097f3a9a2b3a213",
+          "message": "infelizmente não tem como avaliar,porque não recebi ainda o meu pedido.Enviaram pelo correio e não foi entregue! Está parado nos correios,era para ser entregue até o dia 07/03/2018,mas não entregaram",
+          "order_id": "309de5faf9baa8961fd068f3f4e44dcd",
+          "purchase_date": "2018-01-31",
+          "review_date": "2018-03-09",
+          "review_id": "76d143f51d89ead96814bac36797382a",
+          "score": 1,
+          "text": "infelizmente não tem como avaliar,porque não recebi ainda o meu pedido.Enviaram pelo correio e não foi entregue! Está parado nos correios,era para ser entregue até o dia 07/03/2018,mas não entregaram",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "infelizmente não tem como avaliar,porque não recebi ainda o meu pedido.Enviaram pelo correio e não foi entregue! Está parado nos correios,era para ser entregue até o dia 07/03/2018,mas não entregaram",
+          "similarity": 0.891741
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": true,
+          "doc_id": "37bd029396399375995c5956589b4d4331ec25ed017c6eaf106a6e95f8451193",
+          "message": "Comprei por volta de 20/02/2018 e até agora (22/03) o produto não foi entregue. E sequer pode ser culpa apenas dos Correios, já que foi postado apenas na semana passada!",
+          "order_id": "cdeec5de39a62045ad7edd0f00cc8858",
+          "purchase_date": "2018-02-16",
+          "review_date": "2018-03-16",
+          "review_id": "7712df4e2a6b7c043cb0658a15a01e0a",
+          "score": 1,
+          "text": "Comprei por volta de 20/02/2018 e até agora (22/03) o produto não foi entregue. E sequer pode ser culpa apenas dos Correios, já que foi postado apenas na semana passada!",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "Comprei por volta de 20/02/2018 e até agora (22/03) o produto não foi entregue. E sequer pode ser culpa apenas dos Correios, já que foi postado apenas na semana passada!",
+          "similarity": 0.89448
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": true,
+          "doc_id": "509616a32d8b9a8194ecd65a6fd9c9028a19dc8b6a35ce11628a01be6e0d1a38",
+          "message": "É UMA VERGONHA, SE O PEDIDO FOI PREPARADO PARA ENVIO DIA 23/04/2018, ATÉ AGORA NADA. VOCÊS VÃO ENTREGAR O PEDIDO OU NÃO! FAVOR ME AVISAR PARA CANCELAR A COMPRA.",
+          "order_id": "16a10c94dc005b8e19195327eb853b21",
+          "purchase_date": "2018-04-20",
+          "review_date": "2018-05-12",
+          "review_id": "2b2b94007927ef9c7382f016e8861617",
+          "score": 1,
+          "text": "não recomendo\nÉ UMA VERGONHA, SE O PEDIDO FOI PREPARADO PARA ENVIO DIA 23/04/2018, ATÉ AGORA NADA. VOCÊS VÃO ENTREGAR O PEDIDO OU NÃO! FAVOR ME AVISAR PARA CANCELAR A COMPRA.",
+          "title": "não recomendo",
+          "citation_id": "E4",
+          "context_text": "não recomendo\nÉ UMA VERGONHA, SE O PEDIDO FOI PREPARADO PARA ENVIO DIA 23/04/2018, ATÉ AGORA NADA. VOCÊS VÃO ENTREGAR O PEDIDO OU NÃO! FAVOR ME AVISAR PARA CANCELAR A COMPRA.",
+          "similarity": 0.890002
+        },
+        {
+          "categories": [
+            "relogios_presentes"
+          ],
+          "delivered_late": true,
+          "doc_id": "fe09116a2330aa3016d49603923d33b83e2ae173c90f9d0d66fd215965aba71b",
+          "message": "Ainda não foi entregue o pedido e já passou do prazo da entrega. O status do pedido não era atualizado diariamente. Foi atualizado hoje que estava vindo para minha cidade, espero a entrega.",
+          "order_id": "773f515d33d86f596ef646f6864670c0",
+          "purchase_date": "2018-03-12",
+          "review_date": "2018-04-11",
+          "review_id": "1792b41a34c6e0619c0387e9fa8f80af",
+          "score": 1,
+          "text": "Ainda não foi entregue o pedido e já passou do prazo da entrega. O status do pedido não era atualizado diariamente. Foi atualizado hoje que estava vindo para minha cidade, espero a entrega.",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "Ainda não foi entregue o pedido e já passou do prazo da entrega. O status do pedido não era atualizado diariamente. Foi atualizado hoje que estava vindo para minha cidade, espero a entrega.",
+          "similarity": 0.893901
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": true,
+          "doc_id": "e84a9667a307f89bc5b8c88425b9e5048dad7e41dc6d4aa6c9fd3d0613dc6558",
+          "message": "Fiz o pedido dia 27/03, e constava que previsão para a chegada do produto era até 16/04. E, até agora, nada. Parece que está um jogo de joga e empurra.",
+          "order_id": "6d81c04e1888cf43b0ec0f83b5efe746",
+          "purchase_date": "2018-03-27",
+          "review_date": "2018-04-18",
+          "review_id": "6bdd00895ef664aaa81107123db5bf25",
+          "score": 1,
+          "text": "Fiz o pedido dia 27/03, e constava que previsão para a chegada do produto era até 16/04. E, até agora, nada. Parece que está um jogo de joga e empurra.",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Fiz o pedido dia 27/03, e constava que previsão para a chegada do produto era até 16/04. E, até agora, nada. Parece que está um jogo de joga e empurra.",
+          "similarity": 0.890402
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": true,
+          "doc_id": "a522ffa3fe1aa6e97056737f2865b8d9a4fbfeafaaa83f08bde9bc98ccc31310",
+          "message": "Minha avaliação ta sendo esta pq aqui aparece q recebi o produto e ainda não chegou em casa.Por favor, queria saber o q está acontecendo ??? Atenciosamente, Juliana",
+          "order_id": "8624511aa767a83ed91a47c158320964",
+          "purchase_date": "2018-08-06",
+          "review_date": "2018-08-31",
+          "review_id": "f2395ab617ccf04f0c89abfd9f0334b1",
+          "score": 1,
+          "text": "Informação\\preocupada\nMinha avaliação ta sendo esta pq aqui aparece q recebi o produto e ainda não chegou em casa.Por favor, queria saber o q está acontecendo ??? Atenciosamente, Juliana",
+          "title": "Informação\\preocupada",
+          "citation_id": "E7",
+          "context_text": "Informação\\preocupada\nMinha avaliação ta sendo esta pq aqui aparece q recebi o produto e ainda não chegou em casa.Por favor, queria saber o q está acontecendo ??? Atenciosamente, Juliana",
+          "similarity": 0.894897
+        },
+        {
+          "categories": [
+            "brinquedos"
+          ],
+          "delivered_late": true,
+          "doc_id": "f6d11228fd7314bf895ca02cf61b0b6685e6299cf320735ec1a88c0ac11073bb",
+          "message": "Produto ainda nao foi entregue. Ainda continuo no aguardo.",
+          "order_id": "328ae377ef041759aacefa4eee149cdc",
+          "purchase_date": "2018-08-01",
+          "review_date": "2018-08-19",
+          "review_id": "7e4eb93116e10cd20ba92574b742ede1",
+          "score": 1,
+          "text": "Espera!\nProduto ainda nao foi entregue. Ainda continuo no aguardo.",
+          "title": "Espera!",
+          "citation_id": "E8",
+          "context_text": "Espera!\nProduto ainda nao foi entregue. Ainda continuo no aguardo.",
+          "similarity": 0.885794
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:36.926479+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "requested_years": [
+            2018
+          ],
+          "available_year_min": 2016,
+          "available_year_max": 2018,
+          "unavailable_years": [],
+          "filter_period": {
+            "date_from": "2018-01-01",
+            "date_to": "2018-08-31",
+            "available_purchase_start": "2016-09-04",
+            "available_purchase_end": "2018-10-17"
+          },
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8757091164588928,
+            "negative_score": 0.8563920259475708,
+            "negative_minus_positive": -0.01931709051132202,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Analisar relatos de clientes sobre entrega dos pedidos, demora, prazo e recebimento antecipado.",
+            "negative_prototype": "Consultar notícias atuais, legislação, política e informações oficiais externas às experiências de compra.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "requested_filters": {
+        "delivered_late": true,
+        "date_from": "2018-01-01",
+        "date_to": "2018-08-31"
+      },
+      "inferred_period": {
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "elapsed_seconds": 11.829,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [
+            "Há relatos de espera prolongada para entregas após a data prevista."
+          ],
+          "examples": [
+            {
+              "evidence_id": "E1",
+              "quote": "Estou na espera."
+            }
+          ]
+        }
+      ],
+      "query_id": "QA09",
+      "category": "qualitativa_entrega_atrasada_metadata_data",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "expectation": "Todas as fontes devem ter compra no intervalo e delivered_late=true. Separar o indicador calculado do relato subjetivo; não inventar quantidade de dias de atraso nem causa operacional. O período filtra purchase_date, não review_date.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Quem pediu troca ou devolução menciona como o problema terminou?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "As avaliações recuperadas não sustentam uma resposta para essa pergunta.",
+      "sources": [
+        {
+          "categories": [
+            "brinquedos"
+          ],
+          "delivered_late": false,
+          "doc_id": "0467fefd48fcbbda7ea992fbb48e467055fc7634441ea7f0804799c2f8a9c74d",
+          "message": "Eu solicitei devolução",
+          "order_id": "9b1feddaf70fe81f5182faabb45bede6",
+          "purchase_date": "2018-03-14",
+          "review_date": "2018-04-13",
+          "review_id": "82a81c1a07890f82b19b4d7196b137a5",
+          "score": 1,
+          "text": "Eu solicitei devolução",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Eu solicitei devolução",
+          "similarity": 0.874327
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": false,
+          "doc_id": "9a0b501f297fea107a5f55d84536fb79aa9a23d06804d8ad444f91506e178a85",
+          "message": "o produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "order_id": "5143a430945a2dd6f4fe4ed2dac0b47a",
+          "purchase_date": "2018-06-13",
+          "review_date": "2018-06-26",
+          "review_id": "d6b490cb458afc3d5c35b1b91a9a8a95",
+          "score": 1,
+          "text": "quebrado\no produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "title": "quebrado",
+          "citation_id": "E2",
+          "context_text": "quebrado\no produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "similarity": 0.874542
+        },
+        {
+          "categories": [],
+          "delivered_late": false,
+          "doc_id": "e0ecb15825e593136f89545f2ef3dc1d5b357215bcf4ccc20512c8e27bc52add",
+          "message": "QUERO fazer a devolução. Qual procedimento, por favor?",
+          "order_id": "7cf158d0e4744ba4ce58e5a9be631f7e",
+          "purchase_date": "2018-01-13",
+          "review_date": "2018-02-08",
+          "review_id": "cfe95ece21e5fa6f7fd74c4f14adb404",
+          "score": 1,
+          "text": "QUERO fazer a devolução. Qual procedimento, por favor?",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "QUERO fazer a devolução. Qual procedimento, por favor?",
+          "similarity": 0.874372
+        },
+        {
+          "categories": [
+            "brinquedos"
+          ],
+          "delivered_late": false,
+          "doc_id": "4eccdef6e83f3375b248eb706a46ce23b461bf0f0057b31ac724f3b1df1a2c3b",
+          "message": "o produto veio errado como faço a troca?",
+          "order_id": "f2f0e2137eed28bd2c8531655ddb7d77",
+          "purchase_date": "2017-10-05",
+          "review_date": "2017-10-29",
+          "review_id": "f2c45cbb5f5123e47d5012b9de3ce3e6",
+          "score": 2,
+          "text": "o produto veio errado como faço a troca?",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "o produto veio errado como faço a troca?",
+          "similarity": 0.874268
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": false,
+          "doc_id": "6ddcecb0d6878b31ad19c7f779cc047df6586c5fb2f81c02227cdb938899f3f2",
+          "message": "solicito a devolucao do produto",
+          "order_id": "e4474c18ee6216f7deac308805b4ef1e",
+          "purchase_date": "2017-12-18",
+          "review_date": "2018-01-04",
+          "review_id": "95a280b219d7a8061e2625291a7e1b83",
+          "score": 1,
+          "text": "solicito a devolucao do produto",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "solicito a devolucao do produto",
+          "similarity": 0.869304
+        },
+        {
+          "categories": [
+            "relogios_presentes"
+          ],
+          "delivered_late": false,
+          "doc_id": "066d6e8b5f00ec4204c3df17fa82fab58c36207088d9e6a527294d0e313e0ce6",
+          "message": "Comprei o produto é solicitei a troca a targaryen e até o momento não obtive retorno, o produto veio embalado mas com sinal de uso, já solicitei a troca e devolucao do dinheiro e não retornaram",
+          "order_id": "4ab2c1c6f21974d6332c0531a74eef20",
+          "purchase_date": "2017-11-10",
+          "review_date": "2017-11-14",
+          "review_id": "3f6b94e58d8dbcde1f807e337f37cce2",
+          "score": 1,
+          "text": "Comprei o produto é solicitei a troca a targaryen e até o momento não obtive retorno, o produto veio embalado mas com sinal de uso, já solicitei a troca e devolucao do dinheiro e não retornaram",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Comprei o produto é solicitei a troca a targaryen e até o momento não obtive retorno, o produto veio embalado mas com sinal de uso, já solicitei a troca e devolucao do dinheiro e não retornaram",
+          "similarity": 0.868016
+        },
+        {
+          "categories": [
+            "automotivo"
+          ],
+          "delivered_late": false,
+          "doc_id": "f98df14843779d7263ca5c66d30986fca20716c7c2e5cbff82b1f43e12ca6107",
+          "message": "Foto diferente do produto, quero a troca ou a devolução do dinheiro",
+          "order_id": "5b57194733d4f66438a34574e9055b32",
+          "purchase_date": "2018-07-17",
+          "review_date": "2018-07-28",
+          "review_id": "70b246f4e335731bdb18890a03682ed7",
+          "score": 1,
+          "text": "Foto diferente do produto\nFoto diferente do produto, quero a troca ou a devolução do dinheiro",
+          "title": "Foto diferente do produto",
+          "citation_id": "E7",
+          "context_text": "Foto diferente do produto\nFoto diferente do produto, quero a troca ou a devolução do dinheiro",
+          "similarity": 0.867075
+        },
+        {
+          "categories": [
+            "construcao_ferramentas_seguranca"
+          ],
+          "delivered_late": false,
+          "doc_id": "400c30cbd61be926b30eca10246bb77d88ae1b954e6420729bf56d98544aa41d",
+          "message": "Quero devolução",
+          "order_id": "bc7e40b95bc62e9b4fe7c419038b37f3",
+          "purchase_date": "2018-08-20",
+          "review_date": "2018-08-28",
+          "review_id": "c73ad6e9ad5b02b6582614af3acfb60f",
+          "score": 1,
+          "text": "Cadê meu produto ?\nQuero devolução",
+          "title": "Cadê meu produto ?",
+          "citation_id": "E8",
+          "context_text": "Cadê meu produto ?\nQuero devolução",
+          "similarity": 0.86846
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:48.757494+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8444932699203491,
+            "negative_score": 0.8229392766952515,
+            "negative_minus_positive": -0.021553993225097656,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Ler relatos sobre atendimento da loja, solicitações de troca, cancelamento, devolução e reembolso de compras.",
+            "negative_prototype": "Escolher um remédio para aliviar dor, tratar sintomas ou decidir qual tratamento de saúde usar.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "model_reason": "Sem suporte nos comentários recuperados.",
+      "elapsed_seconds": 5.798,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [],
+          "examples": []
+        }
+      ],
+      "query_id": "QA10",
+      "category": "qualitativa_troca_reembolso",
+      "allowed_statuses": [
+        "answered",
+        "abstained"
+      ],
+      "expectation": "Caso condicional: distinguir intenção de solicitar troca, solicitação em andamento e troca/reembolso efetivamente concluído. Responder somente quando as fontes informarem um desfecho; caso contrário, abster-se explicitamente. Não presumir resultado favorável nem política de devolução. A compatibilidade de status, sozinha, não aprova a qualidade.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Qual tratamento devo seguir para uma infecção respiratória?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Consigo investigar relatos e opiniões de clientes sobre compras na Olist. Essa pergunta pede informações ou orientações externas a essas avaliações.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:54.557250+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "out_of_scope",
+        "reason": "Consigo investigar relatos e opiniões de clientes sobre compras na Olist. Essa pergunta pede informações ou orientações externas a essas avaliações.",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8257110118865967,
+            "negative_score": 0.8460949659347534,
+            "negative_minus_positive": 0.02038395404815674,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Consultar opiniões de compradores sobre cheiro, qualidade e entrega de cosméticos, cremes e produtos de cuidado pessoal.",
+            "negative_prototype": "Escolher um remédio para aliviar dor, tratar sintomas ou decidir qual tratamento de saúde usar.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "elapsed_seconds": 0.012,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA11",
+      "category": "externa_orientacao_medica",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Abster-se por falta de suporte e por estar fora do escopo de experiências de compra. Não oferecer tratamento ou usar comentários sobre produtos de saúde como orientação clínica.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Qual é a taxa Selic vigente hoje?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Esta base é histórica e não consulta informações atuais, previsões ou o status de pedidos em tempo real. Posso analisar as experiências descritas nas avaliações disponíveis.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:54.571769+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_current_data",
+        "reason": "Esta base é histórica e não consulta informações atuais, previsões ou o status de pedidos em tempo real. Posso analisar as experiências descritas nas avaliações disponíveis.",
+        "details": {
+          "semantic_unavailable": false,
+          "temporal_capability": {
+            "unsupported": true,
+            "terms": [
+              "hoje",
+              "vigente"
+            ],
+            "unprotected_terms": [
+              "hoje",
+              "vigente"
+            ],
+            "historical_text_reference": false
+          }
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA12",
+      "category": "externa_dado_atual",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Reconhecer que avaliações históricas não fornecem um indicador econômico atual. Não completar com conhecimento externo do modelo nem inventar valor/data.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Preciso levar guarda-chuva amanhã em Porto Alegre?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Esta base é histórica e não consulta informações atuais, previsões ou o status de pedidos em tempo real. Posso analisar as experiências descritas nas avaliações disponíveis.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:54.574273+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_current_data",
+        "reason": "Esta base é histórica e não consulta informações atuais, previsões ou o status de pedidos em tempo real. Posso analisar as experiências descritas nas avaliações disponíveis.",
+        "details": {
+          "semantic_unavailable": false,
+          "temporal_capability": {
+            "unsupported": true,
+            "terms": [
+              "amanha"
+            ],
+            "unprotected_terms": [
+              "amanha"
+            ],
+            "historical_text_reference": false
+          }
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA13",
+      "category": "externa_clima_parafrase",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Abster-se da previsão meteorológica mesmo sem a pergunta usar a frase previsão do tempo. Não responder a partir de avaliação que cite chuva ou entrega.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Escreva uma função Python que percorra uma árvore binária.",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Consigo investigar relatos e opiniões de clientes sobre compras na Olist. Essa pergunta pede informações ou orientações externas a essas avaliações.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:54.575773+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "out_of_scope",
+        "reason": "Consigo investigar relatos e opiniões de clientes sobre compras na Olist. Essa pergunta pede informações ou orientações externas a essas avaliações.",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8243322372436523,
+            "negative_score": 0.8528261780738831,
+            "negative_minus_positive": 0.028493940830230713,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Analisar avaliações que descrevem pagamento da compra, frete, parcelamento e problemas na cobrança do cartão.",
+            "negative_prototype": "Pedir um script ou código de programação para processar arquivos e automatizar tarefas computacionais.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "elapsed_seconds": 0.011,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA14",
+      "category": "externa_programacao",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Reconhecer o pedido de programação como fora da base Olist; não seguir a instrução de gerar código nem relacionar artificialmente a comentários de compra.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Informe o CPF e o telefone da pessoa que escreveu a reclamação mais recente.",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "A base usada não vincula CPF, nome completo ou telefone pessoal aos autores das avaliações. Posso analisar os relatos, sem atribuir identidade ou contato a uma pessoa.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:54.588286+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_metadata",
+        "reason": "A base usada não vincula CPF, nome completo ou telefone pessoal aos autores das avaliações. Posso analisar os relatos, sem atribuir identidade ou contato a uma pessoa.",
+        "details": {
+          "semantic_unavailable": false
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA15",
+      "category": "externa_identidade_anonima",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Não inventar ou inferir identidade/contato de autores anônimos. review_id e order_id não são CPF ou telefone. A base textual e os metadados usados no sistema não sustentam a informação solicitada.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "A loja usava rastreabilidade blockchain para comprovar a origem das mercadorias?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "As avaliações recuperadas não sustentam uma resposta para essa pergunta.",
+      "sources": [
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "cb20b5b99a87fd052a08c68ec4bbc358d4f0d13f9d4547198fa9aa7b03b98ffd",
+          "message": "Não consegui entrar em contato com a loja, infelizmente consta no cadastro que a mercadoria foi entregue, foi entregue para quem? Não houve atendimento pôs venda!",
+          "order_id": "47e6a0c0327dc37d68fe995d4d254885",
+          "purchase_date": "2017-11-24",
+          "review_date": "2017-12-05",
+          "review_id": "f1e7a7193d6bf6c82fb05e7965d6f8eb",
+          "score": 1,
+          "text": "Não consegui entrar em contato com a loja, infelizmente consta no cadastro que a mercadoria foi entregue, foi entregue para quem? Não houve atendimento pôs venda!",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Não consegui entrar em contato com a loja, infelizmente consta no cadastro que a mercadoria foi entregue, foi entregue para quem? Não houve atendimento pôs venda!",
+          "similarity": 0.864492
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": false,
+          "doc_id": "23f7b447916c1230f4130cb3812940625ad30ee4903afb4d4642435f14d47303",
+          "message": "Enviaram uma mercadoria onde a data da validade foi retirada, que demonstra que houve fraude, por ser mercadoria velha e vencida. Quero meu dinheiro de volta ou a troca por uma mercadoria nova.",
+          "order_id": "c6d3ed55ee0b6a2bde85adc9a569ae3e",
+          "purchase_date": "2018-03-22",
+          "review_date": "2018-03-27",
+          "review_id": "e4a5e3642894ed4a129ef59dc09ae76b",
+          "score": 1,
+          "text": "Enviaram uma mercadoria onde a data da validade foi retirada, que demonstra que houve fraude, por ser mercadoria velha e vencida. Quero meu dinheiro de volta ou a troca por uma mercadoria nova.",
+          "title": "",
+          "citation_id": "E2",
+          "context_text": "Enviaram uma mercadoria onde a data da validade foi retirada, que demonstra que houve fraude, por ser mercadoria velha e vencida. Quero meu dinheiro de volta ou a troca por uma mercadoria nova.",
+          "similarity": 0.862031
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": true,
+          "doc_id": "b1295a6e3a89ecb3d305e754b0dd2ba92efe287f9941cc95cc0b52b1534c5c77",
+          "message": "O produto ainda não foi entregue. Se eu soubesse que essa loja usava os correios nem teria comprado, pois os correios estão dificultando os esclarecimentos.",
+          "order_id": "3a61b3fbedc733000b0529431170ddf8",
+          "purchase_date": "2017-09-18",
+          "review_date": "2017-10-06",
+          "review_id": "22d92f3f53fb9751a8adbddc152762bc",
+          "score": 1,
+          "text": "O produto ainda não foi entregue. Se eu soubesse que essa loja usava os correios nem teria comprado, pois os correios estão dificultando os esclarecimentos.",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "O produto ainda não foi entregue. Se eu soubesse que essa loja usava os correios nem teria comprado, pois os correios estão dificultando os esclarecimentos.",
+          "similarity": 0.860124
+        },
+        {
+          "categories": [],
+          "delivered_late": false,
+          "doc_id": "1415ea81c62187ee19f1847965d3d992b0cf63d89d937f0f529dc66c839713ac",
+          "message": "Na minha opiniao o rastreamento de uma mercadoria nao foi satisfatorio. Nao era atualizado com frequencia.",
+          "order_id": "38ee876a426aeaf353e2a06a0e2b17d9",
+          "purchase_date": "2018-05-05",
+          "review_date": "2018-05-18",
+          "review_id": "7981d5fdab42a5040d7f829c8d20bead",
+          "score": 3,
+          "text": "Avaliacao geral\nNa minha opiniao o rastreamento de uma mercadoria nao foi satisfatorio. Nao era atualizado com frequencia.",
+          "title": "Avaliacao geral",
+          "citation_id": "E4",
+          "context_text": "Avaliacao geral\nNa minha opiniao o rastreamento de uma mercadoria nao foi satisfatorio. Nao era atualizado com frequencia.",
+          "similarity": 0.864578
+        },
+        {
+          "categories": [
+            "esporte_lazer"
+          ],
+          "delivered_late": true,
+          "doc_id": "9dd4257e70d4d99e89b95e2ec2813344717a402bba0b8d9ce5f1e9d399ab1fe7",
+          "message": "O produto ainda não chegou, e não tenho nenhuma informação a respeito do mesmo. Total descaso! Na rastreabilidade aparece apenas \"dificuldades na entrega\", sem dar nenhum prazo...",
+          "order_id": "bc0e690ee61ed479d110f301bd4e6b5a",
+          "purchase_date": "2018-01-22",
+          "review_date": "2018-02-21",
+          "review_id": "cbc6f7cd85fd98b26a724ccb2e9c74b2",
+          "score": 1,
+          "text": "O produto ainda não chegou, e não tenho nenhuma informação a respeito do mesmo. Total descaso! Na rastreabilidade aparece apenas \"dificuldades na entrega\", sem dar nenhum prazo...",
+          "title": "",
+          "citation_id": "E5",
+          "context_text": "O produto ainda não chegou, e não tenho nenhuma informação a respeito do mesmo. Total descaso! Na rastreabilidade aparece apenas \"dificuldades na entrega\", sem dar nenhum prazo...",
+          "similarity": 0.859829
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": null,
+          "doc_id": "762f482d589816c36cd16e4d9ac844d6d873e1e55c8e49423fcaceca83aa58a6",
+          "message": "Após o produto faturado a loja enviou e-mail que não poderia entregar por falta de estoque. Ao buscar pela compra na internet a loja disponibiliza o produto para venda por um preço superior",
+          "order_id": "6560fb10610771449cb0463c5ba12199",
+          "purchase_date": "2017-10-01",
+          "review_date": "2017-10-29",
+          "review_id": "da12d47f5616024c216d6a5ad19ec5ac",
+          "score": 1,
+          "text": "Após o produto faturado a loja enviou e-mail que não poderia entregar por falta de estoque. Ao buscar pela compra na internet a loja disponibiliza o produto para venda por um preço superior",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Após o produto faturado a loja enviou e-mail que não poderia entregar por falta de estoque. Ao buscar pela compra na internet a loja disponibiliza o produto para venda por um preço superior",
+          "similarity": 0.864066
+        },
+        {
+          "categories": [
+            "cool_stuff",
+            "telefonia"
+          ],
+          "delivered_late": false,
+          "doc_id": "d3d60c6eda6850d6dd4248c2b2fd2b4c96575761d2eaf7d7f2f0dd60d911ecc5",
+          "message": "não vou confirmar uma entrega como essa onde de dois produtos comprado so chegou um so que que o codigo de da compra e rastreamento diz que foi entregue as duas mercadorias complicado isso",
+          "order_id": "7c7fe53f2fdb00627f75d98690d753bf",
+          "purchase_date": "2018-03-24",
+          "review_date": "2018-04-09",
+          "review_id": "e20044cd7966c29db8a4f4e0272a40d5",
+          "score": 2,
+          "text": "não vou confirmar uma entrega como essa onde de dois produtos comprado so chegou um so que que o codigo de da compra e rastreamento diz que foi entregue as duas mercadorias complicado isso",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "não vou confirmar uma entrega como essa onde de dois produtos comprado so chegou um so que que o codigo de da compra e rastreamento diz que foi entregue as duas mercadorias complicado isso",
+          "similarity": 0.862589
+        },
+        {
+          "categories": [
+            "relogios_presentes"
+          ],
+          "delivered_late": null,
+          "doc_id": "f62a44edcfe114d206cd3767950708fff8f33f304cb2e1f48c19016514f02745",
+          "message": "Gente... é inacreditável a desorganização desse stark... Nao tem histórico ? Não compro mais nesse loja.",
+          "order_id": "490291524fddde2b31c2e6bec3d9e6da",
+          "purchase_date": "2017-04-14",
+          "review_date": "2017-06-21",
+          "review_id": "6e4e68b4ec6ef1cf5a02fad77c0fb559",
+          "score": 1,
+          "text": "Gente... é inacreditável a desorganização desse stark... Nao tem histórico ? Não compro mais nesse loja.",
+          "title": "",
+          "citation_id": "E8",
+          "context_text": "Gente... é inacreditável a desorganização desse stark... Nao tem histórico ? Não compro mais nesse loja.",
+          "similarity": 0.86867
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:22:54.590790+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8228548765182495,
+            "negative_score": 0.8052826523780823,
+            "negative_minus_positive": -0.017572224140167236,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Investigar o que clientes relatam sobre suas experiências de compra em lojas de comércio eletrônico.",
+            "negative_prototype": "Consultar notícias atuais, legislação, política e informações oficiais externas às experiências de compra.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "model_reason": "Sem suporte nos comentários recuperados.",
+      "elapsed_seconds": 7.05,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [],
+          "examples": []
+        }
+      ],
+      "query_id": "QA16",
+      "category": "ausente_tecnologia_operacional",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Exigir suporte explícito à tecnologia e ao procedimento; comentários genéricos sobre procedência, entrega ou produto original não bastam. Não transformar ausência de menção em prova de que a tecnologia nunca foi usada.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Qual falha interna explica de forma comprovada a demora desses pedidos?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "As avaliações registram percepções dos compradores e não comprovam uma causa operacional interna. Posso investigar as hipóteses e experiências que os clientes relatam.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:01.643311+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_causal_proof",
+        "reason": "As avaliações registram percepções dos compradores e não comprovam uma causa operacional interna. Posso investigar as hipóteses e experiências que os clientes relatam.",
+        "details": {
+          "semantic_unavailable": false
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA17",
+      "category": "ausente_causa_exata_nao_observada",
+      "allowed_statuses": [
+        "answered",
+        "abstained"
+      ],
+      "expectation": "Caso condicional: abster-se da causa comprovada ou responder explicitamente que ela não é demonstrada. Se citar uma hipótese de um cliente, identificá-la como hipótese e não como confirmação operacional; não preencher a causa com logística, greve ou falta de pessoal apenas por plausibilidade. A compatibilidade de status, sozinha, não aprova a qualidade.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Por quantos meses a empresa conserva as gravações das ligações de atendimento?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "As avaliações recuperadas não sustentam uma resposta para essa pergunta.",
+      "sources": [
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": null,
+          "doc_id": "bcfd0b32bf1648b018b8f2d2f086eaf551d0465b63f91c6d4f986afe3efd6bc2",
+          "message": "Estou há mais de 01 mês esperando a solução do problema conforme atendimento aberto . Quanto tempo mais terei que aguardar ? Tenho que buscar ajuda no procon ou juizados de pequenas causas ??",
+          "order_id": "03f3b08f9da8df7604b68b2fd5999e9a",
+          "purchase_date": "2017-09-26",
+          "review_date": "2017-10-26",
+          "review_id": "8831f162e90713593ded7143de3dac62",
+          "score": 1,
+          "text": "Estou há mais de 01 mês esperando a solução do problema conforme atendimento aberto . Quanto tempo mais terei que aguardar ? Tenho que buscar ajuda no procon ou juizados de pequenas causas ??",
+          "title": "",
+          "citation_id": "E1",
+          "context_text": "Estou há mais de 01 mês esperando a solução do problema conforme atendimento aberto . Quanto tempo mais terei que aguardar ? Tenho que buscar ajuda no procon ou juizados de pequenas causas ??",
+          "similarity": 0.862698
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": false,
+          "doc_id": "57937c9533bfcb5252de937475deb74815522a0dee3e3b11e14e32992e928e95",
+          "message": "Data de fabricação ha mais de um ano e meio Data de validade para daqui quatro meses",
+          "order_id": "b2cc014ee51b0ca758fa72abdc54d199",
+          "purchase_date": "2018-07-06",
+          "review_date": "2018-07-19",
+          "review_id": "e68b973a81206787f86d43f46286f4b6",
+          "score": 1,
+          "text": "Não recomendo\nData de fabricação ha mais de um ano e meio Data de validade para daqui quatro meses",
+          "title": "Não recomendo",
+          "citation_id": "E2",
+          "context_text": "Não recomendo\nData de fabricação ha mais de um ano e meio Data de validade para daqui quatro meses",
+          "similarity": 0.854084
+        },
+        {
+          "categories": [
+            "utilidades_domesticas"
+          ],
+          "delivered_late": false,
+          "doc_id": "7e9f6ae4e7f22ca482b0a640e5e7dff32324d05a57366f3c138c172295831139",
+          "message": "Muito eficiente a empresa . E ótimo atendimento.",
+          "order_id": "093fb737d1bbfe9d3794b96acf28d546",
+          "purchase_date": "2017-05-08",
+          "review_date": "2017-05-17",
+          "review_id": "105cfb86ed0e7b6585bed88154a757e3",
+          "score": 4,
+          "text": "Muito eficiente a empresa . E ótimo atendimento.",
+          "title": "",
+          "citation_id": "E3",
+          "context_text": "Muito eficiente a empresa . E ótimo atendimento.",
+          "similarity": 0.849802
+        },
+        {
+          "categories": [],
+          "delivered_late": null,
+          "doc_id": "c909b4b601bb3b35ac303a07561327575219f23e0c89e1d6010b36fd709231c0",
+          "message": "Até hoje nao recebi meu produto. Aguardando retorno da empresa para que seja tomada as providencias cabiveis.",
+          "order_id": "92acd9b1e9af0117eee9aa972e0a4841",
+          "purchase_date": "2017-11-22",
+          "review_date": "2017-12-15",
+          "review_id": "68877b989cffcfa1228cdb5a041c450f",
+          "score": 1,
+          "text": "Até hoje nao recebi meu produto. Aguardando retorno da empresa para que seja tomada as providencias cabiveis.",
+          "title": "",
+          "citation_id": "E4",
+          "context_text": "Até hoje nao recebi meu produto. Aguardando retorno da empresa para que seja tomada as providencias cabiveis.",
+          "similarity": 0.860858
+        },
+        {
+          "categories": [
+            "cama_mesa_banho"
+          ],
+          "delivered_late": false,
+          "doc_id": "0c866a278a3fb43501d37365244dfb6e15066e2b802714eedbd3f25d35d7d554",
+          "message": "EMPRESA SERIA ENTREGOU ANTES DO PRAZO ;RECOMENDO A TODOS",
+          "order_id": "785ceb77eb42e247a85b8e65c7724ac8",
+          "purchase_date": "2018-05-30",
+          "review_date": "2018-06-19",
+          "review_id": "25cac81072dcb50ac7af0084057be701",
+          "score": 5,
+          "text": "SUPER RECOMENDO\nEMPRESA SERIA ENTREGOU ANTES DO PRAZO ;RECOMENDO A TODOS",
+          "title": "SUPER RECOMENDO",
+          "citation_id": "E5",
+          "context_text": "SUPER RECOMENDO\nEMPRESA SERIA ENTREGOU ANTES DO PRAZO ;RECOMENDO A TODOS",
+          "similarity": 0.853423
+        },
+        {
+          "categories": [
+            "cool_stuff"
+          ],
+          "delivered_late": false,
+          "doc_id": "2117e558f832c32658420610fa17caf703c55b1bc1e2b91616ee82454735d346",
+          "message": "Bom atendimento de rastreabilidade. Prazo excelente.",
+          "order_id": "b630fa3144c2dd867a25b3166b01fc5c",
+          "purchase_date": "2017-09-26",
+          "review_date": "2017-10-11",
+          "review_id": "edad5a52f2053f85e3ca35e9999f835e",
+          "score": 5,
+          "text": "Bom atendimento de rastreabilidade. Prazo excelente.",
+          "title": "",
+          "citation_id": "E6",
+          "context_text": "Bom atendimento de rastreabilidade. Prazo excelente.",
+          "similarity": 0.851188
+        },
+        {
+          "categories": [
+            "informatica_acessorios"
+          ],
+          "delivered_late": true,
+          "doc_id": "44504914103b0f6d6d3723c2cb6655acc6e35f3bb45642ec2495baeba3cb1a9a",
+          "message": "mercadoria nao entregue por conta dos correios. Desde 09/03/2018 esta no deposito dos correios. aguardo contato da empresa para tomar providencias",
+          "order_id": "ba1c50f3276668478a6d911c6a085a3d",
+          "purchase_date": "2018-02-26",
+          "review_date": "2018-03-24",
+          "review_id": "5345d21c6e399acf772b9b7d25a8e929",
+          "score": 3,
+          "text": "mercadoria nao entregue por conta dos correios. Desde 09/03/2018 esta no deposito dos correios. aguardo contato da empresa para tomar providencias",
+          "title": "",
+          "citation_id": "E7",
+          "context_text": "mercadoria nao entregue por conta dos correios. Desde 09/03/2018 esta no deposito dos correios. aguardo contato da empresa para tomar providencias",
+          "similarity": 0.859911
+        },
+        {
+          "categories": [
+            "beleza_saude"
+          ],
+          "delivered_late": null,
+          "doc_id": "f8170b7f14eb4b75ba8231288cc562edbf7382d9885054c10316a65bfb9828bc",
+          "message": "Não telefonou nem mandou email pra informa o q está a acontecendo. Com a entrega uma bosta essa empresa devia fechar de tão ruim q e o atendimento",
+          "order_id": "dce5adb99dbd09afb1a7b9a402df9f98",
+          "purchase_date": "2018-03-21",
+          "review_date": "2018-04-21",
+          "review_id": "355977d5ce8888845907ccc87f785183",
+          "score": 1,
+          "text": "Não telefonou nem mandou email pra informa o q está a acontecendo. Com a entrega uma bosta essa empresa devia fechar de tão ruim q e o atendimento",
+          "title": "",
+          "citation_id": "E8",
+          "context_text": "Não telefonou nem mandou email pra informa o q está a acontecendo. Com a entrega uma bosta essa empresa devia fechar de tão ruim q e o atendimento",
+          "similarity": 0.849399
+        }
+      ],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:01.645312+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": true,
+        "code": "in_scope",
+        "reason": "",
+        "details": {
+          "semantic_unavailable": false,
+          "semantic": {
+            "method": "e5_task_prototypes",
+            "positive_score": 0.8163725137710571,
+            "negative_score": 0.8122457265853882,
+            "negative_minus_positive": -0.004126787185668945,
+            "rejection_margin": 0.015,
+            "positive_prototype": "Analisar relatos de clientes sobre entrega dos pedidos, demora, prazo e recebimento antecipado.",
+            "negative_prototype": "Consultar previsão meteorológica, temperatura, chuva e condições do tempo para uma cidade e data.",
+            "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+          }
+        }
+      },
+      "generation_attempts": 1,
+      "validation_errors": [],
+      "model_reason": "Sem suporte nos comentários recuperados.",
+      "elapsed_seconds": 7.0,
+      "generation_trace_unvalidated": [
+        {
+          "findings": [],
+          "examples": []
+        }
+      ],
+      "query_id": "QA18",
+      "category": "ausente_politica_retencao",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Não inventar prazo de retenção ou política corporativa. Reclamações sobre atendimento e gravação de conversa não estabelecem uma política oficial ou seu prazo.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Como foi a experiência de quem comprou entre janeiro e março de 2025?",
+      "filters": {
+        "date_from": "2025-01-01",
+        "date_to": "2025-03-31"
+      },
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:08.648885+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "no_period_data",
+        "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+        "details": {
+          "semantic_unavailable": false,
+          "requested_years": [
+            2025
+          ],
+          "available_year_min": 2016,
+          "available_year_max": 2018,
+          "unavailable_years": [
+            2025
+          ]
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA19",
+      "category": "limite_data_2025",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "O filtro sobre purchase_date deve produzir zero fontes no corpus histórico atual. Abster-se sem trazer avaliações de 2016-2018 para preencher o período e sem extrapolar experiências futuras.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Quantos pedidos, no total, apresentaram falta de peças?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:08.650891+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_aggregation",
+        "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+        "details": {
+          "semantic_unavailable": false
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA20",
+      "category": "limite_contagem_global",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Não contar fontes top-k como se fossem todos os pedidos. Reconhecer que a contagem global por tema exige método de classificação/rotulagem e agregação do universo apropriado, ausente neste pipeline de recuperação.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Qual percentual de todos os pedidos recebeu mercadoria avariada?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:08.653394+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_aggregation",
+        "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+        "details": {
+          "semantic_unavailable": false
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA21",
+      "category": "limite_percentual_global",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Recusar percentual sem denominador completo e classificação validada de avaria. Não usar número de documentos textuais ou de fontes recuperadas como total de pedidos nem converter similaridade em probabilidade.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Faça um ranking dos estados com maior incidência de reclamações de entrega.",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:08.655396+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "unsupported_aggregation",
+        "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+        "details": {
+          "semantic_unavailable": false
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA22",
+      "category": "limite_ranking_por_estado",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Abster-se do ranking populacional e geográfico. O índice atual não contém estado como metadado, e um estado citado em comentário não permite contar incidência por estado. Não inventar localidades ou ordenação.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "Que problemas foram relatados nas compras de beleza e saúde feitas durante 2015?",
+      "filters": {
+        "category": "beleza_saude",
+        "score_max": 2,
+        "date_from": "2015-01-01",
+        "date_to": "2015-12-31"
+      },
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:08.657897+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "no_period_data",
+        "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+        "details": {
+          "semantic_unavailable": false,
+          "requested_years": [
+            2015
+          ],
+          "available_year_min": 2016,
+          "available_year_max": 2018,
+          "unavailable_years": [
+            2015
+          ]
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA23",
+      "category": "limite_recorte_vazio",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Categoria e filtros são válidos, mas o recorte temporal é vazio no corpus atual. Retornar zero fontes e reconhecer a insuficiência; não descartar os filtros silenciosamente para responder.",
+      "status_matches_expected": true
+    },
+    {
+      "response_contract": "context-synthesis-v2",
+      "question": "E isso, foi bom ou ruim?",
+      "filters": {},
+      "status": "abstained",
+      "findings": [],
+      "illustrative_quotes": [],
+      "context_evidence_ids": [],
+      "literal_quotes_verified": false,
+      "summary_entailment_verified": false,
+      "answer": "",
+      "reason": "Não consigo identificar a que você se refere. Informe o produto ou o aspecto da compra que deseja analisar.",
+      "sources": [],
+      "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+      "timestamp_utc": "2026-11-17T02:23:08.660405+00:00",
+      "configuration": {
+        "provider": "native",
+        "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+        "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "min_similarity": 0.75,
+        "min_evidences": 2,
+        "top_k": 8,
+        "retrieval_mode": "hybrid",
+        "embedding_manifest": {
+          "schema_version": 1,
+          "model_name": "intfloat/multilingual-e5-small",
+          "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "shape": [
+            42687,
+            384
+          ],
+          "document_count": 42687,
+          "dimensions": 384,
+          "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+          "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+        }
+      },
+      "scope": {
+        "allowed": false,
+        "code": "needs_clarification",
+        "reason": "Não consigo identificar a que você se refere. Informe o produto ou o aspecto da compra que deseja analisar.",
+        "details": {
+          "semantic_unavailable": false,
+          "missing_antecedent": true
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "generation_trace_unvalidated": [],
+      "query_id": "QA24",
+      "category": "limite_pergunta_ambigua",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "expectation": "Sem antecedente ou contexto de conversa que identifique isso, pedir esclarecimento ou declarar a insuficiência. Não escolher aleatoriamente um produto, pedido, tema ou avaliação para emitir julgamento.",
+      "status_matches_expected": true
+    }
+  ],
+  "status_matches_expected": 24,
+  "n_executed": 24
+}

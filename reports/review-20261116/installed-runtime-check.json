@@ -1,0 +1,13 @@
+{
+  "native_query_exit_code": 0,
+  "answer_status": "answered",
+  "sources": 8,
+  "query_elapsed_seconds": 29.867,
+  "response_file": "installed-smoke.json",
+  "health_http": 200,
+  "page_http": 200,
+  "status": "passed",
+  "total_seconds": 33.965,
+  "server_child_stopped": true,
+  "note": "HTTP is a server health check. Actual widget chat was tested separately by cold AppTest."
+}

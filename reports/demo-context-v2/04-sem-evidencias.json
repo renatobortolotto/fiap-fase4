@@ -1,0 +1,58 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "O que os clientes relatam sobre entrega em 2040?",
+  "filters": {
+    "date_from": "2040-01-01"
+  },
+  "status": "abstained",
+  "findings": [],
+  "illustrative_quotes": [],
+  "context_evidence_ids": [],
+  "literal_quotes_verified": false,
+  "summary_entailment_verified": false,
+  "answer": "",
+  "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+  "sources": [],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:18:58.276546+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "scope": {
+    "allowed": false,
+    "code": "no_period_data",
+    "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+    "details": {
+      "semantic_unavailable": false,
+      "requested_years": [
+        2040
+      ],
+      "available_year_min": 2016,
+      "available_year_max": 2018,
+      "unavailable_years": [
+        2040
+      ]
+    }
+  },
+  "elapsed_seconds": 0.0
+}

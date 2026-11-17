@@ -1,0 +1,36 @@
+{
+  "recorded_at_utc": "2026-11-17T02:29:04.802442+00:00",
+  "runs": [
+    {
+      "environment": "isolated review clone",
+      "code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+      "command": ".venv\\Scripts\\python.exe -m pytest -q --basetemp artifacts\\pytest-code-final-1bcc442",
+      "exit_code": 0,
+      "passed": 288,
+      "duration_seconds": 12.27,
+      "evidence": "Observed terminal output: 288 passed in 12.27s",
+      "python": "3.12.14",
+      "platform": "Windows x64"
+    },
+    {
+      "environment": "fresh clone and fresh virtual environment",
+      "code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+      "command": "python -m pytest -q --basetemp artifacts/pytest-cold-final --junitxml reports/review-20261116/cold-pytest.xml",
+      "exit_code": 0,
+      "passed": 288,
+      "duration_seconds": 9.719,
+      "python": "3.12.13",
+      "evidence_file": "cold-pytest.xml"
+    },
+    {
+      "environment": "definitive user project folder",
+      "command": "python -m pytest -q --basetemp artifacts/pytest-installed-review",
+      "exit_code": 0,
+      "passed": 288,
+      "duration_seconds": 6.99,
+      "wall_seconds": 8.322,
+      "evidence_file": "installed-pytest.xml",
+      "terminal_output": "installed-pytest-output.txt"
+    }
+  ]
+}

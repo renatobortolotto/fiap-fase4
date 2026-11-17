@@ -1,0 +1,74 @@
+{
+  "recorded_at_utc": "2026-11-17T02:36:32.178486+00:00",
+  "runtime_code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+  "note": "Reports preserve observed development iterations. Status matching is not semantic quality; see each source review. Documentation and demo question wording were finalized afterward without changes to the RAG runtime.",
+  "runtime_source_sha256": {
+    "src/voc_olist/__init__.py": "ea63bf2a14fe5cf6a4500dd8d24930c45d29f2ed34560ec5eb9266ef73bbf002",
+    "src/voc_olist/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "src/voc_olist/cli.py": "8c0b6b468a9556fcffbe48838c166c58f559a3c45eec1f23e13266acc8ae7641",
+    "src/voc_olist/config.py": "8c116e6591da081040d2503580a2e277750c3fd39aac348788e1c85b4000b228",
+    "src/voc_olist/download.py": "18e9a3b91adcdc5212b9d6d9c4ac22039e5196309682346df7fdbffdf88cde62",
+    "src/voc_olist/evaluation.py": "06683f120345b37b0b59920bdd2dec11c1c4bb92fc37e534f6333a390c203dec",
+    "src/voc_olist/hybrid.py": "d2d8ba6c7af4cd523fe2a77d6655b2fa4eb54b60d07218eaea4d77d969fdd63d",
+    "src/voc_olist/llm.py": "ae75b6f0fdb16f38f4589e49407fc4b30d6efcafd5b7b4bed517f80c71ae1cc5",
+    "src/voc_olist/model_store.py": "31c94f298ce3a757b6cefd552de73005795235ee610f9e0409e4ce15d2ceda16",
+    "src/voc_olist/native_llm.py": "b32743163c36d4764c3e47177a2aaa9d4cd78258e9809733e43860daaf5d80a5",
+    "src/voc_olist/native_runtime.py": "4ca60603f37b2ab39c1c6f6944d0caa1c1de53a57e40a815ab0e0835efc5da77",
+    "src/voc_olist/prepare.py": "4f3db3e1da5b2a52326b8a0f53447ae115fc0d04c76deefe8499c722a097b865",
+    "src/voc_olist/rag.py": "6df5b6c727b81d7a5b87c6fce36b084d915550b5c7802eed02f55088a9296597",
+    "src/voc_olist/retrieval.py": "4d029ea495da8d893015b15ce45055fa526acb0e589749fdefa003fb771c32ab",
+    "src/voc_olist/scope.py": "909647826b6e1f03a187a17ee5d6881f3968d7b0246a62e1dd5583a3d1d40851"
+  },
+  "acceptance_runs": [
+    {
+      "file": "native-acceptance-v1.json",
+      "code_commit": "641ee48",
+      "sha256": "6fff29a8a29a4c272851b52af4c5e1fcc24c5534f7b58707aab0577de2c5c1d3"
+    },
+    {
+      "file": "native-acceptance-v2.json",
+      "code_commit": "b1d9f2f",
+      "sha256": "2aa43d89c824b74c2bd4203b50f89d07ca8058733ec455107094f32dff2efbf3"
+    },
+    {
+      "file": "native-acceptance-v3.json",
+      "code_commit": "c825981",
+      "sha256": "30696d037706b4abeb5b6f6c20316b32c507ec97a4e958b41221440808fec507"
+    },
+    {
+      "file": "native-acceptance-v4.json",
+      "code_commit": "1bcc442",
+      "sha256": "e0c978c45d76fc55a8193a2b1c51bf19817335e6d714ac6f0ba68b6dea70d4f1"
+    }
+  ],
+  "native_runtime_version": "b12359",
+  "native_assets": [
+    {
+      "name": "llama-b12359-bin-win-cpu-x64.zip",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12359/llama-b12359-bin-win-cpu-x64.zip",
+      "size": 25097509,
+      "sha256": "837c1655e87df3b66989f4be33a792a1399c785bf259038dc75c900096683e69"
+    },
+    {
+      "name": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/bb5d59e06d9551d752d08b292a50eb208b07ab1f/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf?download=true",
+      "size": 3993201344,
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+    },
+    {
+      "name": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/bb5d59e06d9551d752d08b292a50eb208b07ab1f/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf?download=true",
+      "size": 689872288,
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+    }
+  ],
+  "demonstrations": {
+    "focused": "reports/demo-detalhado",
+    "review": "reports/review-20261116/focused-demo-source-review.json",
+    "earlier_broad_questions_preserved": [
+      "reports/demo-context-v2",
+      "reports/demo-context-v2-final"
+    ]
+  },
+  "source_hash_normalization": "CRLF normalized to LF; SHA-256 of source bytes, independent of Git checkout line endings."
+}

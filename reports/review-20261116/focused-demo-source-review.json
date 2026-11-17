@@ -1,0 +1,112 @@
+{
+  "review_type": "assistant_assisted_source_review_not_human_not_independent_benchmark",
+  "code_commit_reported_by_controller": "1bcc442",
+  "response_contract": "context-synthesis-v2",
+  "method": "Leitura das duas sínteses contra o contexto completo e conferência de cada citação/filtro. Sem nova geração ou chamada a modelo avaliador separado.",
+  "human_evaluation": false,
+  "automatic_semantic_proof": false,
+  "separate_from_24_case_denominator": true,
+  "overall": {
+    "answered_cases": 2,
+    "findings_grounded": 2,
+    "quotes_with_valid_literal_origin": 2,
+    "filter_violations_observed": 0,
+    "material_issues_observed": [],
+    "quality_assessment": "Sínteses concisas, mais específicas que as demonstrações genéricas anteriores, com cobertura ainda parcial. Não representam análise abrangente ou garantia para perguntas futuras."
+  },
+  "cases": [
+    {
+      "file": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-detalhado\\01-entrega.json",
+      "sha256": "4b3348e3063a3c5be5156e498214f0fe293a21397e0254b38f66275d43e856dd",
+      "question": "Quais problemas concretos de entrega são descritos e o que aconteceu nesses casos?",
+      "status": "answered",
+      "filters": {
+        "score_max": 2
+      },
+      "filter_violations": [],
+      "date_filter_semantics": "purchase_date: data da compra, não data da avaliação.",
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "elapsed_seconds_recorded": 28.252,
+      "finding_reviews": [
+        {
+          "text": "Há relatos de problemas de entrega, incluindo atrasos e falta de informações no rastreamento.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "E8"
+          ],
+          "reason": "E1 descreve não recebimento e ausência de informação no rastreamento; E2/E3/E4 registram espera/não entrega; E5/E8 relatam demora. Os metadados de E1/E2/E3 indicam delivered_late=true. Não foi inventada duração ou causa.",
+          "third_person": true,
+          "coverage_and_synthesis": "concise_partial",
+          "quality_note": "A síntese nomeia dois temas concretos e a citação exemplifica um caso. Continua curta: não cobre, por exemplo, a entrega incompleta descrita em E7."
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "evidence_id": "E1",
+          "quote": "Estou muito descontente. Sempre comprei com vocês. Antes não tinha problema com a entrega. Desta vez além de não entregarem, eu nem sei o que aconteceu. Não tem nenhuma informação no rastreamento.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes"
+        }
+      ],
+      "material_issues_observed": [],
+      "summary_entailment_verified_reported": false
+    },
+    {
+      "file": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-detalhado\\02-elogios.json",
+      "sha256": "51865e51a5aa18c8a462fdf8efb9b6376ce824318b38ff0380801a51d900ce63",
+      "question": "Quais aspectos da entrega satisfizeram os compradores em 2017? Descreva exemplos concretos dos comentários.",
+      "status": "answered",
+      "filters": {
+        "score_min": 4,
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      "filter_violations": [],
+      "date_filter_semantics": "purchase_date: data da compra, não data da avaliação.",
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "elapsed_seconds_recorded": 8.899,
+      "finding_reviews": [
+        {
+          "text": "Há relatos de entrega rápida e satisfação com a entrega.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E4",
+            "E5",
+            "E6",
+            "E7",
+            "E8"
+          ],
+          "reason": "Rapidez é explicitamente elogiada em E1/E2/E7 e satisfação em E4/E5/E7/E8; E6 menciona prazo cumprido. As oito fontes respeitam nota>=4 e data de compra em 2017. A citação E1 é elogio direto, sem a mistura de reclamação de outra entrega dos demos anteriores.",
+          "third_person": true,
+          "coverage_and_synthesis": "concise_partial",
+          "quality_note": "Mais específica que apenas entregas satisfatórias, pois identifica rapidez, mas ainda traz um exemplo e não explora todos os aspectos disponíveis."
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "evidence_id": "E1",
+          "quote": "Lindos produtos, rápida entrega. Recomendo.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes"
+        }
+      ],
+      "material_issues_observed": [],
+      "summary_entailment_verified_reported": false
+    }
+  ],
+  "provenance_note": "Demonstrações com perguntas mais específicas, geradas sem alterar modelo/RAG/prompt do código 1bcc442. Parecer dos demos genéricos permanece separado e não foi apagado.",
+  "timing_note": "28,252s e 8,899s são os tempos registrados nestas consultas, não SLA."
+}

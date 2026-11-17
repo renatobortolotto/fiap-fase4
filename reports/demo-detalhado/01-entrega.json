@@ -1,0 +1,225 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "Quais problemas concretos de entrega são descritos e o que aconteceu nesses casos?",
+  "filters": {
+    "score_max": 2
+  },
+  "status": "answered",
+  "findings": [
+    {
+      "text": "Há relatos de problemas de entrega, incluindo atrasos e falta de informações no rastreamento."
+    }
+  ],
+  "illustrative_quotes": [
+    {
+      "evidence_id": "E1",
+      "quote": "Estou muito descontente. Sempre comprei com vocês. Antes não tinha problema com a entrega. Desta vez além de não entregarem, eu nem sei o que aconteceu. Não tem nenhuma informação no rastreamento.",
+      "literal_verified": true
+    }
+  ],
+  "context_evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+  ],
+  "literal_quotes_verified": true,
+  "summary_entailment_verified": false,
+  "answer": "Nos comentários recuperados:\n\nHá relatos de problemas de entrega, incluindo atrasos e falta de informações no rastreamento.",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "beleza_saude"
+      ],
+      "delivered_late": true,
+      "doc_id": "75447888eb3b40d2dd509e8b6edad7e1d2e6b71fea516b1f6eed0574009dbdb0",
+      "message": "Estou muito descontente. Sempre comprei com vocês. Antes não tinha problema com a entrega. Desta vez além de não entregarem, eu nem sei o que aconteceu. Não tem nenhuma informação no rastreamento.",
+      "order_id": "1cc788ba1c0fa91ed3d7bf5a45a203a4",
+      "purchase_date": "2017-05-22",
+      "review_date": "2017-06-08",
+      "review_id": "f36a27bdb5dd36480261e320e33cefd8",
+      "score": 1,
+      "text": "Estou muito descontente. Sempre comprei com vocês. Antes não tinha problema com a entrega. Desta vez além de não entregarem, eu nem sei o que aconteceu. Não tem nenhuma informação no rastreamento.",
+      "title": "",
+      "citation_id": "E1",
+      "context_text": "Estou muito descontente. Sempre comprei com vocês. Antes não tinha problema com a entrega. Desta vez além de não entregarem, eu nem sei o que aconteceu. Não tem nenhuma informação no rastreamento.",
+      "similarity": 0.8705
+    },
+    {
+      "categories": [
+        "automotivo"
+      ],
+      "delivered_late": true,
+      "doc_id": "22b7d54e2f805b7c2a7e3a8c61dc6dd23a1273569de71bf77b271a3796fa8dde",
+      "message": "Deu problema na entrega e até agora nada.",
+      "order_id": "ec48402bbc28b1e4f252da4031bd502a",
+      "purchase_date": "2017-07-17",
+      "review_date": "2017-08-20",
+      "review_id": "6975d2005d2fae1799dde35d19f44895",
+      "score": 1,
+      "text": "Deu problema na entrega e até agora nada.",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Deu problema na entrega e até agora nada.",
+      "similarity": 0.867064
+    },
+    {
+      "categories": [
+        "utilidades_domesticas"
+      ],
+      "delivered_late": true,
+      "doc_id": "b1ed2551e36c50029a79c665a9f6eb9cdb710e4e1246ef6d61eeef3a4037c887",
+      "message": "recebi um email das lannister informando que haviam problemas na distribuicao, e agora outro perguntando se recebi a compra o que ate o momento nao aconteceu, nao sei o que aconteceu ou a que atribu",
+      "order_id": "2ad674d5024f5e52836b96215eb73588",
+      "purchase_date": "2018-04-16",
+      "review_date": "2018-05-13",
+      "review_id": "fb969030f27ca2b98031a354b03d836b",
+      "score": 1,
+      "text": "produto nao entregue\nrecebi um email das lannister informando que haviam problemas na distribuicao, e agora outro perguntando se recebi a compra o que ate o momento nao aconteceu, nao sei o que aconteceu ou a que atribu",
+      "title": "produto nao entregue",
+      "citation_id": "E3",
+      "context_text": "produto nao entregue\nrecebi um email das lannister informando que haviam problemas na distribuicao, e agora outro perguntando se recebi a compra o que ate o momento nao aconteceu, nao sei o que aconteceu ou a que atribu",
+      "similarity": 0.864975
+    },
+    {
+      "categories": [],
+      "delivered_late": null,
+      "doc_id": "bec1ef734253f980da139dbfe540390f6897e516998db7f85d3cae28d0a1388b",
+      "message": "Não chegou ainda estou na esperando ainda",
+      "order_id": "896fbd78a9ef3839b34b893f48f6bc67",
+      "purchase_date": "2018-05-12",
+      "review_date": "2018-06-03",
+      "review_id": "20787e5ce2d5175a20135e52e3a701e8",
+      "score": 2,
+      "text": "Problemas com entrega\nNão chegou ainda estou na esperando ainda",
+      "title": "Problemas com entrega",
+      "citation_id": "E4",
+      "context_text": "Problemas com entrega\nNão chegou ainda estou na esperando ainda",
+      "similarity": 0.868517
+    },
+    {
+      "categories": [
+        "brinquedos"
+      ],
+      "delivered_late": false,
+      "doc_id": "b04a6eebe1f9ae86c55b0e736afeefccf79b0e02e0b520badfb94ed628d8db6d",
+      "message": "O produto chegou correto. O problema foi a demora na entrega.",
+      "order_id": "ab61bc2f1cfb5d35ddec00c374c09970",
+      "purchase_date": "2017-11-13",
+      "review_date": "2017-12-12",
+      "review_id": "1da9941264ebc5c4a093ee4ba82af918",
+      "score": 1,
+      "text": "O produto chegou correto. O problema foi a demora na entrega.",
+      "title": "",
+      "citation_id": "E5",
+      "context_text": "O produto chegou correto. O problema foi a demora na entrega.",
+      "similarity": 0.862779
+    },
+    {
+      "categories": [
+        "moveis_quarto"
+      ],
+      "delivered_late": null,
+      "doc_id": "ba0658fe88551593198653b50d6b692498fb330ad13f7c77d56625d95af24c2c",
+      "message": "Ja é as egunda vez que tenho problemas com entregas",
+      "order_id": "b47f53f735ee76b0f07d10b4525d564e",
+      "purchase_date": "2018-02-13",
+      "review_date": "2018-03-09",
+      "review_id": "eef257db1ec8d36de355d272048eb3e7",
+      "score": 1,
+      "text": "Ja é as egunda vez que tenho problemas com entregas",
+      "title": "",
+      "citation_id": "E6",
+      "context_text": "Ja é as egunda vez que tenho problemas com entregas",
+      "similarity": 0.862658
+    },
+    {
+      "categories": [
+        "informatica_acessorios",
+        "telefonia"
+      ],
+      "delivered_late": false,
+      "doc_id": "9f3122280092e7e3e52b4536d52923ae6f221370bcf85de1af6d46e88d0619f3",
+      "message": "Tive problemas com a entrega. E ainda não mandaram todos os produtos!",
+      "order_id": "518ca81bf7a1b719e32d6847b6afff85",
+      "purchase_date": "2017-11-27",
+      "review_date": "2017-12-20",
+      "review_id": "4589b661245306b0f4ce2ee972bbf1ab",
+      "score": 1,
+      "text": "Tive problemas com a entrega. E ainda não mandaram todos os produtos!",
+      "title": "",
+      "citation_id": "E7",
+      "context_text": "Tive problemas com a entrega. E ainda não mandaram todos os produtos!",
+      "similarity": 0.863558
+    },
+    {
+      "categories": [
+        "beleza_saude"
+      ],
+      "delivered_late": false,
+      "doc_id": "755f341bcf36b18ee966ec9bb72fa7971644037da6b307cf5a511caeeda2f0f4",
+      "message": "Demorou muito o prazo de entrega. Foi a primeira vez que ocorreu isso. Espero que das próximas vezes, seja corrigido esse problema.",
+      "order_id": "c89faf2acf424fe14db2131b5b6ae379",
+      "purchase_date": "2018-03-15",
+      "review_date": "2018-04-07",
+      "review_id": "b2a69a2c41f523a6cc494b91281aa793",
+      "score": 2,
+      "text": "Demorou muito o prazo de entrega. Foi a primeira vez que ocorreu isso. Espero que das próximas vezes, seja corrigido esse problema.",
+      "title": "",
+      "citation_id": "E8",
+      "context_text": "Demorou muito o prazo de entrega. Foi a primeira vez que ocorreu isso. Espero que das próximas vezes, seja corrigido esse problema.",
+      "similarity": 0.865051
+    }
+  ],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:31:15.755170+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "scope": {
+    "allowed": true,
+    "code": "in_scope",
+    "reason": "",
+    "details": {
+      "semantic_unavailable": false,
+      "semantic": {
+        "method": "e5_task_prototypes",
+        "positive_score": 0.8481795787811279,
+        "negative_score": 0.821823239326477,
+        "negative_minus_positive": -0.02635633945465088,
+        "rejection_margin": 0.015,
+        "positive_prototype": "Analisar relatos de clientes sobre entrega dos pedidos, demora, prazo e recebimento antecipado.",
+        "negative_prototype": "Pedir uma receita culinária e instruções de preparo de alimentos.",
+        "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+      }
+    }
+  },
+  "generation_attempts": 1,
+  "validation_errors": [],
+  "elapsed_seconds": 28.252
+}

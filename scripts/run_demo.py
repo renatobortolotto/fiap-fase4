@@ -15,19 +15,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--provider", choices=["native", "transformers", "ollama"], default="native")
     parser.add_argument("--root", type=Path)
-    parser.add_argument("--output-dir", type=Path, help="Pasta de saída; padrão reports/demo-context-v2")
+    parser.add_argument("--output-dir", type=Path, help="Pasta de saída; padrão reports/demo-detalhado")
     args = parser.parse_args()
     settings = Settings.from_env(args.root)
     model, revision = generation_defaults(args.provider)
     settings = replace(settings, provider=args.provider, llm_model=model, llm_revision=revision)
     service = RagService(make_search_index(VectorIndex.load(settings.index_dir), settings), make_embedder(settings), make_generator(settings), settings)
     examples = [
-        ("01-atrasos", "O que os clientes relatam sobre problemas relacionados à entrega?", {"score_max": 2}),
-        ("02-elogios", "Quais experiências positivas são descritas sobre a entrega em 2017?", {"score_min": 4}),
+        ("01-entrega", "Quais problemas concretos de entrega são descritos e o que aconteceu nesses casos?", {"score_max": 2}),
+        ("02-elogios", "Quais aspectos da entrega satisfizeram os compradores em 2017? Descreva exemplos concretos dos comentários.", {"score_min": 4}),
         ("03-fora-do-escopo", "Quantos clientes reclamaram de atraso em toda a base?", {}),
         ("04-sem-evidencias", "O que os clientes relatam sobre entrega em 2040?", {"date_from": "2040-01-01"}),
     ]
-    output = args.output_dir or settings.root / "reports" / "demo-context-v2"
+    output = args.output_dir or settings.root / "reports" / "demo-detalhado"
     output.mkdir(parents=True, exist_ok=True)
     for name, question, filters in examples:
         result = service.answer(question, filters)

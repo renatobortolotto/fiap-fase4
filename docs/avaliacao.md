@@ -4,13 +4,13 @@
 
 Um teste de software aprovado demonstra o comportamento testado. Uma execução de ponta a ponta mostra que o pipeline funcionou naquele cenário. Nenhum desses resultados, isoladamente, demonstra que a recuperação é boa ou que as afirmações são sustentadas. A qualidade exige perguntas representativas, rótulos de relevância e revisão das respostas.
 
-Os resultados históricos abaixo descrevem somente o pool incluído. A revisão `context-synthesis-v2`, com padrão Qwen2.5-7B-Instruct-GGUF Q4_K_M, runtime llama.cpp portátil, guard semântico e schema JSON, precisa de registros próprios. Pilotos e números finais dessa configuração, o ensaio de aceitação e a instalação limpa estão pendentes nesta documentação. Não transferir aprovações de contratos, modelos ou provedores anteriores para o padrão nativo.
+Esta revisão usa `context-synthesis-v2`, Qwen2.5-7B-Instruct-GGUF Q4_K_M e llama.cpp portátil. Seus testes, lote de aceitação v4, parecer assistido de fontes e reprodução do contexto têm registros próprios em `reports/review-20261116/`, resumidos em [verificacao.md](../reports/verificacao.md). Os resultados históricos do pool são mantidos separadamente. Não transferir aprovações entre contratos ou provedores nem apresentar revisão assistida por IA como avaliação humana.
 
 ## Conjunto de desenvolvimento incluído
 
 `evaluation/pool_documents.jsonl` contém 17 avaliações reais selecionadas após inspeção de seus textos. `evaluation/questions.jsonl` contém quatro perguntas temáticas com rótulos de relevância propostos com auxílio de IA e uma pergunta com filtro de período a partir de 2040, sem documentos. Os critérios e a origem estão em `evaluation/README.md`.
 
-Esse material é um pool pequeno de desenvolvimento, com rótulos pendentes de revisão humana. Não é teste independente, amostra aleatória nem medição da qualidade de busca no corpus principal. Os rótulos cobrem o pool de 17 documentos segundo os critérios propostos; podem conter erros. Uma métrica calculada sobre eles descreve concordância com esses rótulos, sem estabelecer qualidade validada por pessoas.
+Esse material é um pool pequeno de desenvolvimento, com rótulos propostos por IA e sem revisão humana executada. Não é teste independente, amostra aleatória nem medição da qualidade de busca no corpus principal. Os rótulos cobrem o pool de 17 documentos segundo os critérios propostos; podem conter erros. Uma métrica calculada sobre eles descreve concordância com esses rótulos, sem estabelecer qualidade validada por pessoas. A revisão humana é uma extensão futura opcional.
 
 Para executar sem misturar o pool com o índice principal:
 
@@ -31,7 +31,7 @@ As execuções históricas usaram `top_k=4` e limiar de cosseno 0,75:
 
 Os arquivos históricos são `reports/evaluation-dense-initial.json` e `reports/evaluation-pool.json`; eles são preservados sem reescrita. Os comandos acima geram novos relatórios em uma pasta própria da revisão. A reordenação híbrida combina ranks denso e BM25 por RRF, constante 60 e pesos iguais, dentro do pool denso elegível. Ela foi introduzida após observar erros neste mesmo material. A melhora observada é um resultado de desenvolvimento, não de um teste reservado. O acerto do gate considera somente a quantidade de hits e não mede o guard ou o LLM.
 
-Revisar os rótulos, preservar as correções e ampliar o conjunto antes de apresentar o resultado como avaliação de qualidade. Os passos abaixo descrevem esse trabalho adicional.
+Revisão humana dos rótulos, mais perguntas e um conjunto separado permitiriam alegações mais fortes de qualidade generalizável. São melhorias futuras, não requisitos adicionais impostos à entrega pelo enunciado. Os passos de avaliação abaixo distinguem o trabalho executado dessas extensões.
 
 ## 1. Verificação do software
 
@@ -54,17 +54,19 @@ Executar os testes disponíveis e inspecionar os seguintes casos:
 | Contexto | Até oito fontes recuperadas | Enviar e exportar todo o contexto efetivamente consultado |
 | Dados adversariais | Comentário contendo instruções ao modelo | Tratar como texto da avaliação |
 
-Também verificar instalação de clone sem artefatos, `.env` preservado, ZIP local com espaços no caminho, download nativo retomável com tamanho e SHA-256 verificados e cache do encoder sem privilégios de symlink. Conferir `models`, início do processo gerenciado em loopback, reutilização e encerramento ao sair do Python. Falhas iniciais de pasta `artifacts` ausente e de acentos no PowerShell motivaram correções; somente uma nova execução completa pode confirmar o fluxo corrigido. A existência das correções não é prova de instalação fria concluída.
+Os testes registrados no clone de revisão executaram o código `1bcc44273ada42784e1571880eb63da715c79339`: **288 passaram em 12,27 s**, sem falhas. Comando e ambiente estão em `reports/review-20261116/unit-tests.json`. Eles cobrem contratos de dados, índice, fontes, escopo, runtime e interface; fixtures controladas não entram no corpus oficial.
+
+A verificação de instalação é registrada separadamente em `reports/review-20261116/clean-install.json`: clone novo, ambiente virtual novo, ZIP local, encoder e runtime obtidos sem cache de modelos reaproveitado, testes e consulta real na interface. Falhas iniciais de pasta `artifacts` ausente e acentos no PowerShell motivaram ajustes antes da execução final. O relatório distingue os tempos de rede, indexação e geração; um download bem-sucedido, sozinho, não é evidência de conversa real pela interface.
 
 Testes com dados sintéticos devem ser identificados como tais. Eles são úteis para controlar casos de borda e não substituem a avaliação sobre Olist.
 
-## 2. Conjunto de perguntas e relevância
+## 2. Extensões futuras de relevância
 
-Criar um conjunto inicial de pelo menos 30 perguntas, incluindo consultas sobre entrega, produto, atendimento, elogios e consultas com metadados. Incluir perguntas específicas e amplas, negativas e positivas, além de casos não respondíveis. A quantidade é uma proposta operacional, não um requisito numérico do enunciado.
+Como extensão, pode-se criar um conjunto de pelo menos 30 perguntas sobre entrega, produto, atendimento, elogios e metadados, incluindo consultas específicas, amplas e não respondíveis. A quantidade é uma proposta operacional, não requisito do enunciado. O lote técnico efetivamente executado nesta revisão tem 24 casos, descritos adiante.
 
 Separar as perguntas antes de ajustar parâmetros: um conjunto de desenvolvimento para decisões e um conjunto final reservado. Não escolher limiar, top-k ou prompt olhando os resultados finais e depois tratá-los como avaliação independente.
 
-Para cada pergunta respondível, pessoas revisam candidatos recuperados por mais de uma configuração e registram quais documentos realmente ajudam a responder. Usar os `doc_id` persistentes do corpus em `relevant_ids`, nunca os rótulos E1/E2 de uma resposta. É desejável que duas pessoas rotulem uma parte em comum e conciliem discordâncias. O conjunto deve guardar a pergunta, o recorte, a identificação das evidências relevantes e uma justificativa curta. Esse trabalho humano continua pendente; os rótulos propostos por IA não o substituem.
+Para rotulagem humana futura, revisores devem examinar candidatos de mais de uma configuração e registrar quais documentos ajudam a responder. Usar `doc_id` persistente em `relevant_ids`, nunca E1/E2 de uma resposta. Dois avaliadores poderiam rotular uma parte em comum e conciliar discordâncias. Esse trabalho não foi executado e os rótulos propostos por IA não o substituem.
 
 Não confundir as fontes retornadas pelo próprio sistema com rótulos de referência. Quando o julgamento cobrir somente um pool de candidatos, a cobertura é parcial e essa limitação deve acompanhar as métricas.
 
@@ -115,21 +117,35 @@ Incluir pelo menos estes cenários e paráfrases que não tenham sido usadas par
 
 Medir respostas indevidas entre casos não respondíveis e recusas indevidas entre casos respondíveis. Não selecionar somente exemplos fáceis. Uma lista de termos proibidos não comprova generalização para perguntas externas novas.
 
-O novo `ScopeGuard` usa famílias de tarefas E5 e margem inicial 0,015, além de regras de capacidade e período. Avaliar também fronteiras de intenção: “o que compradores relatam sobre instalar o produto?” pode estar no escopo; pedir código para instalar um programa é tarefa externa. A margem não é probabilidade nem foi validada como limiar universal. Confirmar que a admissão pelo guard não impede o LLM de se abster sobre um tema sem evidências.
+O `ScopeGuard` usa famílias de tarefas E5 e margem inicial 0,015, além de regras de capacidade e período. Fronteiras de intenção ainda merecem ampliar os casos: “o que compradores relatam sobre instalar o produto?” pode estar no escopo; pedir código para instalar um programa é tarefa externa. A margem não é probabilidade nem limiar universal. A interpretação temporal automática cobre anos; meses e dias exigem filtros manuais. A admissão pelo guard não impede o LLM de se abster quando o tema não é sustentado.
 
 ## Ensaio de aceitação desta revisão
 
-Está previsto um conjunto de 24 casos com execução real e inspeção assistida por IA, seguido de leitura pelo revisor. Os resultados finais ainda estão pendentes. O ensaio deve cobrir temas respondíveis, ausência de suporte, tarefas externas, agregações não implementadas, períodos, conflitos de filtros e instruções contidas em comentários.
+O conjunto de 24 casos em `evaluation/review_questions.jsonl` foi executado no código `1bcc442`. O resultado final está em `reports/review-20261116/native-acceptance-v4.json`; a leitura contra o contexto completo, com contraponto de um segundo agente nos nove positivos, está em `assistant-source-review-v4.md/.json` na mesma pasta.
+
+| Tipo de caso | Resultado observado |
+| --- | --- |
+| Nove positivos, com resposta obrigatória no protocolo | Nove responderam |
+| Treze recusas obrigatórias | Treze se abstiveram |
+| Dois condicionais, com resposta ou recusa permitidas conforme suporte | Ambos se abstiveram de forma adequada à inspeção |
+
+O programa registrou status compatível com o protocolo em 24/24 casos. Isso é compatibilidade formal de status, não taxa de acurácia semântica. A leitura assistida classificou os dez findings publicados como sustentados pelo conjunto de fontes; nove foram diretamente pertinentes e um acrescentou informação lateral. Os doze exemplos tiveram origem literal normalizada válida; um foi pouco ilustrativo. Não foram observadas violações de filtros nessa execução.
+
+Persistem sínteses genéricas e cobertura parcial, especialmente nos casos QA03/QA05, uma informação lateral em QA02 e escolhas de exemplos menos claras em QA01/QA09. A conclusão é que os critérios materiais desse lote observado foram atendidos com essas ressalvas. Não há certificação de ausência de alucinação para novas consultas.
+
+Os lotes anteriores permanecem preservados: v1 teve duração inventada bloqueada e causa operacional não comprovada; v2 inferiu um desfecho ausente em QA10; v3 acrescentou “comuns” sem medir prevalência. As correções de guard, prompt e validação removeram esses acréscimos no v4 observado. Não se reescreveram os resultados anteriores como aprovados.
 
 Para cada caso, preservar pergunta, filtros solicitados e efetivos, decisão do guard, configuração do modelo e revisão, todas as fontes do contexto, sínteses, exemplos, tentativas, erros e duração. O relatório deve separar expectativa proposta, resposta efetiva e parecer de inspeção, citando o trecho do contexto que motivou o parecer. Um rótulo automático de aprovação não é julgamento humano.
 
-Esse ensaio é aceitação de desenvolvimento, não benchmark independente ou teste cego. Uma leitura posterior por pessoa deve ser registrada como etapa própria, sem ser presumida pela criação do relatório. Nenhuma taxa final, quantidade de testes aprovados ou qualidade global desta revisão é afirmada antes da execução e conferência dos artefatos.
+Esse ensaio é aceitação de desenvolvimento observada durante os ajustes, não benchmark independente ou teste cego. Uma eventual leitura posterior por pessoa deve ser registrada como etapa própria. A revisão assistida já executada não é tratada como julgamento humano nem como prova semântica automática.
+
+A comparação em `cold-context-comparison.json` confirmou os mesmos contextos ordenados, códigos de escopo e filtros efetivos para os 24 casos após a reconstrução fria do índice. Não houve nova geração nessa comparação: ela demonstra reprodução do contexto, não outra medição semântica. As demonstrações são examinadas separadamente e não aumentam o denominador de 24.
 
 ## 6. Calibração e desempenho
 
 O limiar inicial 0,75 e o mínimo de dois documentos distintos ainda não são uma garantia de relevância. Comparar configurações no conjunto de desenvolvimento e observar o equilíbrio entre respostas sem suporte e recusas desnecessárias. Congelar a configuração antes de executar o conjunto final.
 
-Registrar tempo de preparação, indexação, recuperação e geração; quantidade de documentos e textos distintos; modelo exato, quantização e revisão; CPU/GPU e memória; versão e hash do runtime; Python e bibliotecas. O padrão é Qwen2.5-7B-Instruct-GGUF Q4_K_M, revisão `bb5d59e06d9551d752d08b292a50eb208b07ab1f`, com llama.cpp b12359 e quatro threads de CPU. A instalação orienta 16 GB de RAM e cerca de 10 GB livres; medir o consumo real no ambiente avaliado.
+Registrar tempo de preparação, indexação, recuperação e geração; quantidade de documentos e textos distintos; modelo exato, quantização e revisão; CPU/GPU e memória; versão e hash do runtime; Python e bibliotecas. O padrão é Qwen2.5-7B-Instruct-GGUF Q4_K_M, revisão `bb5d59e06d9551d752d08b292a50eb208b07ab1f`, com llama.cpp b12359 e quatro threads de CPU. A instalação orienta 16 GB de RAM e 20 GB livres; medir o consumo real no ambiente avaliado.
 
 O fallback Transformers 1,5B usa o lock com Transformers 4.57.6, Sentence Transformers 5.7.0 e LM Format Enforcer 0.11.3. Separar primeiro download, início do servidor, carregamento frio e consultas com cache. Não reaproveitar como medição atual tempos de modelos ou índices anteriores. Comparar os provedores somente se medidos nas mesmas perguntas, com julgamentos de sustentação sobre o contexto completo. Nenhum ganho de qualidade é presumido pela troca para 7B.
 
@@ -137,14 +153,14 @@ O fallback Transformers 1,5B usa o lock com Transformers 4.57.6, Sentence Transf
 
 | Campo | Preencher com dado real |
 | --- | --- |
-| Data, versão do código e hashes do corpus/índice | Pendente de execução |
-| Modelo de embeddings e modelo gerador | Pendente de execução |
-| Parâmetros de recuperação e filtros | Pendente de execução |
-| Perguntas de desenvolvimento e finais | Pendente de rotulagem |
-| Quantidade de perguntas e cobertura dos rótulos | Pendente de rotulagem |
-| Recall@k / MRR@k | Histórico do pool acima; nova execução e teste independente pendentes |
-| Sínteses revisadas contra o contexto completo | Aceitação assistida por IA e leitura humana final pendentes |
-| Respostas e recusas indevidas | Não medidas neste documento |
-| Tempos, equipamento e falhas conhecidas | Pendente de execução |
+| Data, código e hashes | Registros de verificação e artefatos v4 |
+| Modelo de embeddings e gerador | Fixados e registrados nas configurações exportadas |
+| Recuperação e filtros | Preservados por caso, com comparação de contexto frio |
+| Casos de desenvolvimento | 24 executados; nenhum conjunto independente alegado |
+| Rótulos de relevância | Pool de 17 documentos, propostas de IA; rotulagem humana é extensão futura |
+| Recall@k / MRR@k | Histórico do pool acima, sem transferir para qualidade do corpus inteiro |
+| Sínteses contra o contexto completo | Leitura assistida v4 concluída, com ressalvas registradas |
+| Respostas e recusas | Nove respostas e quinze abstenções no lote v4 |
+| Tempos e ambiente | Verificação, instalação fria e JSONs de execução |
 
-Guardar também exemplos de falha e suas fontes. Os campos “pendente” da tabela orientam um relatório final independente; o pool de desenvolvimento incluído não os torna automaticamente concluídos. Um relatório honesto deve distinguir o que foi medido, o que foi apenas implementado e o que continua pendente.
+Guardar também exemplos de falha e suas fontes. Distinguir o que foi observado, o que o software verifica automaticamente e as melhorias opcionais ainda não executadas. Nenhum resultado deste documento representa qualidade populacional.

@@ -1,0 +1,42 @@
+{
+  "recorded_at_utc": "2026-11-17T02:30:37.669873+00:00",
+  "commit": "1bcc44273ada42784e1571880eb63da715c79339",
+  "offline_models": true,
+  "llm_threads": 2,
+  "embedding_threads": 2,
+  "initial_ui_exceptions": 0,
+  "provider": "native",
+  "mode_label": "RAG local · Qwen 7B",
+  "metrics": [
+    {
+      "label": "Avaliações com texto",
+      "value": "42.687"
+    },
+    {
+      "label": "Notas 1 e 2",
+      "value": "10.994"
+    },
+    {
+      "label": "Categorias disponíveis",
+      "value": "73"
+    }
+  ],
+  "question": "O que os clientes elogiam nas entregas antes do prazo?",
+  "filters": {
+    "score_min": 4,
+    "score_max": 5
+  },
+  "answer_status": "answered",
+  "answer": "Nos comentários recuperados:\n\nOs clientes elogiam a entrega antes do prazo.",
+  "query_wall_seconds": 29.781,
+  "service_seconds": 29.711,
+  "n_sources": 8,
+  "n_findings": 1,
+  "n_quotes": 1,
+  "literal_quotes_checked": true,
+  "export_button_rendered": true,
+  "final_ui_exceptions": 0,
+  "response_file": "reports/review-20261116/cold-ui-response.json",
+  "total_seconds": 31.141,
+  "status": "passed"
+}

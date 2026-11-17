@@ -1,0 +1,241 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "Quais aspectos da entrega satisfizeram os compradores em 2017? Descreva exemplos concretos dos comentários.",
+  "filters": {
+    "score_min": 4,
+    "date_from": "2017-01-01",
+    "date_to": "2017-12-31"
+  },
+  "status": "answered",
+  "findings": [
+    {
+      "text": "Há relatos de entrega rápida e satisfação com a entrega."
+    }
+  ],
+  "illustrative_quotes": [
+    {
+      "evidence_id": "E1",
+      "quote": "Lindos produtos, rápida entrega. Recomendo.",
+      "literal_verified": true
+    }
+  ],
+  "context_evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+  ],
+  "literal_quotes_verified": true,
+  "summary_entailment_verified": false,
+  "answer": "Nos comentários recuperados:\n\nHá relatos de entrega rápida e satisfação com a entrega.",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "moveis_decoracao"
+      ],
+      "delivered_late": false,
+      "doc_id": "a8f3bd807c774d246ea0671d7ab36444b99756fe2924b5e9ffe34803b501ade0",
+      "message": "Lindos produtos, rápida entrega. Recomendo.",
+      "order_id": "a557a0d8ff0129cd241d2bca612b3d6f",
+      "purchase_date": "2017-11-24",
+      "review_date": "2017-12-01",
+      "review_id": "9e80f21e03186dd286b0bca09ef436bb",
+      "score": 5,
+      "text": "Lindos produtos, rápida entrega. Recomendo.",
+      "title": "",
+      "citation_id": "E1",
+      "context_text": "Lindos produtos, rápida entrega. Recomendo.",
+      "similarity": 0.911735
+    },
+    {
+      "categories": [
+        "cama_mesa_banho"
+      ],
+      "delivered_late": false,
+      "doc_id": "4f6c76cf96f73fa39feeaf648a97ebd9755799158d253df78bbee34a02a4f6f7",
+      "message": "fácil de comprar, entrega rápida, posicionamento da compra correta. Excelente.",
+      "order_id": "0373763807c25ce94a4b85c7c0f47062",
+      "purchase_date": "2017-08-01",
+      "review_date": "2017-08-15",
+      "review_id": "4cda777329fd7a7a7b81e17fd09294b6",
+      "score": 5,
+      "text": "fácil de comprar, entrega rápida, posicionamento da compra correta. Excelente.",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "fácil de comprar, entrega rápida, posicionamento da compra correta. Excelente.",
+      "similarity": 0.92289
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "d8b60bad6b3b49e700ad439d78e6ec666d417a084d29c42417d6768a83afc4f9",
+      "message": "Uma loja acolhedora e que entrega aquilo que foi proposto. Adorei!",
+      "order_id": "85607d3592af1748d85f39e8f2d2709f",
+      "purchase_date": "2017-05-12",
+      "review_date": "2017-05-19",
+      "review_id": "cd18301d5e94759bdf06b11128337c1e",
+      "score": 5,
+      "text": "Uma loja acolhedora e que entrega aquilo que foi proposto. Adorei!",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "Uma loja acolhedora e que entrega aquilo que foi proposto. Adorei!",
+      "similarity": 0.90774
+    },
+    {
+      "categories": [
+        "relogios_presentes"
+      ],
+      "delivered_late": false,
+      "doc_id": "56931f9886a9e02a3bad3d89487b36011edfd3bc7e35c6726ded1b6e2a1a54c9",
+      "message": "Muito satisfeita com o produto, entrega. Recomendo!!",
+      "order_id": "e339dedb65f3cb8513ffe6dfa54addae",
+      "purchase_date": "2017-07-02",
+      "review_date": "2017-07-12",
+      "review_id": "797ffb9f76a340e980e50699fb55fb79",
+      "score": 5,
+      "text": "Muito satisfeita com o produto, entrega. Recomendo!!",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": "Muito satisfeita com o produto, entrega. Recomendo!!",
+      "similarity": 0.907378
+    },
+    {
+      "categories": [
+        "brinquedos"
+      ],
+      "delivered_late": false,
+      "doc_id": "d5cc543738b264c3d77349fc8abd684677e68537dee25c9ae7b5171d39315df5",
+      "message": "Fiquei super satisfeita tanto com a entrega quanto ao produto. Recomendo",
+      "order_id": "5cf6b83ea7ea941824c64e4933f5efb4",
+      "purchase_date": "2017-08-03",
+      "review_date": "2017-08-10",
+      "review_id": "6621712c1fcf4de1f1e2e06adc8a9243",
+      "score": 5,
+      "text": "Fiquei super satisfeita tanto com a entrega quanto ao produto. Recomendo",
+      "title": "",
+      "citation_id": "E5",
+      "context_text": "Fiquei super satisfeita tanto com a entrega quanto ao produto. Recomendo",
+      "similarity": 0.909404
+    },
+    {
+      "categories": [
+        "beleza_saude"
+      ],
+      "delivered_late": false,
+      "doc_id": "633f3edbe4d9c84f9a6c0764595f6c5c996fa4e3ed254a61828aba28073b90e6",
+      "message": "Qualifico como ótima compra. Recomendo a todos. Entrega feita no prazo, produto maravilhoso.",
+      "order_id": "32a8de5ba7f744d3a361fa1ebe7f4b6b",
+      "purchase_date": "2017-09-08",
+      "review_date": "2017-09-19",
+      "review_id": "df846198581d96c53014e728d0f8812c",
+      "score": 5,
+      "text": "Qualifico como ótima compra. Recomendo a todos. Entrega feita no prazo, produto maravilhoso.",
+      "title": "",
+      "citation_id": "E6",
+      "context_text": "Qualifico como ótima compra. Recomendo a todos. Entrega feita no prazo, produto maravilhoso.",
+      "similarity": 0.912683
+    },
+    {
+      "categories": [
+        "beleza_saude"
+      ],
+      "delivered_late": false,
+      "doc_id": "ded0744e6bbf10a40ce108dae729ba95e946b27545177ae8155ce5ba6f0d5a3a",
+      "message": "Estou satisfeita. Produto condiz com a minha expectativa. A entrega foi rápida. Estou realmente feliz.",
+      "order_id": "f03c93c7441f0edaa7987c4313467110",
+      "purchase_date": "2017-07-29",
+      "review_date": "2017-08-12",
+      "review_id": "a691269a45388d1608a204a4bcae08b6",
+      "score": 5,
+      "text": "Estou satisfeita. Produto condiz com a minha expectativa. A entrega foi rápida. Estou realmente feliz.",
+      "title": "",
+      "citation_id": "E7",
+      "context_text": "Estou satisfeita. Produto condiz com a minha expectativa. A entrega foi rápida. Estou realmente feliz.",
+      "similarity": 0.913737
+    },
+    {
+      "categories": [
+        "cool_stuff"
+      ],
+      "delivered_late": false,
+      "doc_id": "9ee0e0263d0581f7cf0468062b687495746984dcd1530a164a643640d826a453",
+      "message": "Estou satisfeito com o produto comprado e com o prazo de entrega. Vendedor confiável.",
+      "order_id": "95d7f1d6526fe255c28b15b749634392",
+      "purchase_date": "2017-03-20",
+      "review_date": "2017-03-25",
+      "review_id": "5c554f53cf5fcf83a322b475ed11068f",
+      "score": 5,
+      "text": "Estou satisfeito com o produto comprado e com o prazo de entrega. Vendedor confiável.",
+      "title": "",
+      "citation_id": "E8",
+      "context_text": "Estou satisfeito com o produto comprado e com o prazo de entrega. Vendedor confiável.",
+      "similarity": 0.907793
+    }
+  ],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:31:44.007584+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "scope": {
+    "allowed": true,
+    "code": "in_scope",
+    "reason": "",
+    "details": {
+      "semantic_unavailable": false,
+      "requested_years": [
+        2017
+      ],
+      "available_year_min": 2016,
+      "available_year_max": 2018,
+      "unavailable_years": [],
+      "semantic": {
+        "method": "e5_task_prototypes",
+        "positive_score": 0.878838300704956,
+        "negative_score": 0.8656110763549805,
+        "negative_minus_positive": -0.013227224349975586,
+        "rejection_margin": 0.015,
+        "positive_prototype": "Analisar relatos de clientes sobre entrega dos pedidos, demora, prazo e recebimento antecipado.",
+        "negative_prototype": "Aprender a instalar programas, configurar software, escrever código e resolver erros de programação.",
+        "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+      }
+    }
+  },
+  "requested_filters": {
+    "score_min": 4
+  },
+  "inferred_period": {
+    "date_from": "2017-01-01",
+    "date_to": "2017-12-31"
+  },
+  "generation_attempts": 1,
+  "validation_errors": [],
+  "elapsed_seconds": 8.899
+}

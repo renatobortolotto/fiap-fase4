@@ -1,78 +1,83 @@
-# Verificação da implementação local
+# Verificação técnica da solução
 
-Registro em UTC: 2026-11-15T21:55:03.048689+00:00. Projeto instalado em `raiz do repositório`.
+Registro local: 2026-11-16T23:41:30.903103-03:00. UTC: 2026-11-17T02:41:30.903103+00:00.
 
-## Ambiente e instalação
+Esta revisão consolida testes de software, instalação em clone novo, consultas reais e leitura assistida por IA das fontes. O código do runtime validado é `1bcc44273ada42784e1571880eb63da715c79339`; documentação e perguntas de demonstração foram finalizadas depois, sem alterar esse RAG. A proveniência e os hashes estão em [execution-provenance.json](review-20261116/execution-provenance.json). O registro anterior foi preservado em [verificacao-20261115.md](verificacao-20261115.md) e no [JSON histórico](verificacao-20261115.json).
 
-Ambiente virtual novo com Python 3.12.14, Windows e 6 CPUs lógicas.
-Dependências instaladas com `uv sync --locked --extra dev`; modelos executados em CPU.
-A configuração local `.env` usa Transformers com Qwen2.5-0.5B-Instruct, revisão fixada.
-Ollama continua disponível como alternativa, mas seu servidor/modelo não foi executado nesta máquina.
-O adaptador Ollama tem testes de contrato com respostas simuladas.
+## Configuração e dados
 
-Versões verificadas: torch 2.15.0+cpu, transformers 5.23.0, sentence-transformers 6.3.0, numpy 2.5.4, streamlit 1.67.0, pytest 9.2.0.
+Padrão: `Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M`, revisão `bb5d59e06d9551d752d08b292a50eb208b07ab1f`, com llama.cpp portátil b12359 e quatro threads de CPU. Encoder: `intfloat/multilingual-e5-small`, revisão `614241f622f53c4eeff9890bdc4f31cfecc418b3`. O teste frio usou duas threads para encoder e gerador. Os downloads fixam tamanho e SHA-256; os assets esperados constam no JSON de verificação e na proveniência.
 
-## Dados e índice
+A preparação do ZIP oficial produziu 42.687 documentos a partir de 99.224 avaliações, excluindo 56.537 registros sem texto. O índice tem 42.687 × 384 valores; a codificação reaproveita 37.111 textos distintos, sem remover documentos de pedidos diferentes. O SHA-256 de `documents.jsonl` é `bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c`.
 
-99.224 avaliações oficiais de entrada, 56.537 sem texto excluídas, 42.687 documentos
-finais; 1.737 documentos preservados com apenas título. Dados brutos e pesos ficam
-fora do Git. O manifesto do download e o relatório de preparação registram hashes.
+A busca híbrida reordena candidatos densos elegíveis com BM25/RRF. Filtros, limiar de cosseno e deduplicação textual são respeitados antes da seleção. A comparação do índice reconstruído reproduziu os mesmos contextos ordenados, códigos de escopo e filtros efetivos nos 24 casos: [cold-context-comparison.json](review-20261116/cold-context-comparison.json). Essa comparação não gerou outras respostas nem uma nova nota semântica.
 
-Índice com 42.687 × 384 valores float32, 65.567.232 bytes na matriz persistida.
-Modelo E5 na revisão `614241f622f53c4eeff9890bdc4f31cfecc418b3`; integridade e normalização conferidas.
-Execução final da indexação: 757,59 segundos, incluindo configurações restantes do modelo.
+## Testes de software
 
-## Testes e interface
+| Ambiente | Python | Resultado | Tempo |
+| --- | --- | --- | --- |
+| Clone técnico de revisão, código 1bcc442 | 3.12.14 | 288 passaram, sem falhas | 12,27 s |
+| Clone Windows com instalação nova, código 1bcc442 | 3.12.13 | 288 passaram, sem falhas, erros ou skips | 9,719 s |
+| Pasta definitiva fase4, código 1bcc442 | 3.12.14 | 288 passaram, sem falhas | 6,99 s |
 
-**107 testes passaram, zero falhas**, em 1,61 s na pasta definitiva, após a cópia final.
-Comando: `.venv\Scripts\python.exe -m pytest -q --basetemp artifacts\pytest-final-02`.
-Cobrem preparação, joins, ausentes, persistência, integridade, filtros, ranking,
-BM25/RRF, referências inválidas, alinhamento de trechos literais, abstenção e interface.
-Fixtures de software são sintéticas e não entram no corpus oficial.
+Comandos e evidências: [unit-tests.json](review-20261116/unit-tests.json), [clean-install.json](review-20261116/clean-install.json) e [JUnit do clone novo](review-20261116/cold-pytest.xml). As fixtures controladas verificam dados, joins, índice, filtros, escopo, contrato, runtime e interface; não entram no corpus oficial. Esses resultados não são uma métrica de correção de respostas em linguagem natural.
 
-A interface foi carregada com o índice real via Streamlit AppTest: nenhuma exceção,
-42.687 avaliações, 10.994 notas 1 ou 2, 73 categorias. O servidor local retornou HTTP200
-na página e no endpoint de saúde; foi encerrado após o teste. Abra `INICIAR.cmd` para iniciar.
+Dependências observadas: torch 2.15.0+cpu, Transformers 4.57.6, Sentence Transformers 5.7.0, LM Format Enforcer 0.11.3, NumPy 2.5.4, Streamlit 1.67.0 e pytest 9.2.0.
 
-## Execuções reais com LLM
+## Instalação nova e interface real
 
-As execuções abaixo usam o corpus completo, recuperação híbrida, top-k4 e o modelo
-pequeno local. Configuração, textos, IDs, respostas e correções de citações estão
-nos JSONs de `reports/examples/`. Tempos variam com equipamento e aquecimento do modelo.
+O [registro frio](review-20261116/clean-install.json) partiu de clone GitHub sem venv, `.env`, CSVs, índice ou cache de modelos. O uv obteve CPython 3.12.13 e criou o ambiente; somente seu cache de wheels foi reutilizado. Não foram copiados pesos ou índice de uma instalação existente. O instalador começou no commit `64496ee`; antes dos testes e da interface, o clone foi atualizado para `1bcc442`, sem alteração do lock.
 
-| Exemplo | Resultado | Tempo (s) | Fontes |
-| --- | --- | ---: | ---: |
-| 01-atrasos | answered | 29.697 | 4 |
-| 02-elogios | answered | 5.559 | 4 |
-| 03-fora-do-escopo | abstained | 0.000 | 0 |
-| 04-sem-evidencias | abstained | 0.016 | 0 |
+Comando executado: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Setup.ps1 -ArchivePath "archive (3).zip"`.
 
-Nos dois exemplos respondidos, os trechos produzidos foram identificados como citações
-literais das fontes. Uma troca de rótulo feita pelo modelo é corrigida pela coincidência
-textual e preservada em `original_evidence_ids`. Isso não demonstra correção semântica
-geral: paráfrases e consultas novas ainda precisam de avaliação.
+| Etapa | Tempo observado |
+| --- | --- |
+| Setup completo, saída 0 | 1.679,859 s, cerca de 27 min 59,9 s |
+| Download frio do encoder E5 | 1.122 s, cerca de 18 min 42 s |
+| Construção do índice, duas threads | 321,39 s |
+| Assets nativos novos, com verificações | 181,884 s |
 
-## Recuperação no pool de desenvolvimento
+O download E5 foi o gargalo desta conexão; esses tempos não são mínimos de hardware nem promessa de desempenho. A recomendação operacional é Windows x64, 16 GB de RAM e 20 GB de disco livre, incluindo partes temporárias dos downloads.
 
-Pool de 17 documentos reais e cinco consultas, com quatro perguntas rotuladas por
-relevância. Rótulos propostos com auxílio de IA, ainda pendentes de revisão humana.
-O resultado não representa o corpus completo nem um teste independente.
+Streamlit AppTest executou uma conversa real com o provedor nativo, offline, notas 4–5 e corpus completo: `answered`, oito fontes, um finding e um exemplo com origem literal conferida. O serviço levou 29,711 s; não houve exceção antes ou depois da consulta. O botão de exportação foi renderizado e seu payload foi salvo em [cold-ui-response.json](review-20261116/cold-ui-response.json); o resumo está em [cold-ui-smoke.json](review-20261116/cold-ui-smoke.json). O processo nativo foi encerrado e não restaram processos pertencentes ao teste.
 
-| Método | Recall@4 | MRR@4 | Gate de recuperação |
-| --- | ---: | ---: | ---: |
-| Denso | 0,5625 | 0,875 | 5/5 |
-| Híbrido | 0,675 | 1,000 | 5/5 |
+AppTest verifica execução e interação de widgets no lado do servidor. Não houve inspeção por screenshot nem simulação de clique de download no navegador. O fallback de instalação somente com pip e outros sistemas/provedores não foram validados por esse ensaio frio.
 
-O gate mede apenas menos de dois hits; não avalia o LLM. A recuperação de atraso
-continuou com Recall@4 de 0,5 no pool. Ver `evaluation/README.md`, os JSONs de métricas
-e `reports/development-notes.md` para erros observados e limites.
+## Pasta efetiva do usuário
 
-## Limites e próximos passos de entrega
+Após atualizar a instalação efetiva, a suíte repetiu os 288 testes em 6,99 s. A saída foi preservada em [installed-pytest-output.txt](review-20261116/installed-pytest-output.txt) e [JUnit](review-20261116/installed-pytest.xml). A consulta CLI nativa sobre cobrança duplicada retornou `answered`, oito fontes e exemplo literal, em 29,867 s: [installed-smoke.json](review-20261116/installed-smoke.json).
 
-- Modelo pequeno pode repetir relatos, trocar referências ou gerar sínteses inadequadas.
-  A conferência literal cobre somente cópias identificáveis; revisão humana continua necessária.
-- Limiar 0,75 e mínimo de duas evidências são configurações iniciais, sem calibração independente.
-- Top-k não permite ranking de frequência nem percentuais populacionais dos temas.
-- Falta revisão humana independente dos rótulos e da sustentação das respostas.
-- Este registro foi produzido antes da publicação; o endereço de entrega está em [docs/entrega.md](../docs/entrega.md).
-- Roteiro de 6 min 50 s disponível; vídeo e submissão acadêmica ainda não realizados.
+A página Streamlit e seu endpoint de saúde responderam HTTP 200; o servidor foi encerrado depois. O [registro operacional](review-20261116/installed-runtime-check.json) distingue esse health check da interação real de widgets já executada pelo AppTest no clone frio. O smoke da pasta efetiva não amplia os 24 casos de aceitação nem mede qualidade estatística.
+
+## Aceitação técnica v4
+
+O [lote final](review-20261116/native-acceptance-v4.json) executou 24 casos reais do protocolo de desenvolvimento: nove positivos responderam; treze recusas obrigatórias se abstiveram; os dois condicionais também se abstiveram adequadamente ao suporte observado. Houve compatibilidade formal de status em 24/24 casos. Isso não é taxa de acurácia semântica.
+
+O [parecer assistido das fontes](review-20261116/assistant-source-review-v4.md) confrontou cada síntese com todo o contexto e recebeu contraponto de um segundo agente nos nove positivos. Os dez findings foram classificados como sustentados; nove foram diretamente pertinentes e um incluiu informação lateral. Os doze exemplos tiveram origem literal normalizada válida; um era pouco ilustrativo. Não se observaram erros materiais ou violações de filtros nesse lote v4.
+
+Há ressalvas de cobertura: QA03/QA05 são genéricos, QA02 inclui pontualidade lateral à pergunta sobre características do produto, e alguns exemplos são menos claros que outras fontes disponíveis. Esse parecer é revisão assistida por IA dos casos observados durante o desenvolvimento, não avaliação humana, conjunto cego ou benchmark independente. Não certifica consultas futuras.
+
+As falhas e correções permanecem visíveis nos lotes e pareceres anteriores: v1 teve duração inventada bloqueada e causa operacional inferida; v2 inferiu desfecho ausente em QA10; v3 acrescentou “comuns” sem medir prevalência. Esses acréscimos não se repetiram no v4 observado. As saídas anteriores não foram reescritas como aprovadas.
+
+## Demonstrações reais
+
+| Exemplo | Artefato | Resultado | Tempo |
+| --- | --- | --- | --- |
+| Problemas concretos de entrega, notas 1–2 | [01-entrega.json](demo-detalhado/01-entrega.json) | answered, oito fontes | 28,252 s |
+| Aspectos satisfatórios da entrega em 2017, notas 4–5 | [02-elogios.json](demo-detalhado/02-elogios.json) | answered, oito fontes | 8,899 s |
+| Contagem global solicitada | [03-fora-do-escopo.json](demo-context-v2-final/03-fora-do-escopo.json) | abstained | 0,000 s |
+| Período 2040 sem dados | [04-sem-evidencias.json](demo-context-v2-final/04-sem-evidencias.json) | abstained | 0,000 s |
+
+O [parecer das perguntas específicas](review-20261116/focused-demo-source-review.md) encontrou suporte nas duas sínteses e origem literal/pertinente nos dois exemplos, com filtros respeitados. A primeira síntese aponta atraso e falta de informação no rastreamento; a segunda, rapidez e satisfação. São respostas concisas e de cobertura parcial, não análises abrangentes. As demonstrações de perguntas mais amplas e suas limitações também foram [preservadas](review-20261116/demo-source-review.md). Essas consultas não aumentam o denominador dos 24 casos técnicos.
+
+## Alcance dos controles e limites
+
+O contrato `context-synthesis-v2` atribui a síntese ao contexto completo em `context_evidence_ids` e separa `illustrative_quotes`. `literal_quotes_verified=true` confirma origem de exemplos; `summary_entailment_verified=false` permanece explícito. Schema válido, hash íntegro e exemplo literal não certificam a interpretação.
+
+O pool histórico de 17 documentos e cinco consultas mantém Recall@4/MRR@4 de 0,5625/0,875 na busca densa e 0,675/1,0 na híbrida, com gate 5/5. Seus rótulos foram propostos por IA e o gate mede somente menos de dois hits. Esses valores não estimam qualidade do corpus inteiro nem do LLM.
+
+O top-k não permite frequência, porcentagens ou rankings populacionais de temas. Os limiares 0,75 e 0,015 são heurísticas de desenvolvimento. A interpretação temporal automática cobre anos; meses e dias usam filtros manuais. Qualidade de provedores alternativos, benchmark independente, rótulos humanos e calibração separada são melhorias futuras, não requisitos extras do enunciado.
+
+## Publicação e entrega
+
+Endereço de entrega: [GitHub main](https://github.com/renatobortolotto/fiap-fase4/tree/main). O estado da sincronização/publicação é registrado no campo `publication` de [verificacao.json](verificacao.json), após ser observado; a validação técnica não pressupõe esse passo. Vídeo de até sete minutos e submissão acadêmica ainda cabem à equipe. Consulte [entrega](../docs/entrega.md), [roteiro](../docs/roteiro-video.md) e [checklist](../docs/checklist-entrega.md).

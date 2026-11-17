@@ -1,22 +1,80 @@
 {
-  "recorded_at_utc": "2026-11-15T21:55:03.048689+00:00",
-  "project_path": ".",
-  "python": "3.12.14",
-  "platform": "Windows",
-  "logical_cpus": 6,
-  "packages": {
-    "torch": "2.15.0+cpu",
-    "transformers": "5.23.0",
-    "sentence-transformers": "6.3.0",
-    "numpy": "2.5.4",
-    "streamlit": "1.67.0",
-    "pytest": "9.2.0"
+  "schema_version": 2,
+  "recorded_at_utc": "2026-11-17T02:41:30.903103+00:00",
+  "recorded_at_sao_paulo": "2026-11-16T23:41:30.903103-03:00",
+  "scope": "Technical review of observed development cases and reproducible Windows installation; not a human or independent benchmark.",
+  "repository_url": "https://github.com/renatobortolotto/fiap-fase4",
+  "tested_runtime_code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+  "response_contract": "context-synthesis-v2",
+  "generation": {
+    "provider": "native",
+    "model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "runtime": "llama.cpp",
+    "runtime_version": "b12359",
+    "default_threads": 4,
+    "cold_smoke_threads": 2,
+    "literal_quote_origin_check": true,
+    "automatic_summary_entailment_verification": false
+  },
+  "native_assets_expected": [
+    {
+      "name": "llama-b12359-bin-win-cpu-x64.zip",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12359/llama-b12359-bin-win-cpu-x64.zip",
+      "size": 25097509,
+      "sha256": "837c1655e87df3b66989f4be33a792a1399c785bf259038dc75c900096683e69"
+    },
+    {
+      "name": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/bb5d59e06d9551d752d08b292a50eb208b07ab1f/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf?download=true",
+      "size": 3993201344,
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+    },
+    {
+      "name": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/bb5d59e06d9551d752d08b292a50eb208b07ab1f/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf?download=true",
+      "size": 689872288,
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+    }
+  ],
+  "review_environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "packages": {
+      "torch": "2.15.0+cpu",
+      "transformers": "4.57.6",
+      "sentence-transformers": "5.7.0",
+      "lm-format-enforcer": "0.11.3",
+      "numpy": "2.5.4",
+      "streamlit": "1.67.0",
+      "pytest": "9.2.0"
+    }
   },
   "dataset": {
+    "archive_file": "archive (3).zip",
+    "archive_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+    "files": {
+      "olist_order_reviews_dataset.csv": {
+        "sha256": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7",
+        "bytes": 14451670
+      },
+      "olist_orders_dataset.csv": {
+        "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+        "bytes": 17654914
+      },
+      "olist_order_items_dataset.csv": {
+        "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+        "bytes": 15438671
+      },
+      "olist_products_dataset.csv": {
+        "sha256": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc",
+        "bytes": 2379446
+      }
+    },
     "input_reviews": 99224,
     "text_documents": 42687,
     "excluded_no_text": 56537,
-    "title_only_documents": 1737
+    "documents_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c"
   },
   "index": {
     "schema_version": 1,
@@ -27,77 +85,442 @@
       384
     ],
     "document_count": 42687,
+    "n_unique_texts": 37111,
+    "batching_strategy": "exact_unique_texts_sorted_by_length_then_text",
     "dimensions": 384,
     "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
     "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
-    "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    "vectors_sha256": "d78e18f3ba874450bc73b51186c4cf43e19524054b65fbd458f937b518e67810"
   },
-  "index_build_seconds": 757.59,
   "tests": {
-    "passed": 107,
-    "failed": 0,
-    "seconds": 1.61,
-    "command": ".venv\\Scripts\\python.exe -m pytest -q --basetemp artifacts\\pytest-final-02",
-    "location": "."
+    "runs": [
+      {
+        "environment": "isolated review clone",
+        "code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+        "command": ".venv\\Scripts\\python.exe -m pytest -q --basetemp artifacts\\pytest-code-final-1bcc442",
+        "exit_code": 0,
+        "passed": 288,
+        "duration_seconds": 12.27,
+        "evidence": "Observed terminal output: 288 passed in 12.27s",
+        "python": "3.12.14",
+        "platform": "Windows x64"
+      },
+      {
+        "environment": "fresh clone and fresh virtual environment",
+        "code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+        "command": "python -m pytest -q --basetemp artifacts/pytest-cold-final --junitxml reports/review-20261116/cold-pytest.xml",
+        "exit_code": 0,
+        "passed": 288,
+        "duration_seconds": 9.719,
+        "python": "3.12.13",
+        "evidence_file": "cold-pytest.xml"
+      },
+      {
+        "environment": "definitive user project folder",
+        "command": "python -m pytest -q --basetemp artifacts/pytest-installed-review",
+        "exit_code": 0,
+        "passed": 288,
+        "duration_seconds": 6.99,
+        "wall_seconds": 8.322,
+        "evidence_file": "installed-pytest.xml",
+        "terminal_output": "installed-pytest-output.txt"
+      }
+    ]
   },
-  "ui_real_corpus": {
-    "exceptions": 0,
-    "text_reviews": 42687,
-    "score_1_or_2": 10994,
-    "categories": 73
+  "cold_installation": {
+    "status": "passed",
+    "source": {
+      "path": "reports/review-20261116/clean-install.json",
+      "sha256": "7db85fe071267218d267ec0fabdb34550864bc3c1902110864e44f74c50ef231"
+    },
+    "setup": {
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Setup.ps1 -ArchivePath \"archive (3).zip\"",
+      "exit_code": 0,
+      "elapsed_seconds": 1679.859,
+      "started_at_utc": "2026-11-17T01:57:33.822629+00:00",
+      "finished_at_utc": "2026-11-17T02:25:33.674182+00:00",
+      "interpreter_downloaded_by_uv": true,
+      "e5_cold_download_seconds_observed": 1122,
+      "e5_index_compute_seconds_observed": 321.39,
+      "native_cold_assets_seconds_observed": 181.884,
+      "performance_note": "Initial E5 SDK HTTP download was the bottleneck (~0.4 MiB/s on this connection); full CPU index ran alongside root evaluation with two embedding threads. Timings are observations, not minimum hardware requirements."
+    },
+    "initial_state": {
+      "venv_before_setup": false,
+      "cache_before_setup": false,
+      "raw_csv_before_setup": 0,
+      "full_index_before_setup": false,
+      "env_before_setup": false
+    },
+    "environment": {
+      "python": "3.12.13",
+      "new_venv": true,
+      "package_source_matches_clone": true,
+      "wheel_cache_reused": true,
+      "models_or_indices_copied_from_existing_installation": false,
+      "hf_home_isolated": true,
+      "embedding_threads": 2,
+      "llm_threads": 2,
+      "packages": {
+        "torch": "2.15.0+cpu",
+        "transformers": "4.57.6",
+        "sentence-transformers": "5.7.0",
+        "huggingface-hub": "0.36.2",
+        "streamlit": "1.67.0",
+        "numpy": "2.5.4",
+        "pytest": "9.2.0",
+        "lm-format-enforcer": "0.11.3"
+      }
+    },
+    "ui": {
+      "recorded_at_utc": "2026-11-17T02:30:37.669873+00:00",
+      "offline_models": true,
+      "llm_threads": 2,
+      "embedding_threads": 2,
+      "initial_ui_exceptions": 0,
+      "provider": "native",
+      "mode_label": "RAG local · Qwen 7B",
+      "metrics": [
+        {
+          "label": "Avaliações com texto",
+          "value": "42.687"
+        },
+        {
+          "label": "Notas 1 e 2",
+          "value": "10.994"
+        },
+        {
+          "label": "Categorias disponíveis",
+          "value": "73"
+        }
+      ],
+      "question": "O que os clientes elogiam nas entregas antes do prazo?",
+      "filters": {
+        "score_min": 4,
+        "score_max": 5
+      },
+      "answer_status": "answered",
+      "answer": "Nos comentários recuperados:\n\nOs clientes elogiam a entrega antes do prazo.",
+      "query_wall_seconds": 29.781,
+      "service_seconds": 29.711,
+      "n_sources": 8,
+      "n_findings": 1,
+      "n_quotes": 1,
+      "literal_quotes_checked": true,
+      "export_button_rendered": true,
+      "final_ui_exceptions": 0,
+      "response_file": "reports/review-20261116/cold-ui-response.json",
+      "total_seconds": 31.141,
+      "status": "passed"
+    },
+    "native_backend_cleanup": {
+      "owned_processes_remaining_after_test": 0,
+      "confirmed": true
+    },
+    "limitations": [
+      "AppTest exercises server-side Streamlit execution and widget interaction; it is not a screenshot or browser visual inspection.",
+      "The export control rendered and its response payload was saved for inspection; this did not simulate a browser download click.",
+      "The actual UI chat is one functional installation smoke case, not an independent statistical quality benchmark.",
+      "pip-only fallback and non-Windows alternate providers were not exercised in this cold run."
+    ]
   },
-  "http_check": {
-    "/": 200,
-    "/_stcore/health": 200
+  "technical_acceptance": {
+    "n_cases": 24,
+    "answered": 9,
+    "abstained": 15,
+    "positive_answered": 9,
+    "mandatory_refusals_observed": 13,
+    "conditional_cases_refused": 2,
+    "formal_status_matches": 24,
+    "formal_status_denominator": 24,
+    "formal_status_is_semantic_accuracy": false,
+    "method": {
+      "reviewer": "Assistente de IA com contraponto de um segundo agente para QA01–QA09.",
+      "human_evaluation": false,
+      "separate_model_grader_called": false,
+      "llm_generation_called_by_reviewer": false,
+      "support_scope": "Cada finding foi confrontado com TODO sources.context_text; exemplos ilustrativos foram avaliados separadamente.",
+      "literal_check_scope": "Comparação textual normalizada verifica origem do exemplo, não entailment semântico da síntese.",
+      "limitations": "Conjunto técnico observado durante desenvolvimento; sem rótulos humanos ou benchmark cego; poucos casos não estimam qualidade populacional."
+    },
+    "source_review_observations": {
+      "material_acceptance_satisfied": true,
+      "acceptance_scope": "Somente os24 casos técnicos observados nesta execução, com ressalvas de qualidade; não é certificação de respostas futuras.",
+      "formal_status_matches_expected": 24,
+      "formal_status_denominator": 24,
+      "positive_answered": 9,
+      "positive_required": 9,
+      "mandatory_refusals_observed": 13,
+      "mandatory_refusals_required": 13,
+      "conditionals": {
+        "QA10": "appropriate_refusal_missing_reported_outcome",
+        "QA17": "appropriate_causal_proof_refusal"
+      },
+      "published_findings": 10,
+      "grounding_review_counts": {
+        "yes": 10
+      },
+      "finding_relevance": {
+        "yes": 9,
+        "partial": 1
+      },
+      "published_illustrative_quotes": 12,
+      "normalized_literal_origins_valid": 12,
+      "illustrative_quote_relevance": {
+        "partial": 1,
+        "yes": 11
+      },
+      "first_person_copied_findings_observed": 0,
+      "filter_violations_observed": 0,
+      "material_case_ids": [],
+      "summary": "Os nove positivos responderam com suporte no contexto completo. As treze recusas obrigatórias e os dois condicionais foram adequados. Não se observou repetição dos erros materiais de duração, causa, ausência de desfecho e prevalência das execuções anteriores. Permanecem limitações não bloqueantes de cobertura e de escolha de exemplos."
+    },
+    "preserved_iterations": [
+      {
+        "file": "native-acceptance-v1.json",
+        "code_commit": "641ee48",
+        "sha256": "6fff29a8a29a4c272851b52af4c5e1fcc24c5534f7b58707aab0577de2c5c1d3"
+      },
+      {
+        "file": "native-acceptance-v2.json",
+        "code_commit": "b1d9f2f",
+        "sha256": "2aa43d89c824b74c2bd4203b50f89d07ca8058733ec455107094f32dff2efbf3"
+      },
+      {
+        "file": "native-acceptance-v3.json",
+        "code_commit": "c825981",
+        "sha256": "30696d037706b4abeb5b6f6c20316b32c507ec97a4e958b41221440808fec507"
+      },
+      {
+        "file": "native-acceptance-v4.json",
+        "code_commit": "1bcc442",
+        "sha256": "e0c978c45d76fc55a8193a2b1c51bf19817335e6d714ac6f0ba68b6dea70d4f1"
+      }
+    ],
+    "material_failures_in_earlier_iterations": [
+      "v1: invented duration blocked; unsupported operational cause.",
+      "v2: missing reported outcome inferred as no assistance.",
+      "v3: unmeasured prevalence qualifier."
+    ]
   },
-  "examples": {
-    "01-atrasos": {
-      "status": "answered",
-      "seconds": 29.697,
-      "n_sources": 4,
-      "n_claims": 3,
-      "quote_verified_claims": 3
-    },
-    "02-elogios": {
-      "status": "answered",
-      "seconds": 5.559,
-      "n_sources": 4,
-      "n_claims": 1,
-      "quote_verified_claims": 1
-    },
-    "03-fora-do-escopo": {
-      "status": "abstained",
-      "seconds": 0.0,
-      "n_sources": 0,
-      "n_claims": 0,
-      "quote_verified_claims": 0
-    },
-    "04-sem-evidencias": {
-      "status": "abstained",
-      "seconds": 0.016,
-      "n_sources": 0,
-      "n_claims": 0,
-      "quote_verified_claims": 0
+  "cold_context_comparison": {
+    "n_cases": 24,
+    "all_ordered_contexts_scope_and_effective_filters_match": true,
+    "new_llm_generation": false,
+    "source": {
+      "path": "reports/review-20261116/cold-context-comparison.json",
+      "sha256": "0f55c87cafa30928f29c26e77a1ba46b0d0d15befe7ad5dd04c7fe2db8e877ac"
     }
   },
-  "development_pool": {
+  "focused_demonstrations": [
+    {
+      "path": "reports/demo-detalhado/01-entrega.json",
+      "sha256": "4b3348e3063a3c5be5156e498214f0fe293a21397e0254b38f66275d43e856dd",
+      "question": "Quais problemas concretos de entrega são descritos e o que aconteceu nesses casos?",
+      "status": "answered",
+      "seconds": 28.252,
+      "n_sources": 8,
+      "n_findings": 1,
+      "n_illustrative_quotes": 1,
+      "filters": {
+        "score_max": 2
+      },
+      "response_contract": "context-synthesis-v2",
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false
+    },
+    {
+      "path": "reports/demo-detalhado/02-elogios.json",
+      "sha256": "51865e51a5aa18c8a462fdf8efb9b6376ce824318b38ff0380801a51d900ce63",
+      "question": "Quais aspectos da entrega satisfizeram os compradores em 2017? Descreva exemplos concretos dos comentários.",
+      "status": "answered",
+      "seconds": 8.899,
+      "n_sources": 8,
+      "n_findings": 1,
+      "n_illustrative_quotes": 1,
+      "filters": {
+        "score_min": 4,
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      "response_contract": "context-synthesis-v2",
+      "literal_quotes_verified": true,
+      "summary_entailment_verified": false
+    }
+  ],
+  "refusal_demonstrations": [
+    {
+      "path": "reports/demo-context-v2-final/03-fora-do-escopo.json",
+      "sha256": "3a776b939bddd420f7c3b60ae4ab9bacfbce0b2e42d2db87c7df143f53547ef0",
+      "question": "Quantos clientes reclamaram de atraso em toda a base?",
+      "status": "abstained",
+      "reason": "Esta busca não calcula contagens, percentuais ou rankings sobre toda a base. Posso apresentar relatos e temas das avaliações recuperadas.",
+      "seconds": 0.0,
+      "n_sources": 0
+    },
+    {
+      "path": "reports/demo-context-v2-final/04-sem-evidencias.json",
+      "sha256": "0f76acc2aa1c766c9e04086f55ab373b15fc2cfaf2240769e75dbfe48a47221b",
+      "question": "O que os clientes relatam sobre entrega em 2040?",
+      "status": "abstained",
+      "reason": "A base carregada tem registros de 2016 a 2018 e não sustenta o período solicitado. Escolha um período disponível para investigar os relatos.",
+      "seconds": 0.0,
+      "n_sources": 0
+    }
+  ],
+  "demonstration_review": {
+    "focused": {
+      "path": "reports/review-20261116/focused-demo-source-review.json",
+      "sha256": "a06ab0b80143fcca240b49167401ba8c2b7bcf3cdd8f6c93a03bb5d42236c85d"
+    },
+    "earlier_broad": {
+      "path": "reports/review-20261116/demo-source-review.json",
+      "sha256": "e9af671bd4f72d105f7d00547180c0ea1c5c341b90e10a024f9b8c34cf2d9eb4"
+    },
+    "coverage": "Concise and partial; no comprehensive-analysis claim.",
+    "separate_from_24_case_denominator": true
+  },
+  "historical_development_pool": {
     "documents": 17,
     "queries": 5,
     "relevance_queries": 4,
-    "labels": "AI-proposed, pending human review",
+    "labels": "AI-proposed; not independently human-judged.",
     "dense_recall_at_4": 0.5625,
     "dense_mrr_at_4": 0.875,
     "hybrid_recall_at_4": 0.675,
     "hybrid_mrr_at_4": 1.0,
     "retrieval_gate_correct": 5,
-    "retrieval_gate_total": 5
+    "retrieval_gate_total": 5,
+    "scope": "Historical retrieval-only pool; not whole-corpus or LLM quality."
   },
-  "not_executed": [
-    "Ollama real server/model (adapter covered by mocked tests)",
-    "Independent human relevance and claim-support assessment",
-    "Public GitHub publishing",
-    "Video recording and academic submission"
+  "known_limits": [
+    "The technical cases were observed and used during development; no independent blind benchmark or human grading is claimed.",
+    "Ten supported findings is the assisted reviewers observation in v4, not an automatic semantic guarantee for future answers.",
+    "Some findings and illustrative examples remain generic, lateral or incomplete; focused demonstrations are concise and partial.",
+    "Retrieval is bounded by a dense candidate pool; top-k cannot establish population theme prevalence, counts or rankings.",
+    "The semantic scope margin 0.015 and cosine threshold 0.75 are development heuristics, not calibrated probabilities.",
+    "Temporal natural-language interpretation handles years only; month/day requests require explicit manual date filters.",
+    "Cold UI validation used server-side Streamlit AppTest, not a browser screenshot or download click.",
+    "pip-only installation and equivalent quality of alternate providers were not established by the cold run."
   ],
-  "snapshot_scope": "Local validation before repository publication; see docs/entrega.md for delivery links.",
-  "repository_url": "https://github.com/renatobortolotto/fiap-fase4"
+  "future_optional_evaluation": [
+    "Independent human relevance and synthesis-support judgments.",
+    "Separate held-out questions and threshold calibration."
+  ],
+  "academic_delivery_not_performed": [
+    "Video recording and publication.",
+    "Academic submission and deadline confirmation."
+  ],
+  "historical_verification": [
+    {
+      "path": "reports/verificacao-20261115.md",
+      "sha256": "8f340af7624631ce5e31ef9c6bfa8971368947fd5925a19ccd045e8146d88b29"
+    },
+    {
+      "path": "reports/verificacao-20261115.json",
+      "sha256": "0b198432ec3eb1c73c4962e3590e71bf169cf14d762bab037fb7ce58b61955cf"
+    }
+  ],
+  "publication": {
+    "target_branch": "main",
+    "final_revision_published": false,
+    "status": "Final main synchronization and push are coordinated after this technical report; update only after observing publication."
+  },
+  "evidence_artifacts": [
+    {
+      "path": "reports/review-20261116/unit-tests.json",
+      "sha256": "f04e1f89dbb866d5a311f71a8187d8e7c586a37c80765dce8fc1a8efe0ed730b"
+    },
+    {
+      "path": "reports/review-20261116/clean-install.json",
+      "sha256": "7db85fe071267218d267ec0fabdb34550864bc3c1902110864e44f74c50ef231"
+    },
+    {
+      "path": "reports/review-20261116/cold-pytest.xml",
+      "sha256": "a8e5c2d89294f1865bc73dcf86c5624a30b76b997874d0eda8931c235f949540"
+    },
+    {
+      "path": "reports/review-20261116/cold-ui-response.json",
+      "sha256": "4dd7ecc0e05cba922626826ecc7e02822e197c730ad308c4f24a58bab48a410a"
+    },
+    {
+      "path": "reports/review-20261116/cold-ui-smoke.json",
+      "sha256": "ce103df3a502dca7ccf8629c451b9505d5ff86c30a6c4d7e68024d50d611c01f"
+    },
+    {
+      "path": "reports/review-20261116/native-acceptance-v4.json",
+      "sha256": "e0c978c45d76fc55a8193a2b1c51bf19817335e6d714ac6f0ba68b6dea70d4f1"
+    },
+    {
+      "path": "reports/review-20261116/assistant-source-review-v4.json",
+      "sha256": "9315ac85fef82b0045585f49dff15aed34b65f98900b3cc21e7c6357f1d3eb65"
+    },
+    {
+      "path": "reports/review-20261116/assistant-source-review-v4.md",
+      "sha256": "8a0783fc56f78349051688be2f243c6492c113aa75ad4ac3de489192f0494051"
+    },
+    {
+      "path": "reports/review-20261116/cold-context-comparison.json",
+      "sha256": "0f55c87cafa30928f29c26e77a1ba46b0d0d15befe7ad5dd04c7fe2db8e877ac"
+    },
+    {
+      "path": "reports/review-20261116/focused-demo-source-review.json",
+      "sha256": "a06ab0b80143fcca240b49167401ba8c2b7bcf3cdd8f6c93a03bb5d42236c85d"
+    },
+    {
+      "path": "reports/review-20261116/focused-demo-source-review.md",
+      "sha256": "0fe886d120b8bc6ee0f251cb6c1fa1a67aff4efaf0d7c7299f69fdc5747e5389"
+    },
+    {
+      "path": "reports/review-20261116/demo-source-review.json",
+      "sha256": "e9af671bd4f72d105f7d00547180c0ea1c5c341b90e10a024f9b8c34cf2d9eb4"
+    },
+    {
+      "path": "reports/review-20261116/execution-provenance.json",
+      "sha256": "79b1038aa830fef6f366630ed94ffbcb66c575b68e0001f06cd15d3acc52f945"
+    },
+    {
+      "path": "reports/review-20261116/installed-runtime-check.json",
+      "sha256": "e6c2abd5b8a655bb43bbb1d240578cbaa9afe0109840c5a167d8b898ff9b8547"
+    },
+    {
+      "path": "reports/review-20261116/installed-smoke.json",
+      "sha256": "40d80c0629d0fe79f163d0ebcb4b7f4586d587e94ab183e348d429de78028e12"
+    },
+    {
+      "path": "reports/review-20261116/installed-pytest.xml",
+      "sha256": "2508d09ca5c8d0e43b394400ca4dfd57924e3b0a606e6689f0f5e0970952bfe9"
+    },
+    {
+      "path": "reports/review-20261116/installed-pytest-output.txt",
+      "sha256": "66974fc5c27c6ba72d43237d47bedcd8d2af9bf491abc1557e36f75934366171"
+    }
+  ],
+  "installed_project_runtime": {
+    "check": {
+      "native_query_exit_code": 0,
+      "answer_status": "answered",
+      "sources": 8,
+      "query_elapsed_seconds": 29.867,
+      "response_file": "installed-smoke.json",
+      "health_http": 200,
+      "page_http": 200,
+      "status": "passed",
+      "total_seconds": 33.965,
+      "server_child_stopped": true,
+      "note": "HTTP is a server health check. Actual widget chat was tested separately by cold AppTest."
+    },
+    "provider": "native",
+    "model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "response_contract": "context-synthesis-v2",
+    "literal_quotes_verified": true,
+    "summary_entailment_verified": false,
+    "separate_from_24_case_denominator": true,
+    "configuration": {
+      "runtime_code_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+      "provider": "native",
+      "index_vectors_sha256": "d78e18f3ba874450bc73b51186c4cf43e19524054b65fbd458f937b518e67810",
+      "dependencies_sync": "uv sync --locked --extra dev --python 3.12; exit 0"
+    }
+  }
 }

@@ -1,0 +1,242 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "Quais experiências positivas são descritas sobre a entrega em 2017?",
+  "filters": {
+    "score_min": 4,
+    "date_from": "2017-01-01",
+    "date_to": "2017-12-31"
+  },
+  "status": "answered",
+  "findings": [
+    {
+      "text": "Há relatos de entregas satisfatórias em 2017."
+    }
+  ],
+  "illustrative_quotes": [
+    {
+      "evidence_id": "E1",
+      "quote": "Estou satisfeita por essa entrega,mas muito chateada pela segunda entrega q ate o momento nao recebi em minha residencia. Recebi e-mail de imprevisto nessa entrega.Aguardo resposta.",
+      "literal_verified": true
+    }
+  ],
+  "context_evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+  ],
+  "literal_quotes_verified": true,
+  "summary_entailment_verified": false,
+  "answer": "Nos comentários recuperados:\n\nHá relatos de entregas satisfatórias em 2017.",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "ferramentas_jardim"
+      ],
+      "delivered_late": false,
+      "doc_id": "e23bae6650c7a47f580f59b1e5b309225b1884521f604f1bbc1332d41dc890ba",
+      "message": "Estou satisfeita por essa entrega,mas muito chateada pela segunda entrega q ate o momento nao recebi em minha residencia. Recebi e-mail de imprevisto nessa entrega.Aguardo resposta.",
+      "order_id": "beffe64d2172f01e39f8c776eb5862b0",
+      "purchase_date": "2017-08-22",
+      "review_date": "2017-09-02",
+      "review_id": "e9c7d27d3e5d136c98cc91ba30c67d2e",
+      "score": 5,
+      "text": "Estou satisfeita por essa entrega,mas muito chateada pela segunda entrega q ate o momento nao recebi em minha residencia. Recebi e-mail de imprevisto nessa entrega.Aguardo resposta.",
+      "title": "",
+      "citation_id": "E1",
+      "context_text": "Estou satisfeita por essa entrega,mas muito chateada pela segunda entrega q ate o momento nao recebi em minha residencia. Recebi e-mail de imprevisto nessa entrega.Aguardo resposta.",
+      "similarity": 0.854553
+    },
+    {
+      "categories": [
+        "relogios_presentes"
+      ],
+      "delivered_late": false,
+      "doc_id": "1054862a3cd1ddaba9c0f2036951e184d8b19561061d80f9bf3511ddde99566b",
+      "message": "satisfeita com todo processo de entrega. Parabéns",
+      "order_id": "d7273b44707722d534c868f279e235cb",
+      "purchase_date": "2017-11-08",
+      "review_date": "2017-11-23",
+      "review_id": "67541eb59b59f57d94e6bd4ddf718982",
+      "score": 5,
+      "text": "satisfeita com todo processo de entrega. Parabéns",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "satisfeita com todo processo de entrega. Parabéns",
+      "similarity": 0.853218
+    },
+    {
+      "categories": [
+        "ferramentas_jardim"
+      ],
+      "delivered_late": false,
+      "doc_id": "04955c6df47a5ac1dd829c1bfe4676fdece8419bddf2c39d5767ffe5807fcdd6",
+      "message": "Ótima entrega",
+      "order_id": "b6759a40becdcdd336eecc0a3a833763",
+      "purchase_date": "2017-12-16",
+      "review_date": "2017-12-28",
+      "review_id": "6326c1ed6ff42e80ada621a8157d1eba",
+      "score": 5,
+      "text": "Ótima entrega",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "Ótima entrega",
+      "similarity": 0.849549
+    },
+    {
+      "categories": [
+        "cool_stuff"
+      ],
+      "delivered_late": false,
+      "doc_id": "b7170ac75362a66059fd0b26dc5fb5a9111231cab1a55a556dd4d068093a0474",
+      "message": ". Recomendo produto com qualidade prazo de entrega ótimo.",
+      "order_id": "b5a7a136bcc27a066780c0aa9b30d698",
+      "purchase_date": "2017-11-02",
+      "review_date": "2017-11-08",
+      "review_id": "a6816ca544abe0d1bb4a9cb240fcb60b",
+      "score": 4,
+      "text": ". Recomendo produto com qualidade prazo de entrega ótimo.",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": ". Recomendo produto com qualidade prazo de entrega ótimo.",
+      "similarity": 0.851811
+    },
+    {
+      "categories": [
+        "perfumaria"
+      ],
+      "delivered_late": false,
+      "doc_id": "a066622677107536339238488344b95323a8077f0388fdb2f33f14d4c3cc823a",
+      "message": "A entrega foi realizada bem antes do prazo. Parabéns!",
+      "order_id": "8b74f8eb433512f288e513c2e2f391a8",
+      "purchase_date": "2017-04-05",
+      "review_date": "2017-04-11",
+      "review_id": "0f8b20540c7439163f7dcc0205ebde87",
+      "score": 5,
+      "text": "A entrega foi realizada bem antes do prazo. Parabéns!",
+      "title": "",
+      "citation_id": "E5",
+      "context_text": "A entrega foi realizada bem antes do prazo. Parabéns!",
+      "similarity": 0.851695
+    },
+    {
+      "categories": [
+        "relogios_presentes"
+      ],
+      "delivered_late": false,
+      "doc_id": "e5333bec4353593b45aff300b1a3f47adfd63474de938fd5bc506da4493fd059",
+      "message": "Gostaria que o prazo de entrega fosse mais real do que informado.O prazo dado na ocasião na encomenda foi para o dia 17/11/2017. Tal prazo assusta um pouco o cliente. Aceitei com restrição.",
+      "order_id": "31116b5bedeace2fc1202e1e5288be14",
+      "purchase_date": "2017-10-25",
+      "review_date": "2017-11-08",
+      "review_id": "941392abedd499016d8f4fbecfd1e0c5",
+      "score": 5,
+      "text": "Gostaria que o prazo de entrega fosse mais real do que informado.O prazo dado na ocasião na encomenda foi para o dia 17/11/2017. Tal prazo assusta um pouco o cliente. Aceitei com restrição.",
+      "title": "",
+      "citation_id": "E6",
+      "context_text": "Gostaria que o prazo de entrega fosse mais real do que informado.O prazo dado na ocasião na encomenda foi para o dia 17/11/2017. Tal prazo assusta um pouco o cliente. Aceitei com restrição.",
+      "similarity": 0.848173
+    },
+    {
+      "categories": [
+        "ferramentas_jardim",
+        "moveis_decoracao"
+      ],
+      "delivered_late": false,
+      "doc_id": "041b09a8fdc0b88c804aca958f39c0f66e5b26854548a6d92d9dab410b036d16",
+      "message": "Ocorreu tudo como contratado sendo a entrega realizada antes do prazo Estou satisfeita",
+      "order_id": "32638fbca8d1a197e649fd5138e12049",
+      "purchase_date": "2017-05-24",
+      "review_date": "2017-06-02",
+      "review_id": "6a0969d0769d2f3ff6438809a1cc455e",
+      "score": 5,
+      "text": "Ocorreu tudo como contratado sendo a entrega realizada antes do prazo Estou satisfeita",
+      "title": "",
+      "citation_id": "E7",
+      "context_text": "Ocorreu tudo como contratado sendo a entrega realizada antes do prazo Estou satisfeita",
+      "similarity": 0.856616
+    },
+    {
+      "categories": [
+        "perfumaria"
+      ],
+      "delivered_late": false,
+      "doc_id": "80ed59022e05ea4e9ad65fb00538649df32787fbf5b2217f7bd09625d8469cfc",
+      "message": "Comprem nas lannister entrega certaaaa",
+      "order_id": "505e3b83ecc630a2507a9d9c8bfedd8b",
+      "purchase_date": "2017-10-05",
+      "review_date": "2017-10-28",
+      "review_id": "c20f4e48aa9e0f71acba877905d85e82",
+      "score": 4,
+      "text": "Comprem nas lannister entrega certaaaa",
+      "title": "",
+      "citation_id": "E8",
+      "context_text": "Comprem nas lannister entrega certaaaa",
+      "similarity": 0.848276
+    }
+  ],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:26:07.600647+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "1e99856980aad7bc9d33b8b12388b1ad4b5f0cd8d0c001eb88ed80f757699ef5"
+    }
+  },
+  "scope": {
+    "allowed": true,
+    "code": "in_scope",
+    "reason": "",
+    "details": {
+      "semantic_unavailable": false,
+      "requested_years": [
+        2017
+      ],
+      "available_year_min": 2016,
+      "available_year_max": 2018,
+      "unavailable_years": [],
+      "semantic": {
+        "method": "e5_task_prototypes",
+        "positive_score": 0.8371008634567261,
+        "negative_score": 0.8091064691543579,
+        "negative_minus_positive": -0.027994394302368164,
+        "rejection_margin": 0.015,
+        "positive_prototype": "Encontrar elogios e experiências positivas nas avaliações dos produtos e do serviço da loja.",
+        "negative_prototype": "Pedir uma receita culinária e instruções de preparo de alimentos.",
+        "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+      }
+    }
+  },
+  "requested_filters": {
+    "score_min": 4
+  },
+  "inferred_period": {
+    "date_from": "2017-01-01",
+    "date_to": "2017-12-31"
+  },
+  "generation_attempts": 1,
+  "validation_errors": [],
+  "elapsed_seconds": 13.105
+}

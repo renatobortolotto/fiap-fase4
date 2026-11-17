@@ -1,0 +1,150 @@
+{
+  "review_type": "assistant_assisted_source_review_not_human_not_independent_benchmark",
+  "reviewed_demo_directory": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-context-v2-final",
+  "code_commit_reported_by_controller": "1bcc442",
+  "review_method": "Leitura dos dois findings contra TODO o contexto e conferência separada das quotes e filtros; as duas recusas também foram verificadas. Sem gerar novas respostas nem chamar modelo avaliador separado.",
+  "human_evaluation": false,
+  "automatic_semantic_proof": false,
+  "overall": {
+    "answered_cases_reviewed": 2,
+    "abstained_cases_reviewed": 2,
+    "findings_grounded": 2,
+    "illustrative_quotes_with_valid_literal_origin": 2,
+    "filter_violations_observed": 0,
+    "material_issues_observed": [],
+    "coverage_and_synthesis": "partial_in_both_answered_demos",
+    "summary": "As duas respostas são sustentadas e as recusas adequadas, mas os resumos ficaram muito genéricos e não demonstram cobertura ampla dos aspectos presentes. Não chamar de síntese abrangente ou resultado perfeito."
+  },
+  "cases": [
+    {
+      "file": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-context-v2-final\\01-atrasos.json",
+      "sha256": "f79b6ec99c479e6d7a225965ff9fddeffc4c5a255be280335e87185fbc7e4031",
+      "question": "O que os clientes relatam sobre problemas relacionados à entrega?",
+      "status": "answered",
+      "response_contract": "context-synthesis-v2",
+      "filters": {
+        "score_max": 2
+      },
+      "filter_semantics": "date_from/date_to aplicam-se a purchase_date, data da compra.",
+      "filter_violations": [],
+      "elapsed_seconds_recorded": 23.569,
+      "context_ids_match_actual_sources": true,
+      "source_count": 8,
+      "finding_reviews": [
+        {
+          "text": "Há relatos de falta de atenção e respeito com o cliente durante problemas de entrega.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2"
+          ],
+          "reason": "O título de E1 vincula a reclamação à entrega e seu texto expressa falta de atenção/respeito; E2 relata falta de consideração diante de problema de entrega. A síntese preserva que se trata de relato do cliente.",
+          "third_person": true,
+          "coverage_and_synthesis": "partial",
+          "quality_note": "Muito genérica: resume falta de atenção/respeito e omite temas específicos disponíveis, como atraso(E2), incompletude(E3) e falta de esclarecimento/contato(E6/E7/E8). Não demonstra uma síntese abrangente dos problemas de entrega."
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "evidence_id": "E1",
+          "quote": "Falta de atenção e respeito com cliente",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "Trecho literal pertinente à queixa resumida."
+        }
+      ],
+      "summary_entailment_verified_reported": false,
+      "verdict": "supported_with_limited_coverage"
+    },
+    {
+      "file": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-context-v2-final\\02-elogios.json",
+      "sha256": "7cd3c2f13b73762b6e092809d038dc0d3b6541ae03a0eab1556893ab18ced869",
+      "question": "Quais experiências positivas são descritas sobre a entrega em 2017?",
+      "status": "answered",
+      "response_contract": "context-synthesis-v2",
+      "filters": {
+        "score_min": 4,
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      "filter_semantics": "date_from/date_to aplicam-se a purchase_date, data da compra.",
+      "filter_violations": [],
+      "elapsed_seconds_recorded": 13.105,
+      "context_ids_match_actual_sources": true,
+      "source_count": 8,
+      "finding_reviews": [
+        {
+          "text": "Há relatos de entregas satisfatórias em 2017.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "E7",
+            "E8"
+          ],
+          "reason": "Há satisfação explícita e elogios no contexto; E4/E5/E7 descrevem prazo bom ou entrega antecipada. A referência a 2017 acompanha o filtro de compra, sem converter notas altas em prova de satisfação de todas as entregas.",
+          "third_person": true,
+          "coverage_and_synthesis": "partial",
+          "quality_note": "Responde em nível muito geral: não explica quais aspectos positivos, como cumprimento/antecipação do prazo, apesar de constarem no contexto. E1 é relato misto: satisfeita com uma entrega, chateada com outra."
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "evidence_id": "E1",
+          "quote": "Estou satisfeita por essa entrega,mas muito chateada pela segunda entrega q ate o momento nao recebi em minha residencia. Recebi e-mail de imprevisto nessa entrega.Aguardo resposta.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "partial",
+          "reason": "O relato elogia esta entrega e reclama da segunda, ainda não recebida. A ilustração positiva é mista; não se deve apresentá-la como aprovação de todas as entregas."
+        }
+      ],
+      "summary_entailment_verified_reported": false,
+      "verdict": "supported_with_limited_coverage"
+    },
+    {
+      "file": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-context-v2-final\\03-fora-do-escopo.json",
+      "sha256": "3a776b939bddd420f7c3b60ae4ab9bacfbce0b2e42d2db87c7df143f53547ef0",
+      "question": "Quantos clientes reclamaram de atraso em toda a base?",
+      "status": "abstained",
+      "response_contract": "context-synthesis-v2",
+      "filters": {},
+      "filter_semantics": "date_from/date_to aplicam-se a purchase_date, data da compra.",
+      "filter_violations": [],
+      "elapsed_seconds_recorded": 0.0,
+      "context_ids_match_actual_sources": true,
+      "source_count": 0,
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "summary_entailment_verified_reported": false,
+      "verdict": "appropriate_refusal",
+      "reason_review": "A busca por relevância não permite contagem global de clientes."
+    },
+    {
+      "file": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\demo-context-v2-final\\04-sem-evidencias.json",
+      "sha256": "0f76acc2aa1c766c9e04086f55ab373b15fc2cfaf2240769e75dbfe48a47221b",
+      "question": "O que os clientes relatam sobre entrega em 2040?",
+      "status": "abstained",
+      "response_contract": "context-synthesis-v2",
+      "filters": {
+        "date_from": "2040-01-01"
+      },
+      "filter_semantics": "date_from/date_to aplicam-se a purchase_date, data da compra.",
+      "filter_violations": [],
+      "elapsed_seconds_recorded": 0.0,
+      "context_ids_match_actual_sources": true,
+      "source_count": 0,
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "summary_entailment_verified_reported": false,
+      "verdict": "appropriate_refusal",
+      "reason_review": "O período 2040 não tem dados no corpus histórico. Não se relaxou o recorte para preencher a resposta."
+    }
+  ],
+  "interpretation": "Estes quatro exemplos são demonstrações separadas e não aumentam o denominador do conjunto técnico de24. Tempos23,569s/13,105s são os tempos registrados nestas duas consultas, não SLA. Os exemplos verificam origem literal, não entailment semântico automático; não se afirma qualidade populacional."
+}

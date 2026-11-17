@@ -1,0 +1,149 @@
+{
+  "status": "passed",
+  "scope": "Fresh Windows clone, Python environment, user ZIP preparation, full index and model downloads; only uv wheel cache reused. Actual default-native chat tested offline through Streamlit AppTest.",
+  "repository": "https://github.com/renatobortolotto/fiap-fase4",
+  "branch": "review/technical-readiness-20261116",
+  "setup_commit": "64496ee5871c5d27073b0c04329397bef836663c",
+  "validation_commit": "1bcc44273ada42784e1571880eb63da715c79339",
+  "initial_state": {
+    "venv_before_setup": false,
+    "cache_before_setup": false,
+    "raw_csv_before_setup": 0,
+    "full_index_before_setup": false,
+    "env_before_setup": false
+  },
+  "environment": {
+    "python": "3.12.13",
+    "new_venv": true,
+    "package_source_matches_clone": true,
+    "wheel_cache_reused": true,
+    "models_or_indices_copied_from_existing_installation": false,
+    "hf_home_isolated": true,
+    "embedding_threads": 2,
+    "llm_threads": 2,
+    "packages": {
+      "torch": "2.15.0+cpu",
+      "transformers": "4.57.6",
+      "sentence-transformers": "5.7.0",
+      "huggingface-hub": "0.36.2",
+      "streamlit": "1.67.0",
+      "numpy": "2.5.4",
+      "pytest": "9.2.0",
+      "lm-format-enforcer": "0.11.3"
+    }
+  },
+  "setup": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Setup.ps1 -ArchivePath \"archive (3).zip\"",
+    "exit_code": 0,
+    "elapsed_seconds": 1679.859,
+    "started_at_utc": "2026-11-17T01:57:33.822629+00:00",
+    "finished_at_utc": "2026-11-17T02:25:33.674182+00:00",
+    "interpreter_downloaded_by_uv": true,
+    "e5_cold_download_seconds_observed": 1122,
+    "e5_index_compute_seconds_observed": 321.39,
+    "native_cold_assets_seconds_observed": 181.884,
+    "performance_note": "Initial E5 SDK HTTP download was the bottleneck (~0.4 MiB/s on this connection); full CPU index ran alongside root evaluation with two embedding threads. Timings are observations, not minimum hardware requirements."
+  },
+  "dataset": {
+    "archive_file": "archive (3).zip",
+    "archive_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+    "files": {
+      "olist_order_reviews_dataset.csv": {
+        "sha256": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7",
+        "bytes": 14451670
+      },
+      "olist_orders_dataset.csv": {
+        "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+        "bytes": 17654914
+      },
+      "olist_order_items_dataset.csv": {
+        "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+        "bytes": 15438671
+      },
+      "olist_products_dataset.csv": {
+        "sha256": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc",
+        "bytes": 2379446
+      }
+    },
+    "input_reviews": 99224,
+    "text_documents": 42687,
+    "excluded_no_text": 56537,
+    "documents_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c"
+  },
+  "index": {
+    "schema_version": 1,
+    "model_name": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "shape": [
+      42687,
+      384
+    ],
+    "document_count": 42687,
+    "n_unique_texts": 37111,
+    "batching_strategy": "exact_unique_texts_sorted_by_length_then_text",
+    "dimensions": 384,
+    "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+    "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+    "vectors_sha256": "d78e18f3ba874450bc73b51186c4cf43e19524054b65fbd458f937b518e67810"
+  },
+  "tests": {
+    "passed": 288,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 9.719,
+    "command": "python -m pytest -q --basetemp artifacts/pytest-cold-final --junitxml reports/review-20261116/cold-pytest.xml"
+  },
+  "ui": {
+    "recorded_at_utc": "2026-11-17T02:30:37.669873+00:00",
+    "offline_models": true,
+    "llm_threads": 2,
+    "embedding_threads": 2,
+    "initial_ui_exceptions": 0,
+    "provider": "native",
+    "mode_label": "RAG local · Qwen 7B",
+    "metrics": [
+      {
+        "label": "Avaliações com texto",
+        "value": "42.687"
+      },
+      {
+        "label": "Notas 1 e 2",
+        "value": "10.994"
+      },
+      {
+        "label": "Categorias disponíveis",
+        "value": "73"
+      }
+    ],
+    "question": "O que os clientes elogiam nas entregas antes do prazo?",
+    "filters": {
+      "score_min": 4,
+      "score_max": 5
+    },
+    "answer_status": "answered",
+    "answer": "Nos comentários recuperados:\n\nOs clientes elogiam a entrega antes do prazo.",
+    "query_wall_seconds": 29.781,
+    "service_seconds": 29.711,
+    "n_sources": 8,
+    "n_findings": 1,
+    "n_quotes": 1,
+    "literal_quotes_checked": true,
+    "export_button_rendered": true,
+    "final_ui_exceptions": 0,
+    "response_file": "reports/review-20261116/cold-ui-response.json",
+    "total_seconds": 31.141,
+    "status": "passed"
+  },
+  "native_backend_cleanup": {
+    "owned_processes_remaining_after_test": 0,
+    "confirmed": true
+  },
+  "source_tree_unchanged_by_setup_and_tests": true,
+  "limitations": [
+    "AppTest exercises server-side Streamlit execution and widget interaction; it is not a screenshot or browser visual inspection.",
+    "The export control rendered and its response payload was saved for inspection; this did not simulate a browser download click.",
+    "The actual UI chat is one functional installation smoke case, not an independent statistical quality benchmark.",
+    "pip-only fallback and non-Windows alternate providers were not exercised in this cold run."
+  ]
+}

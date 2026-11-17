@@ -9,11 +9,12 @@ semântica e lexical seleciona relatos; o modelo produz uma síntese do contexto
 completo recuperado e apresenta trechos ilustrativos cuja origem é conferida.
 Esses trechos ajudam a inspecionar a resposta, mas não certificam cada afirmação.
 
-Esta revisão técnica usa o contrato `context-synthesis-v2`. A execução final dos
-testes, a aceitação ponta a ponta e a instalação limpa ainda estão em validação.
-Os relatórios anteriores são preservados como histórico; não comprovam, por si,
-o comportamento desta revisão. Nenhuma avaliação independente por pessoas foi
-concluída nesta documentação.
+Esta revisão usa o contrato `context-synthesis-v2`. O código dos ensaios,
+`1bcc442`, passou em **288 testes** no clone de revisão e foi exercitado em
+**24 casos reais** com inspeção assistida por IA das fontes completas. Os resultados,
+a instalação limpa e seus limites estão em [reports/verificacao.md](reports/verificacao.md).
+As versões anteriores foram preservadas, inclusive as falhas encontradas durante
+o desenvolvimento. A revisão assistida não é avaliação humana nem benchmark independente.
 
 Os padrões de organização das fases anteriores foram reaproveitados. As bases
 educacionais das fases 2 e 3 e o modelo preditivo de NPS da fase 1 não integram
@@ -22,10 +23,11 @@ esta base de conhecimento.
 ## Instalação e execução no Windows
 
 Recomendado: **Windows x64, Python 3.12 e [uv](https://docs.astral.sh/uv/getting-started/installation/)**,
-**16 GB de RAM** e cerca de **10 GB livres em disco** para a instalação padrão.
+**16 GB de RAM** e **20 GB livres em disco** para a instalação padrão.
 O gerador padrão é **Qwen 7B GGUF quantizado em CPU**, com runtime portátil
 gerenciado pela aplicação. GPU, chave de API e instalação global de um servidor
 não são requisitos. Reserve espaço adicional se mantiver outros modelos em cache.
+O espaço livre recomendado inclui partes temporárias usadas para montar e conferir os downloads.
 
 ```powershell
 git clone https://github.com/renatobortolotto/fiap-fase4.git
@@ -45,7 +47,7 @@ Se você já baixou o ZIP oficial da Olist, pode instalar e preparar os dados em
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\Setup.ps1 -ArchivePath "C:\Users\Seu Usuario\Downloads\Olist Dataset\archive.zip"
 ```
 
-`-ArchivePath` implica preparação dos dados e construção do índice. Como alternativa,
+`-ArchivePath` implica preparação dos dados, construção do índice e obtenção dos modelos locais. Como alternativa,
 `Setup.ps1 -PrepareData` tenta baixar a base oficial e executa as mesmas etapas.
 Sem essas opções, a instalação das dependências não prepara os dados. Os comandos
 individuais são:
@@ -54,6 +56,7 @@ individuais são:
 .venv\Scripts\python.exe -m voc_olist download
 .venv\Scripts\python.exe -m voc_olist prepare
 .venv\Scripts\python.exe -m voc_olist index
+.venv\Scripts\python.exe -m voc_olist models
 ```
 
 Depois, abra **INICIAR.cmd**, ou execute:
@@ -85,8 +88,12 @@ Fechar somente a aba do navegador não equivale a encerrar esse processo.
 
 O helper `model_store.py` obtém o encoder e os modelos Transformers opcionais em
 pastas locais com arquivos normais, sem exigir symlinks. Caches legados completos
-são preservados e reutilizados. A instalação limpa desta configuração nativa
-ainda precisa de sua execução final registrada.
+são preservados e reutilizados. A instalação limpa em clone novo foi concluída com
+Python 3.12.13, ambiente virtual e cache de modelos novos; somente o cache de wheels
+do uv foi reutilizado. O clone passou nos 288 testes e respondeu pela interface
+Streamlit AppTest com o modelo nativo offline. O botão de exportação e seu payload
+foram conferidos; não se simulou um clique de download no navegador. Os detalhes
+e tempos estão na [verificação](reports/verificacao.md).
 
 ### Alternativa opcional: Transformers
 
@@ -208,7 +215,9 @@ construção a cada pergunta.
 de compra de `2017-01-01` a `2017-12-31`. O filtro efetivo aparece na interface e
 na exportação, intersectado com o período manual. Nota, categoria e situação de
 atraso continuam sendo filtros explícitos do usuário. Um código de produto não
-deve ser confundido automaticamente com ano.
+deve ser confundido automaticamente com ano. A interpretação em linguagem natural
+reconhece **anos**; para meses ou dias, selecione o intervalo manual na interface
+ou use os parâmetros de data da CLI.
 
 **Geração:** o padrão Qwen 7B Q4_K_M usa llama.cpp portátil, com schema JSON enviado
 ao servidor local gerenciado. O fallback Transformers 1,5B usa LM Format Enforcer.
@@ -292,16 +301,24 @@ são calculadas separadamente no corpus textual e não são contagens de temas.
 ```
 
 O pool incluído tem 17 documentos reais, quatro perguntas de relevância e um caso
-com período vazio. Seus rótulos foram propostos com auxílio de IA e precisam de
-revisão humana. Recall@k e MRR@k usam apenas perguntas com `relevant_ids` não vazios;
+com período vazio. Seus rótulos foram propostos com auxílio de IA; uma futura revisão
+humana ampliaria a evidência de qualidade. Recall@k e MRR@k usam apenas perguntas com `relevant_ids` não vazios;
 sem rótulos, ficam nulos. `expect_abstain` mede somente o gate de recuperação com
 menos de dois hits, não o guard nem a geração.
 
-A revisão prevê ensaio de aceitação com 24 casos e inspeção assistida por IA,
-seguida de leitura pelo revisor. **A execução e os números finais ainda estão
-pendentes.** Esse ensaio não será apresentado como julgamento humano já concluído,
-teste cego ou benchmark independente. Sustentação deve ser avaliada contra todo o
-contexto, até oito fontes no padrão, não só contra os exemplos escolhidos.
+Na execução final v4 dos 24 casos, os nove positivos responderam; as treze recusas
+obrigatórias e os dois casos condicionais resultaram em abstenção adequada à
+inspeção realizada. Os dez findings publicados foram confrontados com todo o
+contexto e os doze exemplos tiveram origem literal conferida. A revisão assistida
+não encontrou erro material nesse lote, com ressalvas de cobertura, pertinência
+lateral e escolha de exemplos. Isso não certifica respostas futuras.
+
+Leia o [parecer das fontes](reports/review-20261116/assistant-source-review-v4.md)
+e os [resultados detalhados](docs/avaliacao.md). A compatibilidade de status em
+24/24 casos não é uma taxa de acurácia semântica. Os quatro JSONs em
+`reports/demo-context-v2-final/` demonstram duas respostas e duas recusas; suas
+sínteses são curtas e têm cobertura limitada. Rótulos humanos, teste cego e calibração
+independente permanecem melhorias futuras, sem serem requisitos adicionais do enunciado.
 
 As fixtures de testes são controladas e não entram no corpus oficial. Os
 [detalhes de avaliação](docs/avaliacao.md) separam integridade, formato, origem
@@ -327,8 +344,7 @@ uv.lock                 dependências fixadas
 Leia [arquitetura](docs/arquitetura.md), [decisões técnicas](docs/decisoes-tecnicas.md),
 [avaliação](docs/avaliacao.md), [roteiro de até 7 minutos](docs/roteiro-video.md) e
 [checklist](docs/checklist-entrega.md). O link público da entrega e seu estado estão
-em [docs/entrega.md](docs/entrega.md); uma revisão local não implica publicação de
-suas alterações. A equipe ainda deve revisar o material e gravar o vídeo. A trilha
+em [docs/entrega.md](docs/entrega.md). A equipe ainda deve revisar o material e gravar o vídeo. A trilha
 Databricks mencionada no enunciado é opcional.
 
 ## Referências técnicas

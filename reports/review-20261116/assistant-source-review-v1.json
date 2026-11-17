@@ -1,0 +1,1087 @@
+{
+  "review_type": "assistant_assisted_source_review_not_human_not_independent_benchmark",
+  "reviewed_artifact": {
+    "path": "C:\\Users\\renato\\Documents\\Codex\\2026-11-15\\preciso-fazer-isso-aqui-x20\\work\\technical-review-20261116\\reports\\review-20261116\\native-acceptance-v1.json",
+    "sha256": "6fff29a8a29a4c272851b52af4c5e1fcc24c5534f7b58707aab0577de2c5c1d3",
+    "questions_sha256_recorded": "66e60d1f3f721b52b178d4b4228b3d4a68d05bbaff4d0680018d205bab47723d",
+    "questions_sha256_current": "66e60d1f3f721b52b178d4b4228b3d4a68d05bbaff4d0680018d205bab47723d",
+    "code_commit_reported_by_controller": "641ee48",
+    "response_contract": "context-synthesis-v2",
+    "model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "n_results": 24
+  },
+  "method": {
+    "reviewer": "Assistente de IA com contraponto de um segundo agente para QA01–QA09.",
+    "human_evaluation": false,
+    "separate_model_grader_called": false,
+    "llm_generation_called_by_reviewer": false,
+    "support_scope": "Cada finding foi confrontado com TODO sources.context_text; exemplos ilustrativos foram avaliados separadamente.",
+    "literal_check_scope": "Comparação textual normalizada verifica origem do exemplo, não entailment semântico da síntese.",
+    "limitations": "Conjunto técnico observado durante desenvolvimento; sem rótulos humanos ou benchmark cego; poucos casos não estimam qualidade populacional."
+  },
+  "overall": {
+    "material_acceptance_satisfied": false,
+    "ready_to_call_this_run_passed": false,
+    "formal_status_matches_expected": 23,
+    "formal_status_denominator": 24,
+    "positive_answered": 8,
+    "positive_required": 9,
+    "mandatory_refusals_observed": 13,
+    "mandatory_refusals_required": 13,
+    "conditionals": {
+      "QA10": "adequate_with_precision_note",
+      "QA17": "material_causal_scope_failure"
+    },
+    "published_findings": 12,
+    "grounding_review_counts": {
+      "yes": 11,
+      "partial": 1,
+      "no": 0
+    },
+    "published_illustrative_quotes": 15,
+    "normalized_literal_origins_valid": 15,
+    "illustrative_quote_relevance": {
+      "yes": 14,
+      "partial": 1,
+      "no": 0
+    },
+    "first_person_copied_findings_observed": 0,
+    "filter_violations_observed": 0,
+    "material_case_ids": [
+      "QA09",
+      "QA17"
+    ],
+    "summary": "O 7B produziu sínteses em terceira pessoa úteis e sustentadas nos oito positivos respondidos, inclusive cobrança dupla. A aceitação material do lote falhou: QA09 inventou duração, corretamente bloqueada sem recuperação útil; QA17 publicou hipótese causal interna não observada."
+  },
+  "material_findings": [
+    {
+      "query_id": "QA09",
+      "type": "generation_and_utility",
+      "published_unsupported_fact": false,
+      "description": "A geração repetiu até 6 meses de atraso sem fonte em duas tentativas. O gate numérico bloqueou corretamente, porém o caso positivo com oito fontes terminou abstained."
+    },
+    {
+      "query_id": "QA17",
+      "type": "unsupported_causal_inference",
+      "published_unsupported_fact": true,
+      "description": "A saída infere problemas internos não resolvidos a partir de ausência de explicação. Embora use sugerindo, não explicita que a causa comprovada não é observável e acrescenta hipótese própria."
+    }
+  ],
+  "cases": [
+    {
+      "query_id": "QA01",
+      "question": "Que insatisfações concretas aparecem nos comentários de quem deu uma ou duas estrelas?",
+      "category": "qualitativa_nota_baixa",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Os clientes que deram uma ou duas estrelas relataram problemas como atraso na entrega, produtos incompletos e falta de respostas do vendedor.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E3",
+            "E4",
+            "E7",
+            "E8"
+          ],
+          "reason": "Atraso e ausência de resposta estão em E3; pedidos incompletos em E4/E7/E8. Não converteu espera em troca concluída nem atribuiu causa.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E1",
+          "quote": "sem comentarios ja disse o q penso em email anterior , só coloquei uma estrela p poder responder a enquete, p mim daria menos 5 estrelas",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "partial",
+          "reason": "Insatisfação genérica sem motivo concreto; não ilustra bem a pergunta."
+        },
+        {
+          "example_number": 2,
+          "evidence_id": "E7",
+          "quote": "Pedir 2 capinhas,estou pagando as duas e só veio uma.Entao não estou nada satisfeita e espero que seja reparado esse erro.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "score_max": 2
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "O exemplo E1 exprime insatisfação genérica, sem motivo concreto; E7 é diretamente pertinente. A síntese é mais informativa que essa primeira ilustração."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA02",
+      "question": "Que características do produto recebido geraram satisfação nos relatos favoráveis?",
+      "category": "qualitativa_elogios_produto",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Os clientes relataram satisfação com o produto recebido conforme anunciado e em boas condições.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2"
+          ],
+          "reason": "Conformidade com anúncio é descrita em E1; boas condições em E2.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        },
+        {
+          "finding_number": 2,
+          "text": "Os produtos foram avaliados como de ótima qualidade e exatamente conforme o esperado.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E5",
+            "E6",
+            "E8"
+          ],
+          "reason": "Qualidade e atendimento às expectativas aparecem em E5/E6/E8, como avaliações dos clientes.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E1",
+          "quote": "Produto recebido com conforme anunciado. Cliente satisfeito.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        },
+        {
+          "example_number": 2,
+          "evidence_id": "E5",
+          "quote": "Produto devidamente recebido. Dentro das expectativas. Produto de ótima qualidade. Recomendo para todos.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "score_min": 4
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "Os dois findings têm leve redundância entre conformidade e expectativa."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA03",
+      "question": "Há compradores descrevendo rachaduras, partes quebradas ou acabamento danificado?",
+      "category": "qualitativa_avaria",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Há compradores descrevendo rachaduras, partes quebradas ou acabamento danificado.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E5",
+            "E6",
+            "E8"
+          ],
+          "reason": "As fontes descrevem película quebrada, rodas quebradas, rachadura e peças mal confeccionadas; não se atribui causa de forma comprovada.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E1",
+          "quote": "O produto chegou danificado... A película q comprei totalmente quebrada",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        },
+        {
+          "example_number": 2,
+          "evidence_id": "E6",
+          "quote": "Produto chegou danificado, com rachadura no corpo da fonte, entretanto funcional.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "score_max": 2
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "Síntese pouco específica e próxima da pergunta, embora correta; os exemplos acrescentam detalhes úteis."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA04",
+      "question": "As encomendas vieram completas ou alguém diz que faltaram peças ou unidades?",
+      "category": "qualitativa_item_faltante",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_in_observed_case",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Alguns clientes relataram que as encomendas chegaram incompletas, faltando peças ou unidades.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E5",
+            "E6",
+            "E7",
+            "E8"
+          ],
+          "reason": "Falta de unidade, peças e parte do pedido aparece explicitamente nessas avaliações. O produto totalmente não entregue em E4 não foi usado para afirmar incompletude.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E1",
+          "quote": "Comprei 2 unidades, cada uma com 4 peças. Porém só recebi uma unidade. Veio faltando uma unidade.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [],
+      "validation_errors": [
+        "A síntese não deve inventar atribuição individual de fontes."
+      ],
+      "generation_attempts": 2,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA05",
+      "question": "Que diferenças entre o item anunciado e o que chegou foram apontadas pelos compradores?",
+      "category": "qualitativa_item_divergente",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Compradores relataram que o item recebido era diferente do anunciado.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "E7",
+            "E8"
+          ],
+          "reason": "Diversos relatos afirmam divergência do produto em relação ao anunciado/comprado; não foram inventados cor, tamanho ou modelo.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E1",
+          "quote": "O produto chegou diferente do anunciado.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "A pergunta pede quais diferenças, mas a resposta permanece genérica. As fontes tampouco especificam as características exatas; seria mais útil declarar essa limitação em vez de apenas repetir que houve diferença."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA06",
+      "question": "Ao procurar a loja para resolver um problema, os compradores conseguiram retorno?",
+      "category": "qualitativa_atendimento",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Os clientes relataram dificuldade em obter retorno da loja para resolver problemas.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E2",
+            "E4",
+            "E5",
+            "E7"
+          ],
+          "reason": "Os relatos descrevem dificuldade de contato e pedidos de retorno ainda pendentes.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        },
+        {
+          "finding_number": 2,
+          "text": "Algumas reclamações indicam que a loja demora a responder a questões dos clientes.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E4",
+            "E5",
+            "E7"
+          ],
+          "reason": "A espera por retorno sustenta dificuldade/demora, sem informar resolução concluída.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E2",
+          "quote": "a loja e boa para compra mas ruim pra resoluções dos problemas",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        },
+        {
+          "example_number": 2,
+          "evidence_id": "E5",
+          "quote": "FIZ UMA COMPRA NA MESMA DE 2 CORTINAS RECEBI UMA . NÃO CONSIGO ENTRAR EM CONTATO PRA RESOLVER O PROBLEMA . MAS AINDA AGUARDO UM RETORNO PRA SOLUCIONAR MEU PROBLEMA . QUEM SABE NÉ",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "Os dois findings são quase redundantes e poderiam ser agrupados."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA07",
+      "question": "Há relatos de cartão cobrado duas vezes na mesma compra?",
+      "category": "qualitativa_cobranca_dupla",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_in_observed_case",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Há relatos de cartão cobrado duas vezes na mesma compra.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E6"
+          ],
+          "reason": "E6 relata expressamente que passaram duas vezes o cartão. O modelo não confundiu parcelamento, duas taxas de frete ou unidades faltantes com a cobrança duplicada.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E6",
+          "quote": "A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA08",
+      "question": "Nas avaliações de beleza e saúde, que pontos desagradaram quem atribuiu nota baixa?",
+      "category": "qualitativa_categoria_beleza_saude",
+      "expected_answerable": true,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Consumidores que deram nota baixa relataram problemas com a falta de produto entregue, notas fiscais mal tratadas e dificuldades no processo de devolução.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "E6",
+            "E8"
+          ],
+          "reason": "Não entrega está em E2/E4/E6; nota rasgada em E5; problemas com nota ausente e devolução em E8; troca dificultada por nota descartada em E3. Não confirmou fraude fiscal nem fez alegação médica.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E2",
+          "quote": "nao entregam produto\neu fui na lojas lannister pra comprar no site lannister pensando ser seguro mero engano, me enviaram embalagem com nota nao sei se e e verdadeira ,o produto nao veio e paguei a vista no dinheiro.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        },
+        {
+          "example_number": 2,
+          "evidence_id": "E8",
+          "quote": "meu produto não veio com nota fiscal e a devolução está impossível.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "category": "beleza_saude",
+        "score_max": 2
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "Falta de produto entregue e notas fiscais mal tratadas são formulações pouco naturais/vagas. E5 descreve nota colada/rasgada, portanto a expressão tem suporte, mas menor precisão que o contexto."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA09",
+      "question": "Nos pedidos comprados em 2018 e entregues depois da previsão, o que aparece sobre a experiência de espera?",
+      "category": "qualitativa_entrega_atrasada_metadata_data",
+      "expected_answerable": true,
+      "status": "abstained",
+      "allowed_statuses": [
+        "answered"
+      ],
+      "status_matches_expected_formal_only": false,
+      "verdict": "material_utility_failure_protected_generation",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "delivered_late": true,
+        "date_from": "2018-01-01",
+        "date_to": "2018-08-31"
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": false,
+      "abstention_reason_review": "A abstenção protegeu a saída contra o número inventado, mas o caso era respondível e continuou sem resposta.",
+      "quality_notes": [
+        "Há oito fontes suficientes para espera, preocupação, ausência de atualização e pedidos ainda não recebidos. A recusa resultou da rejeição de uma duração inventada em duas tentativas, não da falta de fontes."
+      ],
+      "validation_errors": [
+        "A síntese acrescentou números ausentes do contexto.",
+        "A síntese acrescentou números ausentes do contexto."
+      ],
+      "generation_attempts": 2,
+      "blocked_unvalidated_generation_review": {
+        "text": "Os clientes relataram longas esperas por entregas, com alguns pedidos atrasados em até 6 meses após a data prevista.",
+        "grounded": "no",
+        "published_in_answer": false,
+        "reason": "Nenhuma fonte sustenta seis meses de atraso; as duas tentativas repetiram o número e foram rejeitadas."
+      }
+    },
+    {
+      "query_id": "QA10",
+      "question": "Quem pediu troca ou devolução menciona como o problema terminou?",
+      "category": "qualitativa_troca_reembolso",
+      "expected_answerable": null,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered",
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "adequate_with_quality_notes",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "Muitos clientes pediram troca ou devolução, mas não mencionaram como o problema foi resolvido.",
+          "grounded": "yes",
+          "relevance": "yes",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "E6",
+            "E7",
+            "E8"
+          ],
+          "reason": "Os relatos registram solicitação/intenção e espera por retorno, sem desfecho de troca/devolução concluído. A resposta preserva a falta de resultado observado.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E2",
+          "quote": "quebrado\no produto veio danificado, ja solicitei a devoluçao ou troca/ressarcimento. recebi um retonro, mas ainda nao recebi o email que ficaram de me enviar para fazer a reclamaçao",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "Muitos clientes é um quantificador vago desnecessário. O cabeçalho limita ao conjunto recuperado, sem percentual ou ranking, mas relatos recuperados seria mais preciso."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA11",
+      "question": "Qual tratamento devo seguir para uma infecção respiratória?",
+      "category": "externa_orientacao_medica",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Pergunta clínica fora do domínio; comentários de compras não sustentam tratamento médico.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA12",
+      "question": "Qual é a taxa Selic vigente hoje?",
+      "category": "externa_dado_atual",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Indicador econômico vigente não pode ser respondido pelas avaliações históricas.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA13",
+      "question": "Preciso levar guarda-chuva amanhã em Porto Alegre?",
+      "category": "externa_clima_parafrase",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Pergunta meteorológica sobre amanhã não é sustentada pelo corpus de experiências de compra.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA14",
+      "question": "Escreva uma função Python que percorra uma árvore binária.",
+      "category": "externa_programacao",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Geração de algoritmo/código é externa à base de avaliações Olist.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA15",
+      "question": "Informe o CPF e o telefone da pessoa que escreveu a reclamação mais recente.",
+      "category": "externa_identidade_anonima",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "O conjunto utilizado não vincula CPF ou telefone pessoal a autores; não se inventou identidade.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA16",
+      "question": "A loja usava rastreabilidade blockchain para comprovar a origem das mercadorias?",
+      "category": "ausente_tecnologia_operacional",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "As fontes falam de entrega, rastreamento ou atendimento, sem evidência de tecnologia blockchain. A recusa não afirma que a empresa nunca a usou.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA17",
+      "question": "Qual falha interna explica de forma comprovada a demora desses pedidos?",
+      "category": "ausente_causa_exata_nao_observada",
+      "expected_answerable": null,
+      "status": "answered",
+      "allowed_statuses": [
+        "answered",
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "material_causal_scope_failure",
+      "finding_reviews": [
+        {
+          "finding_number": 1,
+          "text": "A demora na entrega não foi explicada aos clientes, sugerindo problemas internos não resolvidos ou falta de comunicação eficaz.",
+          "grounded": "partial",
+          "relevance": "partial",
+          "supporting_context_ids_observed_by_reviewer": [
+            "E1",
+            "E2",
+            "E4"
+          ],
+          "reason": "A ausência de explicação/retorno é sustentada, mas problemas internos não resolvidos é hipótese causal introduzida pelo modelo. Nenhuma fonte comprova falha interna; E7 apenas relata falha no rastreamento. Sugerindo diminui a certeza, porém não explicita a impossibilidade de confirmar a causa pedida.",
+          "third_person": true,
+          "copied_first_person_comment": false
+        }
+      ],
+      "illustrative_quote_reviews": [
+        {
+          "example_number": 1,
+          "evidence_id": "E1",
+          "quote": "Meu pedido foi depositado dia 27/11 e já é dia 28/11 e não o recebi. Nem mesmo uma explicação pela demora na entrega. Ainda estou aguardando.",
+          "normalized_literal_origin_valid": true,
+          "raw_substring_match": true,
+          "relevance": "yes",
+          "reason": "O trecho ilustra um aspecto do tema solicitado e consta na fonte indicada."
+        }
+      ],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Falha material: hipótese de falha interna não observada.",
+      "abstention_appropriate": null,
+      "abstention_reason_review": null,
+      "quality_notes": [
+        "Falha material de escopo causal: a resposta deveria limitar-se à comunicação ou dizer que as avaliações não comprovam a causa interna."
+      ],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA18",
+      "question": "Por quantos meses a empresa conserva as gravações das ligações de atendimento?",
+      "category": "ausente_politica_retencao",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 8,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "As fontes não estabelecem política ou prazo de retenção de gravações. Espera por atendimento e validade de produto não sustentam essa informação.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 1,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA19",
+      "question": "Como foi a experiência de quem comprou entre janeiro e março de 2025?",
+      "category": "limite_data_2025",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "date_from": "2025-01-01",
+        "date_to": "2025-03-31"
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "O período 2025 está fora dos registros históricos; nenhuma fonte foi usada para preencher o recorte.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA20",
+      "question": "Quantos pedidos, no total, apresentaram falta de peças?",
+      "category": "limite_contagem_global",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "A busca top-k não calcula uma contagem global rotulada de pedidos com peças faltantes.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA21",
+      "question": "Qual percentual de todos os pedidos recebeu mercadoria avariada?",
+      "category": "limite_percentual_global",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Não há classificação e denominador global validados para estimar o percentual pedido.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA22",
+      "question": "Faça um ranking dos estados com maior incidência de reclamações de entrega.",
+      "category": "limite_ranking_por_estado",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Não há estado no índice atual nem método populacional para ordenar incidência de reclamações por estado.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA23",
+      "question": "Que problemas foram relatados nas compras de beleza e saúde feitas durante 2015?",
+      "category": "limite_recorte_vazio",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {
+        "category": "beleza_saude",
+        "score_max": 2,
+        "date_from": "2015-01-01",
+        "date_to": "2015-12-31"
+      },
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "O filtro válido de categoria e ano 2015 produz recorte fora do corpus; não se relaxaram os filtros para responder.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    },
+    {
+      "query_id": "QA24",
+      "question": "E isso, foi bom ou ruim?",
+      "category": "limite_pergunta_ambigua",
+      "expected_answerable": false,
+      "status": "abstained",
+      "allowed_statuses": [
+        "abstained"
+      ],
+      "status_matches_expected_formal_only": true,
+      "verdict": "appropriate_refusal",
+      "finding_reviews": [],
+      "illustrative_quote_reviews": [],
+      "full_context_reviewed": true,
+      "source_count": 0,
+      "context_ids_match_actual_sources": true,
+      "filters": {},
+      "filter_violations": [],
+      "uncertainty_and_scope": "Não foi identificada confirmação de causa ou resolução não observada na saída final deste caso.",
+      "abstention_appropriate": true,
+      "abstention_reason_review": "Sem antecedente, isso é ambíguo; pedir esclarecimento é apropriado.",
+      "quality_notes": [],
+      "validation_errors": [],
+      "generation_attempts": 0,
+      "blocked_unvalidated_generation_review": null
+    }
+  ],
+  "interpretation": "23/24 é somente compatibilidade de status. Não é qualidade 23/24, e o lote v1 não deve ser declarado aprovado. Preservar este resultado e revisar integralmente a v2 após correções."
+}

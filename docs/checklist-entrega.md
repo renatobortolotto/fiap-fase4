@@ -1,10 +1,10 @@
 # Checklist de entrega
 
-Os itens marcados foram verificados na implementação local; os demais dependem de revisão da equipe, publicação ou gravação. Consulte reports/verificacao.md para o ambiente e os limites. O prazo de entrega deve ser confirmado no ambiente da disciplina: o PDF não informa uma data.
+Esta lista distingue a preparação técnica, a gravação e a submissão. Os controles de testes e revisão detalhada complementam o enunciado; um benchmark humano independente não é um pré-requisito declarado no PDF. Consulte [a verificação](../reports/verificacao.md) para resultados e limites. Confirme o prazo no ambiente da disciplina: o PDF não informa uma data.
 
 ## Solução
 
-- [ ] Dataset Olist obtido da fonte indicada, com versão/data e hashes registrados.
+- [x] Dataset Olist obtido da fonte indicada, com versão/data e hashes registrados; ZIP local conferido.
 - [x] Preparação executada com resumo real de entradas, descartes e documentos.
 - [x] Ausentes e duplicatas tratados com critérios documentados.
 - [x] Unidade do documento e relacionamento com pedido preservados.
@@ -18,18 +18,16 @@ Os itens marcados foram verificados na implementação local; os demais dependem
 - [x] Interface indica quando está apenas no modo de evidências.
 - [x] Limites de frequência, causalidade e representatividade estão explícitos.
 
-## Avaliação
+## Revisão técnica da versão atual
 
 - [x] Testes de software executados, com resultado e ambiente registrados.
-- [ ] Perguntas de desenvolvimento separadas das perguntas de avaliação final.
-- [ ] Avaliações relevantes rotuladas por pessoas para um conjunto de perguntas.
-- [ ] Rótulos propostos por IA no pool de desenvolvimento revisados e identificados como tal.
-- [ ] Métricas de recuperação calculadas somente onde há rótulos válidos.
-- [ ] Citações e sustentação semântica revisadas por pessoas.
-- [ ] Erros de abstenção e de respostas sem suporte registrados.
+- [x] Lote de 24 consultas executado e sínteses confrontadas com o contexto completo, por revisão assistida por IA, com ressalvas registradas.
+- [x] Rótulos do pool identificados como propostas de IA, sem alegação de revisão humana concluída.
+- [x] Métricas de recuperação limitadas ao pool rotulado de desenvolvimento, com sua proveniência explícita.
+- [x] Falhas encontradas e resultado após correções registrados, sem reescrever as saídas anteriores.
 - [x] Limiar inicial distinguido de um limiar calibrado.
 - [x] Melhora da busca híbrida no pool de desenvolvimento distinguida de um teste final independente.
-- [ ] Limitações e pendências refletidas no README e no vídeo.
+- [x] README e relatórios refletem o estado final da revisão; levar esses limites para o vídeo.
 
 ## Repositório público no GitHub
 
@@ -38,11 +36,15 @@ Os itens marcados foram verificados na implementação local; os demais dependem
 - [x] Arquitetura e principais decisões técnicas descritas.
 - [x] Preparação do corpus e pipeline RAG documentados.
 - [x] Exemplos de perguntas e respostas reais, com fontes, incluídos.
-- [ ] Comandos conferidos em um ambiente limpo.
+- [x] Instalação uv e ZIP local conferidos em clone/venv/cache de modelos novos, com testes, conversa nativa via AppTest e payload de exportação.
 - [x] Arquivos temporários, caches e pesos de modelos fora do versionamento.
 - [x] Segredos e credenciais fora do versionamento.
 - [x] Condições de uso e atribuição do dataset verificadas na fonte.
 - [x] Link público abre para um visitante sem acesso à conta da equipe.
+
+## Melhorias futuras de avaliação
+
+Um teste cego separado, rótulos humanos de relevância, conciliação entre avaliadores e calibração independente do limiar ampliariam a evidência de qualidade. Essas atividades não foram executadas nem são apresentadas como requisitos adicionais da entrega. Os ensaios atuais são de desenvolvimento observado e não provam ausência geral de alucinações.
 
 ## Vídeo
 

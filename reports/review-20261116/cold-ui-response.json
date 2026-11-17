@@ -1,0 +1,229 @@
+{
+  "response_contract": "context-synthesis-v2",
+  "question": "O que os clientes elogiam nas entregas antes do prazo?",
+  "filters": {
+    "score_min": 4,
+    "score_max": 5
+  },
+  "status": "answered",
+  "findings": [
+    {
+      "text": "Os clientes elogiam a entrega antes do prazo."
+    }
+  ],
+  "illustrative_quotes": [
+    {
+      "evidence_id": "E1",
+      "quote": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "literal_verified": true
+    }
+  ],
+  "context_evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+  ],
+  "literal_quotes_verified": true,
+  "summary_entailment_verified": false,
+  "answer": "Nos comentários recuperados:\n\nOs clientes elogiam a entrega antes do prazo.",
+  "reason": "",
+  "sources": [
+    {
+      "categories": [
+        "cama_mesa_banho"
+      ],
+      "delivered_late": false,
+      "doc_id": "7013daf2251cf1e5c5f786f1a7c5b32d3d2069631c409f7e94acd981b7eb4db4",
+      "message": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "order_id": "a1226839947001dfb15c46e812c68325",
+      "purchase_date": "2017-03-04",
+      "review_date": "2017-03-10",
+      "review_id": "0ec638d4fa47f321fd70dd6dd6e7c568",
+      "score": 4,
+      "text": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "title": "",
+      "citation_id": "E1",
+      "context_text": "Bom atendimento ao cliente,mercadorias entregues antes do prazo",
+      "similarity": 0.898897
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "a93c37dfe9915231a5dccf45614af54fe705df6bd4828ff3e172b2c87d080087",
+      "message": "Parabéns a entrega foi antes do prazo",
+      "order_id": "2d33e2f321b7f676de5d3ab87c08d1ab",
+      "purchase_date": "2017-08-06",
+      "review_date": "2017-08-16",
+      "review_id": "cdf1925c268b7902beb421680b225d26",
+      "score": 5,
+      "text": "Parabéns a entrega foi antes do prazo",
+      "title": "",
+      "citation_id": "E2",
+      "context_text": "Parabéns a entrega foi antes do prazo",
+      "similarity": 0.90054
+    },
+    {
+      "categories": [
+        "automotivo"
+      ],
+      "delivered_late": false,
+      "doc_id": "54734fe6debfcd95a2b23ba0c487832e9af11290aad54bb86da539ea978dbc05",
+      "message": "entrega antes do prazo",
+      "order_id": "7157fd8b253bcba337ae46c9f0e10476",
+      "purchase_date": "2017-08-06",
+      "review_date": "2017-08-15",
+      "review_id": "89574fd5da8cdf29650416f3c937cd3b",
+      "score": 5,
+      "text": "entrega antes do prazo",
+      "title": "",
+      "citation_id": "E3",
+      "context_text": "entrega antes do prazo",
+      "similarity": 0.895932
+    },
+    {
+      "categories": [
+        "pcs"
+      ],
+      "delivered_late": false,
+      "doc_id": "da2e2c47f0cb0692da9f50e721bbd210ff648f6fae0f074859b5dfabf6007af5",
+      "message": "Entregue muito antes do prazo! Excelente! Loja muito atenciosa com o cliente. Recomendo!",
+      "order_id": "8185ba302492c86291d7b1912c94ded3",
+      "purchase_date": "2018-04-18",
+      "review_date": "2018-04-25",
+      "review_id": "d5a86b5d21dd6daf089000d89c1df630",
+      "score": 5,
+      "text": "Entregue muito antes do prazo! Excelente! Loja muito atenciosa com o cliente. Recomendo!",
+      "title": "",
+      "citation_id": "E4",
+      "context_text": "Entregue muito antes do prazo! Excelente! Loja muito atenciosa com o cliente. Recomendo!",
+      "similarity": 0.895435
+    },
+    {
+      "categories": [
+        "beleza_saude"
+      ],
+      "delivered_late": false,
+      "doc_id": "dca5f1823bde982a579f6f4257d188bf1910df48cdd548a854e9f5de55ea2ba5",
+      "message": "entrega chegou antes do prazo gostei",
+      "order_id": "0378193927bcea58a229c432fa102ba9",
+      "purchase_date": "2018-01-02",
+      "review_date": "2018-01-11",
+      "review_id": "7e3f7328ef91b28e9ecf85a1d9a6dfca",
+      "score": 4,
+      "text": "entrega chegou antes do prazo gostei",
+      "title": "",
+      "citation_id": "E5",
+      "context_text": "entrega chegou antes do prazo gostei",
+      "similarity": 0.902354
+    },
+    {
+      "categories": [
+        "informatica_acessorios"
+      ],
+      "delivered_late": false,
+      "doc_id": "25e94312671fe9e72a8e10f1fb354f3da9ebf85814ad011f2a8ebd2eb381856c",
+      "message": "entrega da mercadoria antes do prazo",
+      "order_id": "569749247450c1251fdd11128a1bb2bc",
+      "purchase_date": "2018-01-12",
+      "review_date": "2018-01-25",
+      "review_id": "17ac943da7d76ecc58b47796178adad2",
+      "score": 5,
+      "text": "entrega da mercadoria antes do prazo",
+      "title": "",
+      "citation_id": "E6",
+      "context_text": "entrega da mercadoria antes do prazo",
+      "similarity": 0.896439
+    },
+    {
+      "categories": [
+        "ferramentas_jardim"
+      ],
+      "delivered_late": false,
+      "doc_id": "5b9fdd1c7fdf72f14bea37cf43139e65b9bb435e33ba2a1f1a8dc1af933fb648",
+      "message": "Ótima loja entrega antes do prazo",
+      "order_id": "dfacafa5fce5542f18db6d6bb7ed5d16",
+      "purchase_date": "2018-03-16",
+      "review_date": "2018-03-28",
+      "review_id": "b06b6b70fd7e089fb20063250e384aae",
+      "score": 4,
+      "text": "Ótima loja entrega antes do prazo",
+      "title": "",
+      "citation_id": "E7",
+      "context_text": "Ótima loja entrega antes do prazo",
+      "similarity": 0.901646
+    },
+    {
+      "categories": [
+        "esporte_lazer"
+      ],
+      "delivered_late": false,
+      "doc_id": "46ccaf5e1c608f836de38f7e10fe6a9c7e8acbbc791ef67f4b602a973b3263b3",
+      "message": "Pronta entrega, antes do prazo",
+      "order_id": "1ec8ab9b7dc304ec05a9e96f6a25217c",
+      "purchase_date": "2017-03-17",
+      "review_date": "2017-03-29",
+      "review_id": "1c05af40d1be8d72751b9934aaaf693d",
+      "score": 5,
+      "text": "Pronta entrega, antes do prazo",
+      "title": "",
+      "citation_id": "E8",
+      "context_text": "Pronta entrega, antes do prazo",
+      "similarity": 0.895295
+    }
+  ],
+  "notice": "A síntese considera o contexto recuperado, exibido abaixo. Os trechos ilustrativos têm sua origem conferida; isso não certifica automaticamente toda interpretação. A amostra por relevância não mede a frequência dos problemas na base completa. Similaridade não é probabilidade de veracidade.",
+  "timestamp_utc": "2026-11-17T02:30:39.082633+00:00",
+  "configuration": {
+    "provider": "native",
+    "llm_model": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+    "llm_revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "min_similarity": 0.75,
+    "min_evidences": 2,
+    "top_k": 8,
+    "retrieval_mode": "hybrid",
+    "embedding_manifest": {
+      "schema_version": 1,
+      "model_name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "shape": [
+        42687,
+        384
+      ],
+      "document_count": 42687,
+      "n_unique_texts": 37111,
+      "batching_strategy": "exact_unique_texts_sorted_by_length_then_text",
+      "dimensions": 384,
+      "source_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "docs_sha256": "bc06619eadd964af277651083498f0adec336b6f4e8c6eae8e08e7bd719b2a4c",
+      "vectors_sha256": "d78e18f3ba874450bc73b51186c4cf43e19524054b65fbd458f937b518e67810"
+    }
+  },
+  "scope": {
+    "allowed": true,
+    "code": "in_scope",
+    "reason": "",
+    "details": {
+      "semantic_unavailable": false,
+      "semantic": {
+        "method": "e5_task_prototypes",
+        "positive_score": 0.8841286301612854,
+        "negative_score": 0.8227428197860718,
+        "negative_minus_positive": -0.06138581037521362,
+        "rejection_margin": 0.015,
+        "positive_prototype": "Analisar relatos de clientes sobre entrega dos pedidos, demora, prazo e recebimento antecipado.",
+        "negative_prototype": "Pedir uma receita culinária e instruções de preparo de alimentos.",
+        "note": "Margem heurística de desenvolvimento; não é probabilidade nem garantia de escopo."
+      }
+    }
+  },
+  "generation_attempts": 1,
+  "validation_errors": [],
+  "elapsed_seconds": 29.711
+}
